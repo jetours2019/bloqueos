@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
+<head> 
 
 <?php include 'header.php'; ?>
 
