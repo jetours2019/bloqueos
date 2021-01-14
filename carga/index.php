@@ -14,15 +14,24 @@
 
 
     <script type="text/javascript">
-        function cargarHojaExcel() {
-            if (document.frmcargararchivo.excel.value == "") {
-                alert("Suba un archivo");
-                document.frmcargararchivo.excel.focus();
-                return false;
-            }
-            document.frmcargararchivo.action = "process.php";
-            document.frmcargararchivo.submit();
-        }
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
     </script>
 
 
@@ -88,10 +97,14 @@
                             <h3 class="text-center font-weight-light my-4">Actualizar Disponibilidad</h3>
                         </div>
                         <div class="card-body">
-                            <form name="frmcargararchivo" method="post" enctype="multipart/form-data">
+                            <form action="process.php" name="frmcargararchivo" method="post" enctype="multipart/form-data">
                                 <p>Subir Excel(ControlCharters.xlsx).</p>
-                                <p><input type="file" name="excel" id="excel" /></p>
-                                <p><input type="button" value="subir" onclick="cargarHojaExcel();" /></p>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="excel" name="excel" required>
+                                    <label class="custom-file-label" for="excel">Seleccione Archivo...</label>
+                                    <div class="invalid-feedback">Debe seleccionar un archivo</div>
+                                </div>
+                                <button class="btn btn-primary" type="submit">Subir</button>
                             </form>
                         </div>
                     </div>
