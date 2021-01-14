@@ -78,20 +78,27 @@
     require '../2205/conexion.php';
 
     ?>
-    <article>
-        <section>
-            <h1>Actualizar Disponibilidad</h1>
-            <form name="frmcargararchivo" method="post" enctype="multipart/form-data">
-                <p>Subir Excel(ControlCharters.xlsx).</p>
-                <p><input type="file" name="excel" id="excel" /></p>
-                <p><input type="button" value="subir" onclick="cargarHojaExcel();" /></p>
-            </form>
-        </section>
-    </article>
 
-
-
-
+    <main>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <div class="card shadow-lg border-0 rounded-lg mt-5">
+                        <div class="card-header">
+                            <h3 class="text-center font-weight-light my-4">Actualizar Disponibilidad</h3>
+                        </div>
+                        <div class="card-body">
+                            <form name="frmcargararchivo" method="post" enctype="multipart/form-data">
+                                <p>Subir Excel(ControlCharters.xlsx).</p>
+                                <p><input type="file" name="excel" id="excel" /></p>
+                                <p><input type="button" value="subir" onclick="cargarHojaExcel();" /></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
 
     <!-- Optional JavaScript -->

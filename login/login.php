@@ -100,14 +100,14 @@ if (!empty($_POST)) {
                             <form name="session" method="post" class="needs-validation" novalidate>
                                 <div class="form-group">
                                     <label for="username">Nombre de Usuario</label>
-                                    <input type="text" class="form-control loginForm" required id="user" name="user" aria-describedby="username" placeholder="Ingrese nombre de usuario">
+                                    <input type="text" class="form-control" required id="user" name="user" aria-describedby="username" placeholder="Ingrese nombre de usuario">
                                     <div class="invalid-feedback">
                                         Debe ingresar un usuario.
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Contraseña</label>
-                                    <input type="password" class="form-control loginForm" required name="pass" id="exampleInputContraseña1" placeholder="Contraseña">
+                                    <input type="password" class="form-control" required name="pass" id="exampleInputContraseña1" placeholder="Contraseña">
                                     <div class="invalid-feedback">
                                         Debe ingresar un usuario.
                                     </div>
