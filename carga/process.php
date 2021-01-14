@@ -36,7 +36,7 @@ if ($xlsx == 1 && $emparejado == 1) {
     $sql = "DELETE FROM productos WHERE id>=0";
     // $borrado = $conexion->query($sql); 
 
-    $rutaArchivo = "base/ControlCharters.xlsx";
+    $rutaArchivo = "../2205/base/ControlCharters.xlsx";
 
     $documento = IOFactory::load($rutaArchivo);
 
