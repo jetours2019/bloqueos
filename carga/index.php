@@ -1,3 +1,12 @@
+<?php 
+
+session_start();
+
+if(!$_SESSION['logged']){
+    header('location: ../login');
+}
+
+?>
 <!doctype html>
 <html lang="es">
 
