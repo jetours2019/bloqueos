@@ -99,7 +99,7 @@ if (!empty($_POST)) {
                 <p>Inicia sesión para subir archivos.</p>
                 <div class="form-group">
                     <label for="username">Nombre de Usuario</label>
-                    <input type="text" class="form-control loginForm" required id="user" name="usuario" aria-describedby="username" placeholder="Ingrese nombre de usuario">
+                    <input type="text" class="form-control loginForm" required id="user" name="user" aria-describedby="username" placeholder="Ingrese nombre de usuario">
                     <div class="invalid-feedback">
                         Debe ingresar un usuario.
                     </div>
