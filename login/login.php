@@ -78,7 +78,7 @@
         $pass = md5($_POST['pass']);
         $query = "SELECT *
                   FROM usuarios
-                  WHERE username = '$key'
+                  WHERE username = '$user'
                   AND password = '$pass'";
 
         $consulta = mysqli_query($conexion, $query) or die(mysqli_error($conexion));
@@ -109,7 +109,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Contraseña</label>
-                    <input type="password" class="form-control loginForm" required name="clave" id="exampleInputContraseña1" placeholder="Contraseña">
+                    <input type="password" class="form-control loginForm" required name="pass" id="exampleInputContraseña1" placeholder="Contraseña">
                     <div class="invalid-feedback">
                         Debe ingresar un usuario.
                     </div>
