@@ -50,6 +50,12 @@
             color: white;
             padding: 20px;
         }
+
+        .loginForm {
+            width: 70%;
+            padding-left: 15%;
+            margin-left: 15%;
+        }
     </style>
 
 </head>
@@ -80,7 +86,7 @@
         if ($row_cnt == 0) {
             $logginFailed = true;
             session_destroy();
-        }else{
+        } else {
             $_SESSION['logged'] = true;
 
             header('location: /carga');
@@ -96,14 +102,14 @@
                 <p>Inicia sesión para subir archivos.</p>
                 <div class="form-group">
                     <label for="username">Nombre de Usuario</label>
-                    <input type="text" class="form-control" id="user" name="usuario" aria-describedby="username" placeholder="Ingrese nombre de usuario">
+                    <input type="text" class="form-control loginForm" id="user" name="usuario" aria-describedby="username" placeholder="Ingrese nombre de usuario">
                     <div class="invalid-feedback">
                         Debe ingresar un usuario.
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Contraseña</label>
-                    <input type="password" class="form-control" name="clave" id="exampleInputContraseña1" placeholder="Contraseña">
+                    <input type="password" class="form-control loginForm" name="clave" id="exampleInputContraseña1" placeholder="Contraseña">
                     <div class="invalid-feedback">
                         Debe ingresar un usuario.
                     </div>
