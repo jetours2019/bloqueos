@@ -13,6 +13,19 @@
     <title>Actualizar Control de Bloqueos</title>
 
 
+    <script type="text/javascript">
+        function cargarHojaExcel() {
+            if (document.frmcargararchivo.excel.value == "") {
+                alert("Suba un archivo");
+                document.frmcargararchivo.excel.focus();
+                return false;
+            }
+            document.frmcargararchivo.action = "process.php";
+            document.frmcargararchivo.submit();
+        }
+    </script>
+
+
     <style>
         body {
 
@@ -68,14 +81,11 @@
     <article>
         <section>
             <h1>Actualizar Disponibilidad</h1>
-
-            <form name="session" method="post">
-                <p>Inicia sesión para subir archivos.</p>
-                <p><input type="text" name="usuario" placeholder="Usuario" id="user" /></p>
-                <p><input type="password" name="clave" placeholder="Contraseña"></p>
-                <p><input type="submit" name="xlsx" value="Entrar"></p>
+            <form name="frmcargararchivo" method="post" enctype="multipart/form-data">
+                <p>Subir Excel(ControlCharters.xlsx).</p>
+                <p><input type="file" name="excel" id="excel" /></p>
+                <p><input type="button" value="subir" onclick="cargarHojaExcel();" /></p>
             </form>
-
         </section>
     </article>
 
