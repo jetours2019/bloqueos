@@ -1,3 +1,32 @@
+<?php
+
+#conectar a base de datos 
+require '../2205/conexion.php';
+session_start();
+
+$logginFailed = false;
+if (!empty($_POST)) {
+
+    $user = $_POST['user'];
+    $pass = md5($_POST['pass']);
+    $query = "SELECT *
+              FROM usuarios
+              WHERE username = '$user'
+              AND password = '$pass'";
+
+    $consulta = mysqli_query($conexion, $query) or die(mysqli_error($conexion));
+    $row_cnt = mysqli_num_rows($consulta);
+    if ($row_cnt == 0) {
+        $logginFailed = true;
+        session_destroy();
+    } else {
+        $_SESSION['logged'] = true;
+
+        header('location: ../carga');
+    }
+}
+
+?>
 <!doctype html>
 <html lang="es">
 
@@ -62,38 +91,6 @@
 
 <body>
 
-
-
-
-    <?php
-
-    #conectar a base de datos 
-    require '../2205/conexion.php';
-    session_start();
-
-    $logginFailed = false;
-    if (!empty($_POST)) {
-
-        $user = $_POST['user'];
-        $pass = md5($_POST['pass']);
-        $query = "SELECT *
-                  FROM usuarios
-                  WHERE username = '$user'
-                  AND password = '$pass'";
-
-        $consulta = mysqli_query($conexion, $query) or die(mysqli_error($conexion));
-        $row_cnt = mysqli_num_rows($consulta);
-        if ($row_cnt == 0) {
-            $logginFailed = true;
-            session_destroy();
-        } else {
-            $_SESSION['logged'] = true;
-
-            header('location: ../carga');
-        }
-    }
-
-    ?>
     <article>
         <section>
             <h1>Actualizar Disponibilidad</h1>
