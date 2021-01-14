@@ -75,7 +75,7 @@
     if (!empty($_POST)) {
 
         $user = $_POST['user'];
-        $pass = $_POST['pass'];
+        $pass = md5($_POST['pass']);
         $query = "SELECT *
                   FROM usuarios
                   WHERE username = '$key'
@@ -89,7 +89,7 @@
         } else {
             $_SESSION['logged'] = true;
 
-            header('location: /carga');
+            header('location: ../carga');
         }
     }
 
