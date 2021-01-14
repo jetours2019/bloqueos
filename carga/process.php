@@ -125,7 +125,7 @@ if ($xlsx == 1 && $emparejado == 1) {
     // $result = $mysqli->query($sql);
     $html .= '<div class="emparejado">El archivo se actualizo con fecha ' . $fechaData . ' a las ' . $elH . '</div>';
 } else {
-    $html .= "<a href='index.php'> Volver a cargar </a>";
+    $html .= "<div class='alert alert-info'><a href='index.php'> Volver a cargar </a></div>";
 }
 
 
