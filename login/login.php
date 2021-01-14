@@ -90,38 +90,45 @@ if (!empty($_POST)) {
 </head>
 
 <body>
+    <main>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <div class="card shadow-lg border-0 rounded-lg mt-5">
+                        <div class="card-header">
+                            <h3 class="text-center font-weight-light my-4">Actualizar Disponibilidad</h3>
+                            <small id="passwordHelpInline" class="text-muted">
+                                Inicia sesión para subir archivos.
+                            </small>
+                        </div>
+                        <div class="card-body">
+                            <form name="session" method="post" class="needs-validation" novalidate>
+                                <div class="form-group">
+                                    <label for="username">Nombre de Usuario</label>
+                                    <input type="text" class="form-control loginForm" required id="user" name="user" aria-describedby="username" placeholder="Ingrese nombre de usuario">
+                                    <div class="invalid-feedback">
+                                        Debe ingresar un usuario.
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Contraseña</label>
+                                    <input type="password" class="form-control loginForm" required name="pass" id="exampleInputContraseña1" placeholder="Contraseña">
+                                    <div class="invalid-feedback">
+                                        Debe ingresar un usuario.
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Entrar</button>
+                                <?php if ($logginFailed) { ?>
+                                    <p class="alert alert-warning">Nombre de usuario o contraseña incorrectos</p>
+                                <?php } ?>
 
-    <article>
-        <section>
-            <h1>Actualizar Disponibilidad</h1>
-
-            <form name="session" method="post" class="needs-validation" novalidate>
-                <p>Inicia sesión para subir archivos.</p>
-                <div class="form-group">
-                    <label for="username">Nombre de Usuario</label>
-                    <input type="text" class="form-control loginForm" required id="user" name="user" aria-describedby="username" placeholder="Ingrese nombre de usuario">
-                    <div class="invalid-feedback">
-                        Debe ingresar un usuario.
+                            </form>
+                        </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Contraseña</label>
-                    <input type="password" class="form-control loginForm" required name="pass" id="exampleInputContraseña1" placeholder="Contraseña">
-                    <div class="invalid-feedback">
-                        Debe ingresar un usuario.
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Entrar</button>
-                <?php if ($logginFailed) { ?>
-                    <p class="alert alert-warning">Nombre de usuario o contraseña incorrectos</p>
-                <?php } ?>
-
-            </form>
-
-        </section>
-    </article>
-
-
+            </div>
+        </div>
+    </main>
 
 
     <script>
