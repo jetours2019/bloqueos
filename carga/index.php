@@ -78,16 +78,6 @@
 
 <body>
 
-
-
-
-    <?php
-
-    #conectar a base de datos 
-    require '../2205/conexion.php';
-
-    ?>
-
     <main>
         <div class="container">
             <div class="row justify-content-center">
