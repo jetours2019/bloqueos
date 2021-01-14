@@ -1,7 +1,8 @@
 <?php
+ini_set('display_errors', 1);
 
-require_once 'conexion.php';
-require_once "vendor/autoload.php";
+require_once '../2205/conexion.php';
+require_once "../2205/vendor/autoload.php";
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
