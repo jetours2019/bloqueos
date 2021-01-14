@@ -80,11 +80,6 @@ if (!empty($_POST)) {
             padding: 20px;
         }
 
-        .loginForm {
-            width: 70%;
-            padding-left: 15%;
-            margin-left: 15%;
-        }
     </style>
 
 </head>
