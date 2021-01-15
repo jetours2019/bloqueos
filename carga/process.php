@@ -198,7 +198,7 @@ if ($xlsx == 1 && $emparejado == 1) {
 </body>
 
 <script>
-    console.log(<?php echo implode("", $querys); ?>);
+    console.log('<?php echo implode("", $querys); ?>');
 </script>
 
 </html>
