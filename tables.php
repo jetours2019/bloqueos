@@ -12,87 +12,55 @@ if (isset($_GET['mes'])) {
 
 
 #asignamos el nombre del mes de regreso
-switch ($destino) {
-      case "CLO":
-            $destino2 = "Cali";
-            break;
-      case "BOG":
-            $destino2 = "Bogotá";
-            break;
-      case "SMR":
-            $destino2 = "Santa Marta";
-            break;
-      case "CTG":
-            $destino2 = "Cartagena";
-            break;
-      case "ADZ":
-            $destino2 = "San Andrés";
-            break;
-      case "BAQ":
-            $destino2 = "Barranquilla";
-            break;
-      case "SDQ":
-            $destino2 = "Santo Domingo";
-            break;
-      case "PTY":
-            $destino2 = "Panamá";
-            break;
-      case "AUA":
-            $destino2 = "Aruba";
-            break;
-      case "CUR":
-            $destino2 = "Curazao";
-            break;
-      case "PUJ":
-            $destino2 = "Punta Cana";
-            break;
-      case "CUN":
-            $destino2 = "Cancún";
-            break;
-}
-
+$destino2 = asignarNombreCiudad($destino2);
 
 #asignamos el nombre del mes de origen
-switch ($desde) {
-      case "CLO":
-            $desde2 = "Cali";
-            break;
-      case "BOG":
-            $desde2 = "Bogotá";
-            break;
-      case "SMR":
-            $desde2 = "Santa Marta";
-            break;
-      case "CTG":
-            $desde2 = "Cartagena";
-            break;
-      case "ADZ":
-            $desde2 = "San Andrés";
-            break;
-      case "BAQ":
-            $desde2 = "Barranquilla";
-            break;
-      case "SDQ":
-            $desde2 = "Santo Domingo";
-            break;
-      case "PTY":
-            $desde2 = "Panamá";
-            break;
-      case "AUA":
-            $desde2 = "Aruba";
-            break;
-      case "CUR":
-            $desde2 = "Curazao";
-            break;
-      case "PUJ":
-            $desde2 = "Punta Cana";
-            break;
-      case "CUN":
-            $desde2 = "Cancún";
-            break;
+$desde2 = asignarNombreCiudad($desde);
+
+function asignarNombreCiudad($codigo)
+{
+      $ciudad = "";
+      switch ($codigo) {
+            case "CLO":
+                  $ciudad = "Cali";
+                  break;
+            case "BOG":
+                  $ciudad = "Bogotá";
+                  break;
+            case "SMR":
+                  $ciudad = "Santa Marta";
+                  break;
+            case "CTG":
+                  $ciudad = "Cartagena";
+                  break;
+            case "ADZ":
+                  $ciudad = "San Andrés";
+                  break;
+            case "BAQ":
+                  $ciudad = "Barranquilla";
+                  break;
+            case "SDQ":
+                  $ciudad = "Santo Domingo";
+                  break;
+            case "PTY":
+                  $ciudad = "Panamá";
+                  break;
+            case "AUA":
+                  $ciudad = "Aruba";
+                  break;
+            case "CUR":
+                  $ciudad = "Curazao";
+                  break;
+            case "PUJ":
+                  $ciudad = "Punta Cana";
+                  break;
+            case "CUN":
+                  $ciudad = "Cancún";
+                  break;
+      }
+
+      return $ciudad;
 }
-
-
 
 #asignamos el nombre del mes
 switch ($mes) {
