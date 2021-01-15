@@ -1,6 +1,7 @@
 <?php
 #conectar a base de datos 
 require '2205/conexion.php';
+session_start();
 
 if (isset($_GET['mes'])) {
       $mes = $_GET['mes'];
