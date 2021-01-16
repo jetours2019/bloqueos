@@ -226,7 +226,7 @@ switch ($mes) {
                                                       $mes22 = $registro['mes2'];
                                                       $dia2 = $registro['dia2'];
                                                       $programa = $registro['programa'];
-
+                                                      $contentPrograma = (isset($programa) && $programa != null && $programa != "" && $programa != "NO DISPO") ? "<a href='../carga/files/$programa.pdf' title='$programa'>$programa <i class='fas fa-search-plus'></i></a>" : "No disponible";
                                                       #asignamos el nombre del mes de regreso
                                                       switch ($mes) {
                                                             case 1:
@@ -268,10 +268,6 @@ switch ($mes) {
                                                       }
 
 
-
-
-
-
                                                       if ($libre <= 0) {
                                                       } else {
                                                             #asignamos el nombre de la aerolinea
@@ -301,7 +297,7 @@ switch ($mes) {
                         <td class='dia'>$dia2 <a title='$fecha2'><i class='far fa-calendar-check dat'></i></td>
                         <td align='center'><img src='$url/assets/images/$aero.png'> $libre</td>
                         <td align='center'> <a href='detalles.php?id=$referencia&desde=$desde' title='$referencia'>Ver itinerario <i class='fas fa-search-plus'></i></a></td>
-                        <td align='center'> <a href='#' title='$programa'>$programa <i class='fas fa-search-plus'></i></a></td>
+                        <td align='center'> $contentPrograma</td>
                         </tr>     
                         ";
                                                       };
