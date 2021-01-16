@@ -226,7 +226,7 @@ switch ($mes) {
                                                       $mes22 = $registro['mes2'];
                                                       $dia2 = $registro['dia2'];
                                                       $programa = $registro['programa'];
-                                                      $contentPrograma = ""; ?  : "No disponible";
+                                                      $contentPrograma = "";
                                                       if(isset($programa) && $programa != null && $programa != "" && $programa != "NO DISPO" && $programa != "0" && $programa != " - " && $programa != "EXCURSIONES"){
                                                             $programa = str_replace(" ", "-", $programa);
                                                             $contentPrograma = "<a href='../carga/files/$programa.pdf' title='$programa'>$programa <i class='fas fa-search-plus'></i></a>";
