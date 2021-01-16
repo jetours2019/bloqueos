@@ -1,11 +1,12 @@
 
 
+  <?php $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="shortcut icon" type="image/png" href="../assets/images/logo.png"/>
+  <link rel="shortcut icon" type="image/png" href="<?php echo $url; ?>/assets/images/logo.png"/>
   <title>Aliados Travel | Control Charter</title>
 
   <!-- Custom fonts for this template-->
@@ -16,7 +17,7 @@
   <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
   
   <!-- Custom styles for this page -->
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/style.css">
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->

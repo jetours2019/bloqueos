@@ -17,7 +17,7 @@
         <!--a class="nav-link" href="index.html">
           <i class="fab fa-angellist"></i>
           <span>Últimos Cupos</span></a-->
-           <a class="nav-link" href="https://aliadostravel.com">
+           <a class="nav-link" href="<?php echo $url; ?>">
           <i class="fa fa-arrow-left"></i>
           <span>Volver</span></a>
       </li>
