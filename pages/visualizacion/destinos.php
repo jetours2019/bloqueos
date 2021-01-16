@@ -1,6 +1,6 @@
 <?php
 #conectar a base de datos 
-require '../../db/conexion.php';
+$level_file = "../..";
 
 if (isset($_GET['mes'])) {
   $mes = $_GET['mes'];

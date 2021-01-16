@@ -1,5 +1,6 @@
 <?php
 session_start();
+$level_file = "..";
 ?>
 <!DOCTYPE html>
 <html lang="es">
