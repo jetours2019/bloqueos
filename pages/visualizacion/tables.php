@@ -1,6 +1,4 @@
 <?php
-#conectar a base de datos 
-require '2205/conexion.php';
 session_start();
 
 if (isset($_GET['mes'])) {
@@ -109,98 +107,8 @@ switch ($mes) {
 
 <head>
 
-      <?php include 'header.php'; ?>
-
-
-      <style type="text/css">
-            .bg-gradient-primary {
-                  background-color: #214482;
-                  background-image: linear-gradient(180deg, #214582 10%, #224abe 100%);
-                  background-size: cover;
-            }
-
-            span.vuelo {
-                  font-size: 12px;
-                  float: right;
-                  opacity: .5;
-                  line-height: 24px;
-            }
-
-
-            .tituloDest {
-                  position: relative;
-            }
-
-            .tituloDest h1 {
-                  position: absolute;
-                  top: 50%;
-                  left: 50%;
-                  color: white;
-                  transform: translate(-50%, -20%);
-                  font-size: 4em;
-                  text-align: center;
-                  line-height: 55px;
-            }
-
-            .tituloDest h4 {
-                  position: absolute;
-                  top: 50%;
-                  left: 50%;
-                  color: white;
-                  font-weight: 100;
-                  transform: translate(-50%, -204%);
-            }
-
-            td.dia {
-                  font-size: 19px;
-                  font-weight: 900;
-                  text-align: center;
-                  color: #4e77e2;
-            }
-
-            .showMes {
-                  background: #dddddd;
-            }
-
-            .ok b {
-
-                  color: #008c19;
-
-            }
-
-            .alertas b {
-
-                  color: #e30000;
-
-            }
-
-            .alertas:after {
-                  content: "(i) Hace mas de 20 horas que no se actualiza las tablas.";
-                  font-size: 12px;
-                  background: red;
-                  color: white;
-                  padding: 0px 8px;
-                  border-radius: 15px;
-                  transform: translate(0px, -15px);
-                  display: inline-block;
-                  animation: alerta 1s infinite;
-            }
-
-            @keyframes alerta {
-                  0% {
-                        opacity: 1;
-                  }
-
-                  50% {
-                        opacity: .5;
-                  }
-
-                  100% {
-                        opacity: 1;
-                  }
-            }
-      </style>
-
+      <?php include '../../assets/templates/header.php'; ?>
+      <?php include '../../assets/templates/datatables.php'; ?>
 </head>
 
 <body id="page-top">
@@ -208,7 +116,7 @@ switch ($mes) {
       <!-- Page Wrapper -->
       <div id="wrapper">
 
-            <?php include 'aside.php'; ?>
+            <?php include '../../assets/templates/aside.php'; ?>
 
             <!-- Content Wrapper -->
             <div id="content-wrapper" class="d-flex flex-column">
@@ -219,9 +127,7 @@ switch ($mes) {
                         <!-- Topbar -->
                         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-
-                              <?php include 'alertas.php' ?>
-
+                              <?php include '../../assets/templates/alertas.php' ?>
 
                               <!-- Topbar Navbar -->
                               
@@ -230,17 +136,8 @@ switch ($mes) {
                                     <div class="topbar-divider d-none d-sm-block"></div>
                                     
                                     <!-- Nav Item - User Information -->
-                                    <?php include 'navbar.php' ?>
-                                    <!-- <li class="nav-item dropdown no-arrow"> -->
-                                          <!-- <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
-                                                <!-- <span class="mr-2 d-none d-lg-inline text-gray-600 small">Control Bloqueos V1.0</span> -->
-                                                <!-- <img class="img-profile rounded-circle" src="http://charter.aliadostravel.com/img/logo.png"> -->
-                                          <!-- </a> -->
-                                          <!-- Dropdown - User Information -->
-<!--  -->
-                                    <!-- </li> -->
-<!--  -->
-<!--  -->
+                                    <?php include '../../assets/templates/navbar.php' ?>
+
                               </ul>
 
                         </nav>
@@ -463,21 +360,7 @@ switch ($mes) {
       </div>
 
       <!-- Bootstrap core JavaScript-->
-      <script src="vendor/jquery/jquery.min.js"></script>
-      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-      <!-- Core plugin JavaScript-->
-      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-      <!-- Custom scripts for all pages-->
-      <script src="js/sb-admin-2.min.js"></script>
-
-      <!-- Page level plugins -->
-      <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-      <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-      <!-- Page level custom scripts -->
-      <script src="js/demo/datatables-demo.js"></script>
+      <?php include '../../assets/templates/scripts.php'; ?>
 
 </body>
 
