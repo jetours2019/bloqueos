@@ -1,7 +1,7 @@
 <?php
 
 $carpeta = "pruebas_bloqueos"; //TODO:Cambiar a bloqueos al finalizar refactoring
-$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$carpeta"; 
+$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]/$carpeta"; 
 
 ?>
 <meta charset="utf-8">
