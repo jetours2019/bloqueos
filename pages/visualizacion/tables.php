@@ -1,5 +1,6 @@
 <?php
 session_start();
+$level_file = "../..";
 
 if (isset($_GET['mes'])) {
       $mes = $_GET['mes'];
