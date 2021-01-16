@@ -1,8 +1,8 @@
 <?php
 
 #conectar a base de datos 
-require "../db/conexion.php";
-print_r($url);
+require "$carpeta/db/conexion.php";
+// print_r($url);
 date_default_timezone_set('UTC');
 
 $elA = date("Y");
