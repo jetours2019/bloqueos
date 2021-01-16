@@ -228,8 +228,8 @@ switch ($mes) {
                                                       $programa = $registro['programa'];
                                                       $contentPrograma = "";
                                                       if(isset($programa) && $programa != null && $programa != "" && $programa != "NO DISPO" && $programa != "0" && $programa != " - " && $programa != "EXCURSIONES"){
-                                                            $programa = str_replace(" ", "-", $programa);
-                                                            $contentPrograma = "<a href='../carga/files/$programa.pdf' title='$programa'>$programa <i class='fas fa-search-plus'></i></a>";
+                                                            $programaLink = str_replace(" ", "-", trim($programa));
+                                                            $contentPrograma = "<a target='_blank' href='../carga/files/$programaLink.pdf' title='$programa'>$programa <i class='fas fa-search-plus'></i></a>";
                                                       }else{
                                                             $contentPrograma = "No disponible";
                                                       }
