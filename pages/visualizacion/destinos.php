@@ -66,7 +66,7 @@ switch ($mes) {
 
 <head>
 
-  <?php include '../assets/templates/header.php'; ?>
+  <?php include '../../assets/templates/header.php'; ?>
 
 </head>
 
@@ -75,7 +75,7 @@ switch ($mes) {
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-    <?php include '../assets/templates/aside.php'; ?>
+    <?php include '../../assets/templates/aside.php'; ?>
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -87,7 +87,7 @@ switch ($mes) {
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
 
-          <?php include '../assets/templates/alertas.php' ?>
+          <?php include '../../assets/templates/alertas.php' ?>
 
 
           <!-- Topbar Navbar -->
@@ -252,7 +252,7 @@ switch ($mes) {
   </a>
 
 
-  <?php include '../assets/templates/scripts.php'; ?>
+  <?php include '../../assets/templates/scripts.php'; ?>
 
 </body>
 
