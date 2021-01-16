@@ -251,7 +251,7 @@ switch ($mes) {
 
                               <!-- Page Heading -->
                               <div class="mb-4 tituloDest">
-                                    <img src="http://charter.aliadostravel.com/img/banner1.jpg" width="100%">
+                                    <img src="<?php echo $url; ?>/assets/images/banner1.jpg" width="100%">
                                     <h1>
                                           <? echo $destino2 ?> <br>
                                           <? echo $ano ?>

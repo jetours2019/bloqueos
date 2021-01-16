@@ -484,7 +484,7 @@ animation: alerta 1s infinite;
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Control Bloqueos V1.0</span>
-                <img class="img-profile rounded-circle" src="http://charter.aliadostravel.com/img/logo.png">
+                <img class="img-profile rounded-circle" src="<?php echo $url; ?>/assets/images/logo.png">
               </a>
               <!-- Dropdown - User Information -->
               
@@ -497,8 +497,8 @@ animation: alerta 1s infinite;
         <!-- End of Topbar -->
 
 <video class="videoFull" controls="false" autoplay="autoplay" loop>
-  <source src="http://charter.aliadostravel.com/img/videoAvionLoop.mp4" type="video/mp4">
-  <source src="http://charter.aliadostravel.com/img/videoAvionLoop.mp4" type="video/ogg">
+  <source src="<?php echo $url; ?>/assets/images/videoAvionLoop.mp4" type="video/mp4">
+  <source src="<?php echo $url; ?>/assets/images/videoAvionLoop.mp4" type="video/ogg">
 Your browser does not support the video tag.
 </video>
 

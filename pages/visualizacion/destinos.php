@@ -116,7 +116,7 @@ switch ($mes) {
           <!-- Content Column -->
           <div class="col-lg-12 mb-4">
             <div class="card shadow mb-4 tituloDest">
-              <img src="http://charter.aliadostravel.com/img/nov.jpg" width="100%">
+              <img src="<?php echo $url; ?>/assets/images/nov.jpg" width="100%">
               <h1>
                 <? echo $mes2 ?> /
                 <? echo $ano ?>
