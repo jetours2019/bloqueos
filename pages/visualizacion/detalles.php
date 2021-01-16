@@ -1,6 +1,7 @@
 <?php
 #conectar a base de datos 
 $level_file = "../..";
+require_once "$level_file/db/conexion.php";
 
 if (isset($_GET['id'])) {
   $ID = $_GET['id'];

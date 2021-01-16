@@ -1,7 +1,7 @@
 <?php
 
 #conectar a base de datos 
-require "$level_file/db/conexion.php";
+require_once "$level_file/db/conexion.php";
 // print_r($url);
 date_default_timezone_set('UTC');
 
