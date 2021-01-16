@@ -516,7 +516,7 @@ switch ($aero) {
               <h2>SALIENDO</h2>
               <div>
                 <span><?php echo $desde . '-' . $hacia; ?></span><span><?php echo $tipo ?></span>
-                <p><img src="img/<?php echo $aero ?>.png"> Vuelo: <?php echo $vuelo ?></p>
+                <p><img src='<?php echo $url;?>/assets/images/<?php echo $aero;?>.png'>  Vuelo: <?php echo $vuelo ?></p>
 
                 <b><?php echo $dia1 ?> <i><?php echo $mes1 ?></i></b>
 
