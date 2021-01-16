@@ -27,12 +27,10 @@ $horax = $horasx[0];
 #Detectamos la hora actual
 $horaz = explode(":", $elH);
 $horazz = $horaz[0];
-$msg = "";
 if ($elM == $mess && $elD == $dias && ($horax + 20) > $horazz) {
     $clase = "ok";
 } else {
-    $msg = "Hace mas de 20 horas que no se actualizan los registros.";
     $clase = "alertas";
 }
 
-echo '<div style="content: \'(i) Hace mas de 20 horas que no se actualiza la información.\' !important" class="' . $clase . '">Última actualización de datos el .<b>' . $fecha . '</b>. a las .<b>' . $hora . '.</b></div>';
+echo '<div class="' . $clase . '">Última actualización de datos el .<b>' . $fecha . '</b>. a las .<b>' . $hora . '.</b></div>';

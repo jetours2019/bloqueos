@@ -171,8 +171,7 @@ a.back:hover {
 }
 
 .alertas:after {
-    content: "(i)";
-    /* TODO: Ajustar content segun pantalla */
+    content: "(i) Hace mas de 20 horas que no se actualiza la informacion.";
     font-size: 12px;
     background: red;
     color: white;
