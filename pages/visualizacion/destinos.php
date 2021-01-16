@@ -99,7 +99,7 @@ switch ($mes) {
             <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->
-            <?php include '../assets/templates/navbar.php' ?>
+            <?php include '../../assets/templates/navbar.php' ?>
 
 
           </ul>
