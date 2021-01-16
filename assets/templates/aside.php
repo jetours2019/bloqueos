@@ -48,18 +48,18 @@
            
             
             <h6 class="collapse-header">2021</h6>
-            <a class="collapse-item <?php if($_GET['mes'] == 1) echo 'showMes'; ?>" href="destinos.php?mes=1&ano=2021&desde=CLO">Enero</a>
-            <a class="collapse-item <?php if($_GET['mes'] == 2) echo 'showMes'; ?>" href="destinos.php?mes=2&ano=2021&desde=CLO">Febrero</a>
-            <a class="collapse-item <?php if($_GET['mes'] == 3) echo 'showMes'; ?>" href="destinos.php?mes=3&ano=2021&desde=CLO">Marzo</a>
-            <a class="collapse-item <?php if($_GET['mes'] == 4) echo 'showMes'; ?>" href="destinos.php?mes=4&ano=2021&desde=CLO">Abril</a>
-            <a class="collapse-item <?php if($_GET['mes'] == 5) echo 'showMes'; ?>" href="destinos.php?mes=5&ano=2021&desde=CLO">Mayo</a>
-            <a class="collapse-item <?php if($_GET['mes'] == 6) echo 'showMes'; ?>" href="destinos.php?mes=6&ano=2021&desde=CLO">Junio</a>
-            <a class="collapse-item <?php if($_GET['mes'] == 7) echo 'showMes'; ?>" href="destinos.php?mes=7&ano=2021&desde=CLO">Julio</a>
-            <a class="collapse-item <?php if($_GET['mes'] == 8) echo 'showMes'; ?>" href="destinos.php?mes=8&ano=2021&desde=CLO">Agosto</a>
-            <a class="collapse-item <?php if($_GET['mes'] == 9) echo 'showMes'; ?>" href="destinos.php?mes=9&ano=2021&desde=CLO">Septiembre</a>
-            <a class="collapse-item <?php if($_GET['mes'] == 10) echo 'showMes'; ?>" href="destinos.php?mes=10&ano=2021&desde=CLO">Octubre</a>
-            <a class="collapse-item <?php if($_GET['mes'] == 11) echo 'showMes'; ?>" href="destinos.php?mes=11&ano=2021&desde=CLO">Noviembre</a>
-            <a class="collapse-item <?php if($_GET['mes'] == 12) echo 'showMes'; ?>" href="destinos.php?mes=12&ano=2021&desde=CLO">Diciembre</a>
+            <a class="collapse-item <?php if($_GET['mes'] == 1) echo 'showMes'; ?>" href="/visualizacion/destinos.php?mes=1&ano=2021&desde=CLO">Enero</a>
+            <a class="collapse-item <?php if($_GET['mes'] == 2) echo 'showMes'; ?>" href="/visualizacion/destinos.php?mes=2&ano=2021&desde=CLO">Febrero</a>
+            <a class="collapse-item <?php if($_GET['mes'] == 3) echo 'showMes'; ?>" href="/visualizacion/destinos.php?mes=3&ano=2021&desde=CLO">Marzo</a>
+            <a class="collapse-item <?php if($_GET['mes'] == 4) echo 'showMes'; ?>" href="/visualizacion/destinos.php?mes=4&ano=2021&desde=CLO">Abril</a>
+            <a class="collapse-item <?php if($_GET['mes'] == 5) echo 'showMes'; ?>" href="/visualizacion/destinos.php?mes=5&ano=2021&desde=CLO">Mayo</a>
+            <a class="collapse-item <?php if($_GET['mes'] == 6) echo 'showMes'; ?>" href="/visualizacion/destinos.php?mes=6&ano=2021&desde=CLO">Junio</a>
+            <a class="collapse-item <?php if($_GET['mes'] == 7) echo 'showMes'; ?>" href="/visualizacion/destinos.php?mes=7&ano=2021&desde=CLO">Julio</a>
+            <a class="collapse-item <?php if($_GET['mes'] == 8) echo 'showMes'; ?>" href="/visualizacion/destinos.php?mes=8&ano=2021&desde=CLO">Agosto</a>
+            <a class="collapse-item <?php if($_GET['mes'] == 9) echo 'showMes'; ?>" href="/visualizacion/destinos.php?mes=9&ano=2021&desde=CLO">Septiembre</a>
+            <a class="collapse-item <?php if($_GET['mes'] == 10) echo 'showMes'; ?>" href="/visualizacion/destinos.php?mes=10&ano=2021&desde=CLO">Octubre</a>
+            <a class="collapse-item <?php if($_GET['mes'] == 11) echo 'showMes'; ?>" href="/visualizacion/destinos.php?mes=11&ano=2021&desde=CLO">Noviembre</a>
+            <a class="collapse-item <?php if($_GET['mes'] == 12) echo 'showMes'; ?>" href="/visualizacion/destinos.php?mes=12&ano=2021&desde=CLO">Diciembre</a>
           </div>
         </div>
       </li>
@@ -78,21 +78,21 @@
           <div class="bg-white py-2 collapse-inner rounded">
             
             <h6 class="collapse-header">2020</h6>
-            <a class="collapse-item <?php if($_GET['mes'] == 12) echo 'showMes'; ?>" href="destinos.php?mes=12&ano=2020&desde=BOG">Diciembre</a>
+            <a class="collapse-item <?php if($_GET['mes'] == 12) echo 'showMes'; ?>" href="/visualizacion/destinos.php?mes=12&ano=2020&desde=BOG">Diciembre</a>
             
             <h6 class="collapse-header">2021</h6>
-            <a class="collapse-item <?php if($_GET['mes'] == 1) echo 'showMes'; ?>" href="destinos.php?mes=1&ano=2021&desde=BOG">Enero</a>
-            <a class="collapse-item <?php if($_GET['mes'] == 2) echo 'showMes'; ?>" href="destinos.php?mes=2&ano=2021&desde=BOG">Febrero</a>
-            <a class="collapse-item <?php if($_GET['mes'] == 3) echo 'showMes'; ?>" href="destinos.php?mes=3&ano=2021&desde=BOG">Marzo</a>
-            <a class="collapse-item <?php if($_GET['mes'] == 4) echo 'showMes'; ?>" href="destinos.php?mes=4&ano=2021&desde=BOG">Abril</a>
-            <a class="collapse-item <?php if($_GET['mes'] == 5) echo 'showMes'; ?>" href="destinos.php?mes=5&ano=2021&desde=BOG">Mayo</a>
-            <a class="collapse-item <?php if($_GET['mes'] == 6) echo 'showMes'; ?>" href="destinos.php?mes=6&ano=2021&desde=BOG">Junio</a>
-            <a class="collapse-item <?php if($_GET['mes'] == 7) echo 'showMes'; ?>" href="destinos.php?mes=7&ano=2021&desde=BOG">Julio</a>
-            <a class="collapse-item <?php if($_GET['mes'] == 8) echo 'showMes'; ?>" href="destinos.php?mes=8&ano=2021&desde=BOG">Agosto</a>
-            <a class="collapse-item <?php if($_GET['mes'] == 9) echo 'showMes'; ?>" href="destinos.php?mes=9&ano=2021&desde=BOG">Septiembre</a>
-            <a class="collapse-item <?php if($_GET['mes'] == 10) echo 'showMes'; ?>" href="destinos.php?mes=10&ano=2021&desde=BOG">Octubre</a>
-            <a class="collapse-item <?php if($_GET['mes'] == 11) echo 'showMes'; ?>" href="destinos.php?mes=11&ano=2021&desde=BOG">Noviembre</a>
-            <a class="collapse-item <?php if($_GET['mes'] == 12) echo 'showMes'; ?>" href="destinos.php?mes=12&ano=2021&desde=BOG">Diciembre</a>
+            <a class="collapse-item <?php if($_GET['mes'] == 1) echo 'showMes'; ?>" href="/visualizacion/destinos.php?mes=1&ano=2021&desde=BOG">Enero</a>
+            <a class="collapse-item <?php if($_GET['mes'] == 2) echo 'showMes'; ?>" href="/visualizacion/destinos.php?mes=2&ano=2021&desde=BOG">Febrero</a>
+            <a class="collapse-item <?php if($_GET['mes'] == 3) echo 'showMes'; ?>" href="/visualizacion/destinos.php?mes=3&ano=2021&desde=BOG">Marzo</a>
+            <a class="collapse-item <?php if($_GET['mes'] == 4) echo 'showMes'; ?>" href="/visualizacion/destinos.php?mes=4&ano=2021&desde=BOG">Abril</a>
+            <a class="collapse-item <?php if($_GET['mes'] == 5) echo 'showMes'; ?>" href="/visualizacion/destinos.php?mes=5&ano=2021&desde=BOG">Mayo</a>
+            <a class="collapse-item <?php if($_GET['mes'] == 6) echo 'showMes'; ?>" href="/visualizacion/destinos.php?mes=6&ano=2021&desde=BOG">Junio</a>
+            <a class="collapse-item <?php if($_GET['mes'] == 7) echo 'showMes'; ?>" href="/visualizacion/destinos.php?mes=7&ano=2021&desde=BOG">Julio</a>
+            <a class="collapse-item <?php if($_GET['mes'] == 8) echo 'showMes'; ?>" href="/visualizacion/destinos.php?mes=8&ano=2021&desde=BOG">Agosto</a>
+            <a class="collapse-item <?php if($_GET['mes'] == 9) echo 'showMes'; ?>" href="/visualizacion/destinos.php?mes=9&ano=2021&desde=BOG">Septiembre</a>
+            <a class="collapse-item <?php if($_GET['mes'] == 10) echo 'showMes'; ?>" href="/visualizacion/destinos.php?mes=10&ano=2021&desde=BOG">Octubre</a>
+            <a class="collapse-item <?php if($_GET['mes'] == 11) echo 'showMes'; ?>" href="/visualizacion/destinos.php?mes=11&ano=2021&desde=BOG">Noviembre</a>
+            <a class="collapse-item <?php if($_GET['mes'] == 12) echo 'showMes'; ?>" href="/visualizacion/destinos.php?mes=12&ano=2021&desde=BOG">Diciembre</a>
             
           </div>
         </div>
