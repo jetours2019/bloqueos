@@ -1,7 +1,7 @@
 <?php
 
 #conectar a base de datos 
-require '../db/conexion.php';
+require "$url/db/conexion.php";
 date_default_timezone_set('UTC');
 
 $elA = date("Y");
