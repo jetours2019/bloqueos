@@ -109,7 +109,7 @@ switch ($mes) {
 <head>
 
       <?php include '../../assets/templates/header.php'; ?>
-      <?php include '../../assets/templates/datatables.php'; ?>
+      <?php include '../../assets/templates/datatablesCss.php'; ?>
 </head>
 
 <body id="page-top">
@@ -362,6 +362,7 @@ switch ($mes) {
 
       <!-- Bootstrap core JavaScript-->
       <?php include '../../assets/templates/scripts.php'; ?>
+      <?php include '../../assets/templates/datatablesJs.php'; ?>
 
 </body>
 
