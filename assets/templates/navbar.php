@@ -13,10 +13,10 @@ session_start();
         <?php
         if ($_SESSION['logged']) {
         ?>
-            <a class="dropdown-item" href="carga">Carga</a>
-            <a class="dropdown-item" href="login/logout.php">Salir</a>
+            <a class="dropdown-item" href="<?php echo $level_file; ?>/pages/carga">Carga</a>
+            <a class="dropdown-item" href="<?php echo $level_file; ?>/pages/login/logout.php">Salir</a>
         <?php } else { ?>
-            <a class="dropdown-item" href="login/login.php">Iniciar sesión</a>
+            <a class="dropdown-item" href="<?php echo $level_file; ?>/pages/login/login.php">Iniciar sesión</a>
         <?php } ?>
 
     </div>
