@@ -186,6 +186,7 @@ switch ($mes) {
                 <th>Regresando</th>
                 <th>Sillas Libres</th>  
                 <th>Ver Itinerario</th>
+                <th>Ver Programa</th>
                 </tr>
                 </thead>
                 <tfoot>
@@ -198,6 +199,7 @@ switch ($mes) {
                 <th>Regresando</th>
                 <th>Sillas Libres</th>
                 <th>Ver Itinerario</th>
+                <th>Ver Programa</th>
                 </tr>
                 </tfoot>
                 <tbody>
@@ -223,6 +225,7 @@ switch ($mes) {
                                                       $ano2 = $registro['ano2'];
                                                       $mes22 = $registro['mes2'];
                                                       $dia2 = $registro['dia2'];
+                                                      $programa = $registro['programa'];
 
                                                       #asignamos el nombre del mes de regreso
                                                       switch ($mes) {
@@ -296,8 +299,9 @@ switch ($mes) {
                         <td><span class='_vuelo'>$tipo</span></td>
                         <td class='dia'>$dia <a title='$fecha'><i class='far fa-calendar-check dat'></i></td>
                         <td class='dia'>$dia2 <a title='$fecha2'><i class='far fa-calendar-check dat'></i></td>
-                        <td align='center'><img src='img/$aero.png'> $libre</td>
+                        <td align='center'><img src='$url/assets/images/$aero.png'> $libre</td>
                         <td align='center'> <a href='detalles.php?id=$referencia&desde=$desde' title='$referencia'>Ver itinerario <i class='fas fa-search-plus'></i></a></td>
+                        <td align='center'> <a href='#' title='$programa'>$programa <i class='fas fa-search-plus'></i></a></td>
                         </tr>     
                         ";
                                                       };
