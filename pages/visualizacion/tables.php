@@ -131,11 +131,11 @@ switch ($mes) {
                               <?php include '../../assets/templates/alertas.php' ?>
 
                               <!-- Topbar Navbar -->
-                              
+
                               <ul class="navbar-nav ml-auto">
-                                    
+
                                     <div class="topbar-divider d-none d-sm-block"></div>
-                                    
+
                                     <!-- Nav Item - User Information -->
                                     <?php include '../../assets/templates/navbar.php' ?>
 
@@ -227,10 +227,15 @@ switch ($mes) {
                                                       $dia2 = $registro['dia2'];
                                                       $programa = $registro['programa'];
                                                       $contentPrograma = "";
-                                                      if(false && isset($programa) && $programa != null && $programa != "" && $programa != "NO DISPO" && $programa != "0" && $programa != " - " && $programa != "EXCURSIONES"){
+                                                      if (isset($programa) && $programa != null && $programa != "" && $programa != "NO DISPO" && $programa != "0" && $programa != " - " && $programa != "EXCURSIONES") {
                                                             $programaLink = str_replace(" ", "-", trim($programa));
-                                                            $contentPrograma = "<a target='_blank' href='../carga/files/$programaLink.pdf' title='$programa'>$programa <i class='fas fa-search-plus'></i></a>";
-                                                      }else{
+                                                            $nombre_fichero = "../carga/files/$programaLink.pdf";
+                                                            if (file_exists($nombre_fichero)) {
+                                                                  $contentPrograma = "<a target='_blank' href='$nombre_fichero' title='$programa'>$programa <i class='fas fa-search-plus'></i></a>";
+                                                            } else {
+                                                                  $contentPrograma = "No disponible";
+                                                            }
+                                                      } else {
                                                             $contentPrograma = "No disponible";
                                                       }
                                                       #asignamos el nombre del mes de regreso
