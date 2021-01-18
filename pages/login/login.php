@@ -28,7 +28,6 @@ if (!empty($_POST)) {
         $_SESSION['logged'] = true;
         $_SESSION['user'] = $user;
 
-        //TODO: Validar el usuario para la redireccion
         switch ($user) {
             case 'admin':
                 $header = "location: ../admin";

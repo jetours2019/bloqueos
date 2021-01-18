@@ -143,7 +143,7 @@ if ($xlsx == 1 && $emparejado == 1) {
     $html .= "<div class='alert alert-info'><a href='javascript:history.back(-1)'> Volver a cargar </a></div>";
 }
 
-$carpeta = "pruebas_bloqueos"; //TODO:Cambiar a bloqueos al finalizar refactoring
+$carpeta = "bloqueos";
 $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]/$carpeta";
 
 ?>
