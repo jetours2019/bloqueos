@@ -44,7 +44,7 @@ if ($xlsx == 1 && $emparejado == 1) {
     $html .= "<h3 style='text-align:center;'>CONTROL DE CHARTERS</h3>";
     $html .= "<h4 style='text-align:center;'><a class='btn btn-info' href='javascript:history.back(-1)'>Volver</a></h4>";
 
-    $html .= '<table class="table table-responsive" style="margin: auto; width: 100%; border: solid #eee 1px;">';
+    $html .= '<table class="table table-responsive" id="dataTable" style="margin: auto; width: 100%; border: solid #eee 1px;">';
 
     # Iterar filas
     foreach ($hojaActual->getRowIterator() as $fila) {
