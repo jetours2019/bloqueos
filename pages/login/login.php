@@ -21,11 +21,30 @@ if (!empty($_POST)) {
         $logginFailed = true;
         session_destroy();
     } else {
-        $_SESSION['logged'] = true;
         $registro = mysqli_fetch_array($consulta);
         $user = $registro['username'];
+        $_SESSION['logged'] = true;
+        $_SESSION['user'] = $user;
+
         //TODO: Validar el usuario para la redireccion
-        header('location: ../carga'.$user);
+        switch ($user) {
+            case 'admins':
+                $header = "location: ../admin";
+                break;
+            case 'productos':
+                $header = "location: ../carga/tarifas.php";
+                break;
+            case 'bloqueos':
+                $header = "location: ../carga/info.php";
+                break;
+            case 'reportes':
+                $header = "location: ../admin/reporte.php";
+                break;
+            default:
+                $header = "HTTP/1.0 403 Forbidden";
+                break;
+        }
+        header($header);
     }
 }
 
@@ -48,7 +67,7 @@ if (!empty($_POST)) {
     <style>
         body {
 
-            background: url(http://charter.aliadostravel.com/2206/bg_blur.jpg);
+            background: url(../../assets/images/bg_blur.jpg);
             background-size: cover;
             background-size: cover;
             padding: 0;
