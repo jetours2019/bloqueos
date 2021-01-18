@@ -79,8 +79,8 @@ if (!$_SESSION['logged']) {
                                     <form action="process.php" name="frmcargararchivo" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
                                         <p>Subir Excel(ControlCharters.xlsx).</p>
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="excel" name="excel" required>
-                                            <label class="custom-file-label" for="excel">Seleccione Archivo...</label>
+                                            <input type="file" class="custom-file-input" id="excel" name="excel" required onchange="$('#upload-file-info').text($(this).val());">
+                                            <label class="custom-file-label" for="excel"  id="upload-file-info">Seleccione Archivo...</label>
                                             <div class="invalid-feedback">Debe seleccionar un archivo</div>
                                         </div>
                                         <hr>
