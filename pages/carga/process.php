@@ -42,6 +42,7 @@ if ($xlsx == 1 && $emparejado == 1) {
     $hojaActual = $documento->getSheet(0);
 
     $html .= "<h3 style='text-align:center;'>CONTROL DE CHARTERS</h3>";
+    $html .= "<h4 style='text-align:center;'><a class='btn btn-info' href='javascript:history.back(-1)'>Volver</a></h4>";
 
     $html .= '<table class="table table-responsive" style="margin: auto; width: 100%; border: solid #eee 1px;">';
 
@@ -112,7 +113,7 @@ if ($xlsx == 1 && $emparejado == 1) {
         };
 
         $sql = "INSERT INTO productos (no,id,vuelo1,desde1,hasta1,aerolineas1,fecha1,salida1,llegada1,vuelo2,desde2,hasta2,aerolineas2,fecha2,salida2,llegada2,total,libre,referencia, ano, mes, dia, tipo, ano2, mes2, dia2, programa) VALUE( '$no','$id','$vuelo1','$desde1','$hasta1','$aerolineas1','$fecha1','$salida1','$llegada1','$vuelo2','$desde2','$hasta2','$aerolineas2','$fecha2','$salida2','$llegada2','$total','$libre','$referencia','$ano','$mes','$dia','$tipo','$ano2','$mes2','$dia2', '$programa')";
-        if($id != "" && $id != "ID"){
+        if ($id != "" && $id != "ID") {
             // $result = $mysqli->query($sql);
             $querys[] = $sql;
         }
@@ -141,6 +142,9 @@ if ($xlsx == 1 && $emparejado == 1) {
 <head>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="<?php echo $url; ?>/assets/js/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="<?php echo $url; ?>/assets/images/iconlogo.png" />
+    <title>Aliados Travel | Control Charter</title>
 
     <style>
         .error {
@@ -192,12 +196,13 @@ if ($xlsx == 1 && $emparejado == 1) {
 
 <body>
 
-<div class="container">
-    <?php echo $html; ?>
-</div>
+    <div class="container">
+        <?php echo $html; ?>
+    </div>
 
 </body>
-
+<?php include '../../assets/templates/scripts.php'; ?>
+<?php include '../../assets/templates/datatables.php'; ?>
 <script>
     console.log("<?php echo implode("", $querys); ?>");
 </script>
