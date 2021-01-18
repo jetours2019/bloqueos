@@ -118,7 +118,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             <div class="col-sm-6 my-1">
                                                 <label class="sr-only" for="codigo">Codigo</label>
                                                 <div class="input-group">
-                                                    <input type="text" minlength="4" class="form-control" id="codigo" name="codigo" placeholder="Codigo" required>
+                                                    <input type="number" minlength="4" class="form-control" id="codigo" name="codigo" placeholder="Codigo" required>
                                                     <div class="invalid-feedback">Debe ingresar un código de tarifa válido (Mín 4 caracteres)</div>
                                                 </div>
                                             </div>
