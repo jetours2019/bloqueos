@@ -11,7 +11,16 @@ if (!$_SESSION['logged']) {
     }
 }
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // $carpetaCarga     = "./files/";
+    // $filepdf      = $_FILES['filepdf']['name'];
 
+    // $rutaArchivo = "$carpetaCarga$filepdf";
+
+    // if (move_uploaded_file($_FILES['filepdf']['tmp_name'], $rutaArchivo)) {
+    //     $mensaje = "El archivo de tarifas con código $codigo ha sido cargado con exito";
+    // }
+}
 ?>
 
 <!DOCTYPE html>
@@ -80,18 +89,18 @@ if (!$_SESSION['logged']) {
                                         <p>Subir PDF.</p>
                                         <div class="form-row align-items-center">
                                             <div class="col-sm-2 my-1">
-                                                <label class="sr-only" for="inlineFormInputName">Agencia</label>
-                                                <input type="text" class="form-control" id="inlineFormInputName" value="AT" readonly>
+                                                <label class="sr-only" for="agencia">Agencia</label>
+                                                <input type="text" class="form-control" id="agencia" value="AT" name="agencia" readonly>
                                             </div>
                                             <div class="col-sm-6 my-1">
-                                                <label class="sr-only" for="inlineFormInputGroupCodigo">Codigo</label>
+                                                <label class="sr-only" for="codigo">Codigo</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" id="inlineFormInputGroupCodigo" placeholder="Codigo" required>
+                                                    <input type="text" minlength="4" class="form-control" id="codigo" name="codigo" placeholder="Codigo" required>
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 my-1">
-                                                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Tipo</label>
-                                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" placeholder="Elegir..." required>
+                                                <label class="mr-sm-2 sr-only" for="tipo">Tipo</label>
+                                                <select class="custom-select mr-sm-2" id="tipo" name="tipo" placeholder="Elegir..." required>
                                                     <option value="" selected>Elegir...</option>
                                                     <option value="P">Promo</option>
                                                     <option value="SP">Super Promo</option>
@@ -100,8 +109,8 @@ if (!$_SESSION['logged']) {
                                             </div>
                                         </div>
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="excel" name="excel" required onchange="$('#upload-file-info').text($(this).val());">
-                                            <label class="custom-file-label" for="excel" id="upload-file-info">Seleccione Archivo...</label>
+                                            <input type="file" class="custom-file-input" id="filepdf" name="filepdf" required onchange="$('#upload-file-info').text($(this).val());">
+                                            <label class="custom-file-label" for="filepdf" id="upload-file-info">Seleccione Archivo...</label>
                                             <div class="invalid-feedback">Debe seleccionar un archivo</div>
                                         </div>
                                         <hr>
