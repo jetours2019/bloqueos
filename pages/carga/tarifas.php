@@ -79,11 +79,11 @@ if (!$_SESSION['logged']) {
                                     <form name="frmcargararchivo" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
                                         <p>Subir PDF.</p>
                                         <div class="form-row align-items-center">
-                                            <div class="col-sm-4 my-1">
+                                            <div class="col-sm-2 my-1">
                                                 <label class="sr-only" for="inlineFormInputName">Agencia</label>
                                                 <input type="text" class="form-control" id="inlineFormInputName" value="AT" readonly>
                                             </div>
-                                            <div class="col-sm-4 my-1">
+                                            <div class="col-sm-6 my-1">
                                                 <label class="sr-only" for="inlineFormInputGroupCodigo">Codigo</label>
                                                 <div class="input-group">
                                                     <input type="text" class="form-control" id="inlineFormInputGroupCodigo" placeholder="Codigo" required>
@@ -91,8 +91,7 @@ if (!$_SESSION['logged']) {
                                             </div>
                                             <div class="col-sm-4 my-1">
                                                 <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Tipo</label>
-                                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" required>
-                                                    <option selected>Elegir...</option>
+                                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" placeholder="Elegir..." required>
                                                     <option value="P">Promo</option>
                                                     <option value="SP">Super Promo</option>
                                                     <option value="R">Regular</option>
