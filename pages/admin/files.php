@@ -185,6 +185,11 @@ if (!$_SESSION['logged']) {
                         "next": "Siguiente",
                         "previous": "Anterior"
                     },
+                    "columnDefs": [{
+                            "orderable": false,
+                            "targets": 0
+                        }
+                    ],
                 }
             });
         });
