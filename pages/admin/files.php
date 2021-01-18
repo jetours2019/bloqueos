@@ -83,7 +83,7 @@ while ($registro = mysqli_fetch_array($consulta)) {
                     </div>
 
                     <div class="row">
-                        <div class="tab-content" id="myTabContent">
+                        <div class="tab-content justify-content-center" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <table class="table table-responsive" id="programas">
                                     <thead>
