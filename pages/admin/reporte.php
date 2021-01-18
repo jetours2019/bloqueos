@@ -6,7 +6,7 @@ session_start();
 if(!$_SESSION['logged']){
     header('location: ../login/login.php');
 }else{
-    if($_SESSION['user'] != "admin" || $_SESSION['user'] != "reportes"){
+    if($_SESSION['user'] != "admin" && $_SESSION['user'] != "reportes"){
         header('location: ../');
     }
 }
