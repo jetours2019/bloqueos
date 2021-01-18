@@ -185,7 +185,7 @@ if (!$_SESSION['logged']) {
                         "next": "Siguiente",
                         "previous": "Anterior"
                     },
-                    "columnDefs": [{
+                    "aoColumnDefs": [{
                             "orderable": false,
                             "targets": 0
                         }
