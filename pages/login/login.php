@@ -22,8 +22,10 @@ if (!empty($_POST)) {
         session_destroy();
     } else {
         $_SESSION['logged'] = true;
+        $registro = mysqli_fetch_array($consulta);
+        $user = $registro['username'];
         //TODO: Validar el usuario para la redireccion
-        header('location: ../carga');
+        header('location: ../carga'.$user);
     }
 }
 
@@ -80,7 +82,6 @@ if (!empty($_POST)) {
             color: white;
             padding: 20px;
         }
-
     </style>
 
 </head>
