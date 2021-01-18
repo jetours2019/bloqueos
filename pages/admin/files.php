@@ -11,11 +11,18 @@ if (!$_SESSION['logged']) {
     }
 }
 
-// $consulta = mysqli_query($conexion, "select distinct programa from productos") or die(mysqli_error($conexion));
-// $programas = "";
-// while ($registro = mysqli_fetch_array($consulta)) {
-// }
-// 
+require_once("../../db/conexion.php");
+
+$consulta = mysqli_query($conexion, "select distinct programa from productos") or die(mysqli_error($conexion));
+$programas = "";
+while ($registro = mysqli_fetch_array($consulta)) {
+    $programas .= "<tr>";
+    $programas .= "<td>" . $registro['programa'] . "<td>";
+    $programas .= "<td>" . "NO" . "<td>";
+    $programas .= "<td>" . "<button> <i class='fa fa-upload'></i></button>" . "<td>";
+    $programas .= "</tr>";
+}
+
 ?>
 
 <!DOCTYPE html>
