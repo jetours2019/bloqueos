@@ -17,6 +17,8 @@ session_start();
             if ($_SESSION['user'] == "admin") {
             ?>
                 <a class="dropdown-item" href="<?php echo $level_file; ?>/pages/admin">Administración</a>
+                <a class="dropdown-item" href="<?php echo $level_file; ?>/pages/carga/tarifas.php">Carga Tarifas</a>
+                <a class="dropdown-item" href="<?php echo $level_file; ?>/pages/carga/info.php">Carga Información</a>
             <?php } elseif ($_SESSION['user'] == "productos") { ?>
                 <a class="dropdown-item" href="<?php echo $level_file; ?>/pages/carga/tarifas.php">Carga</a>
             <?php } elseif ($_SESSION['user'] == "bloqueos") { ?>
