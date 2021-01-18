@@ -183,7 +183,7 @@ $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http
             font-weight: bold;
         }
 
-        table tr:nth-child(1) {
+        thead tr:nth-child(1) {
             background: #031268;
             color: white;
         }
