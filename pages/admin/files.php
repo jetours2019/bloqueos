@@ -98,6 +98,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Archivos</a>
                             </li>
                         </ul>
+                    </div>
+
+                    <div class="row">
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Aqui iran los programas</div>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Aqui iran los archivos</div>
