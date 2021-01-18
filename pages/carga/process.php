@@ -119,12 +119,12 @@ if ($xlsx == 1 && $emparejado == 1) {
         };
 
         $sql = "INSERT INTO productos (no,id,vuelo1,desde1,hasta1,aerolineas1,fecha1,salida1,llegada1,vuelo2,desde2,hasta2,aerolineas2,fecha2,salida2,llegada2,total,libre,referencia, ano, mes, dia, tipo, ano2, mes2, dia2, programa) VALUE( '$no','$id','$vuelo1','$desde1','$hasta1','$aerolineas1','$fecha1','$salida1','$llegada1','$vuelo2','$desde2','$hasta2','$aerolineas2','$fecha2','$salida2','$llegada2','$total','$libre','$referencia','$ano','$mes','$dia','$tipo','$ano2','$mes2','$dia2', '$programa')";
+        $row .= "</tr>";
         if ($id != "" && $id != "ID") {
             // $result = $mysqli->query($sql);
             $html .= $row;
             $querys[] = $sql;
         }
-        $row .= "</tr>";
         if ($header) {
             $html .= $row . "</thead> <tbody>";
             $header = false;
