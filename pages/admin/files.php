@@ -11,11 +11,11 @@ if (!$_SESSION['logged']) {
     }
 }
 
-$consulta = mysqli_query($conexion, "select distinct programa from productos") or die(mysqli_error($conexion));
-$programas = "";
-while ($registro = mysqli_fetch_array($consulta)) {
-}
-?>
+// $consulta = mysqli_query($conexion, "select distinct programa from productos") or die(mysqli_error($conexion));
+// $programas = "";
+// while ($registro = mysqli_fetch_array($consulta)) {
+// }
+// ?>
 
 <!DOCTYPE html>
 <html lang="es">
