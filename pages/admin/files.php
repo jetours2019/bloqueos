@@ -11,6 +11,10 @@ if (!$_SESSION['logged']) {
     }
 }
 
+$consulta = mysqli_query($conexion, "select distinct programa from productos") or die(mysqli_error($conexion));
+$programas = "";
+while ($registro = mysqli_fetch_array($consulta)) {
+}
 ?>
 
 <!DOCTYPE html>
@@ -80,8 +84,35 @@ if (!$_SESSION['logged']) {
 
                     <div class="row">
                         <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Aqui iran los programas</div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Aqui iran los archivos</div>
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <table class="table table-responsive" id="programas">
+                                    <thead>
+                                        <tr>
+                                            <th>Programa</th>
+                                            <th>Archivo Cargado</th>
+                                            <th>Cargar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php echo $programas; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <table class="table table-responsive" id="archivos">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Archivo Cargado</th>
+                                            <th>Programa Asociado</th>
+                                            <th>Borrar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php echo $archivos; ?>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                     <!-- /.container-fluid -->
@@ -115,7 +146,48 @@ if (!$_SESSION['logged']) {
 
 
     <?php include '../../assets/templates/scripts.php'; ?>
-    <?php include '../../assets/templates/datatables.php'; ?>
+    <script src="<?php echo $url; ?>/assets/js/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?php echo $url; ?>/assets/js/datatables/dataTables.bootstrap4.min.js"></script>
+    <script>
+        // Call the dataTables jQuery plugin
+        $(document).ready(function() {
+            $('#programas').DataTable({
+                "language": {
+                    "lengthMenu": "Mostrando _MENU_ registros por página",
+                    "zeroRecords": "No se encuentran registros",
+                    "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
+                    "infoEmpty": "No se encuentran registros",
+                    "infoFiltered": "(Filtrado de _MAX_ registros totales)",
+                    "lengthMenu": "Mostrar _MENU_ registros",
+                    "search": "Buscar:",
+                    "paginate": {
+                        "first": "Primera",
+                        "last": "Última",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    },
+                }
+            });
+
+            $('#archivos').DataTable({
+                "language": {
+                    "lengthMenu": "Mostrando _MENU_ registros por página",
+                    "zeroRecords": "No se encuentran registros",
+                    "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
+                    "infoEmpty": "No se encuentran registros",
+                    "infoFiltered": "(Filtrado de _MAX_ registros totales)",
+                    "lengthMenu": "Mostrar _MENU_ registros",
+                    "search": "Buscar:",
+                    "paginate": {
+                        "first": "Primera",
+                        "last": "Última",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    },
+                }
+            });
+        });
+    </script>
 
 </body>
 
