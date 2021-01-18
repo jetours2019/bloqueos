@@ -49,16 +49,16 @@ if ($xlsx == 1 && $emparejado == 1) {
     $header = true;
     # Iterar filas
     foreach ($hojaActual->getRowIterator() as $fila) {
-        $html .= '<tr>';
+        $row .= '<tr>';
         $dataRow = array();
         array_push($dataRow, 'value'); //Se inserta un valor en la primera posicion del arreglo para evitar cambiar los indices usados anteriormente
         foreach ($fila->getCellIterator() as $celda) {
 
             $valorFormateado = $celda->getFormattedValue();
             if ($header) {
-                $html .= "<th>" . $valorFormateado . "</th>";
+                $row .= "<th>" . $valorFormateado . "</th>";
             } else {
-                $html .= "<td>" . $valorFormateado . "</td>";
+                $row .= "<td>" . $valorFormateado . "</td>";
             }
 
             array_push($dataRow, $valorFormateado);
@@ -121,11 +121,12 @@ if ($xlsx == 1 && $emparejado == 1) {
         $sql = "INSERT INTO productos (no,id,vuelo1,desde1,hasta1,aerolineas1,fecha1,salida1,llegada1,vuelo2,desde2,hasta2,aerolineas2,fecha2,salida2,llegada2,total,libre,referencia, ano, mes, dia, tipo, ano2, mes2, dia2, programa) VALUE( '$no','$id','$vuelo1','$desde1','$hasta1','$aerolineas1','$fecha1','$salida1','$llegada1','$vuelo2','$desde2','$hasta2','$aerolineas2','$fecha2','$salida2','$llegada2','$total','$libre','$referencia','$ano','$mes','$dia','$tipo','$ano2','$mes2','$dia2', '$programa')";
         if ($id != "" && $id != "ID") {
             // $result = $mysqli->query($sql);
+            $html .= $row;
             $querys[] = $sql;
         }
-        $html .= "</tr>";
+        $row .= "</tr>";
         if ($header) {
-            $html .= "</thead> <tbody>";
+            $html .= $row . "</thead> <tbody>";
             $header = false;
         }
     }
