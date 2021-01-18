@@ -186,6 +186,9 @@ if (!$_SESSION['logged']) {
                         "previous": "Anterior"
                     },
                 },
+                "order": [
+                    [1, "asc"]
+                ],
                 "columnDefs": [{
                     "orderable": false,
                     "targets": 0
