@@ -45,15 +45,21 @@ if ($xlsx == 1 && $emparejado == 1) {
     $html .= "<h4 style='text-align:center;'><a class='btn btn-info' href='javascript:history.back(-1)'>Volver</a></h4>";
 
     $html .= '<table class="table table-responsive" id="dataTable" style="margin: auto; width: 100%; border: solid #eee 1px;">';
-
+    $html .= "<thead>";
+    $header = true;
     # Iterar filas
     foreach ($hojaActual->getRowIterator() as $fila) {
         $html .= '<tr>';
         $dataRow = array();
         array_push($dataRow, 'value'); //Se inserta un valor en la primera posicion del arreglo para evitar cambiar los indices usados anteriormente
         foreach ($fila->getCellIterator() as $celda) {
+
             $valorFormateado = $celda->getFormattedValue();
-            $html .= "<td>" . $valorFormateado . "</td>";
+            if ($header) {
+                $html .= "<th>" . $valorFormateado . "</th>";
+            } else {
+                $html .= "<td>" . $valorFormateado . "</td>";
+            }
 
             array_push($dataRow, $valorFormateado);
         }
@@ -118,9 +124,13 @@ if ($xlsx == 1 && $emparejado == 1) {
             $querys[] = $sql;
         }
         $html .= "</tr>";
+        if ($header) {
+            $html .= "</thead> <tbody>";
+            $header = false;
+        }
     }
 
-    $html .= '</table>';
+    $html .= '</tbody></table>';
 
     $fechaData = $elD . '/' . $elM . '/' . $elA;
     $sql = "INSERT INTO datos (fecha, hora, autor) VALUE( '$fechaData','$elH', 'Admin')";
@@ -133,7 +143,7 @@ if ($xlsx == 1 && $emparejado == 1) {
 }
 
 $carpeta = "pruebas_bloqueos"; //TODO:Cambiar a bloqueos al finalizar refactoring
-$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]/$carpeta"; 
+$url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]/$carpeta";
 
 ?>
 
