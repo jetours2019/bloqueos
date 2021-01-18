@@ -15,15 +15,20 @@ require_once("../../db/conexion.php");
 
 $query = "SELECT DISTINCT programa
           FROM productos
-          WHERE programa != 'NO DISPO' AND programa != ' - ' AND programa != '0'";
+          WHERE programa != 'NO DISPO' AND programa != ' - ' AND programa != '0' AND programa != 'EXCURSIONES'";
 
 $consulta = mysqli_query($conexion, $query) or die(mysqli_error($conexion));
 $programas = "";
 while ($registro = mysqli_fetch_array($consulta)) {
+    $programa = str_replace(" ", "-", trim($registro['programa']));
     $programas .= "<tr>";
-    $programas .= "<td>" . $registro['programa'] . "</td>";
-    $programas .= "<td>" . "NO" . "</td>";
-    $programas .= "<td>" . "<button class='btn btn-info'> <i class='fa fa-upload'></i></button>" . "</td>";
+    $programas .= "<td>" . $programa . "</td>";
+
+    $nombre_fichero = "../carga/files/$programa.pdf";
+    $exists = (file_exists($nombre_fichero)) ? "SI": "NO";
+
+    $programas .= "<td>" . $exists . "</td>";
+    $programas .= "<td>" . "<a href='../carga/tarifas.php?programa=$programa' class='btn btn-info'> <i class='fa fa-upload'></i></a>" . "</td>";
     $programas .= "</tr>";
 }
 
