@@ -357,5 +357,5 @@ div#videoInicio a {
     border: antiquewhite;
     border: solid 0.1px;
     border-color: #dddfeb #dddfeb;
-    width: -webkit-fill-available;
+    width: 50% !important;
 }
