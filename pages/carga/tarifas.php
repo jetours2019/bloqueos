@@ -22,10 +22,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $extension = pathinfo($_FILES['filepdf']['name'], PATHINFO_EXTENSION);
 
-    if($extension != "pdf"){
+    if ($extension != "pdf") {
         $errorCarga = true;
         $error = "Debe cargar archivos con extensión PDF.";
-    }else{
+    } else {
         if (move_uploaded_file($_FILES['filepdf']['tmp_name'], $rutaArchivo)) {
             $carga = true;
         } else {
@@ -101,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             <? php echo $codigo; ?> ha sido cargado con éxito
                                         </div>
                                     <?php } elseif ($errorCarga) { ?>
-                                        <div class="alert alert-warning fz-12">Error al cargar el archivo de tarifas con código. <?php echo $error?>
+                                        <div class="alert alert-warning fz-12">Error al cargar el archivo de tarifas con código. <?php echo $error ?>
                                             <? php echo $codigo; ?>
                                         </div>
                                     <?php } ?>
@@ -119,6 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                 <label class="sr-only" for="codigo">Codigo</label>
                                                 <div class="input-group">
                                                     <input type="text" minlength="4" class="form-control" id="codigo" name="codigo" placeholder="Codigo" required>
+                                                    <div class="invalid-feedback">Debe ingresar un código de tarifa válido (Mín 4 caracteres)</div>
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 my-1">
@@ -129,6 +130,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                     <option value="SP">Super Promo</option>
                                                     <option value="R">Regular</option>
                                                 </select>
+                                                <div class="invalid-feedback">Debe seleccionar un tipo de tarifa</div>
                                             </div>
                                         </div>
                                         <div class="custom-file">
