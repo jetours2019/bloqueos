@@ -140,7 +140,7 @@ if ($xlsx == 1 && $emparejado == 1) {
     // $result = $mysqli->query($sql);
     $html .= '<div class="emparejado">El archivo se actualizo con fecha ' . $fechaData . ' a las ' . $elH . '</div>';
 } else {
-    $html .= "<div class='alert alert-info'><a href='index.php'> Volver a cargar </a></div>";
+    $html .= "<div class='alert alert-info'><a href='javascript:history.back(-1)'> Volver a cargar </a></div>";
 }
 
 $carpeta = "pruebas_bloqueos"; //TODO:Cambiar a bloqueos al finalizar refactoring
