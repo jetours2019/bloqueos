@@ -13,13 +13,17 @@ if (!$_SESSION['logged']) {
 
 require_once("../../db/conexion.php");
 
-$consulta = mysqli_query($conexion, "select distinct programa from productos") or die(mysqli_error($conexion));
+$query = "SELECT DISTINCT programa
+          FROM productos
+          WHERE programa != 'NO DISPO' AND programa != ' - ' AND programa != '0'";
+
+$consulta = mysqli_query($conexion, $query) or die(mysqli_error($conexion));
 $programas = "";
 while ($registro = mysqli_fetch_array($consulta)) {
     $programas .= "<tr>";
     $programas .= "<td>" . $registro['programa'] . "</td>";
     $programas .= "<td>" . "NO" . "</td>";
-    $programas .= "<td>" . "<button> <i class='fa fa-upload'></i></button>" . "</td>";
+    $programas .= "<td>" . "<button class='btn btn-info'> <i class='fa fa-upload'></i></button>" . "</td>";
     $programas .= "</tr>";
 }
 
