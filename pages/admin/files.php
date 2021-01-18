@@ -65,7 +65,7 @@ if (!$_SESSION['logged']) {
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
+                <div class="container-fluid pl-5">
 
 
 
@@ -83,7 +83,7 @@ if (!$_SESSION['logged']) {
                         </ul>
                     </div>
                     <hr>
-                    <div class="row">
+                    <div class="row pt-2">
                         <div class="tab-content justify-content-center" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <table class="table table-responsive" id="programas">
