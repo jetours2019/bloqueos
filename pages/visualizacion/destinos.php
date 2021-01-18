@@ -141,7 +141,7 @@ switch ($mes) {
 
 
             <?php
-            $consulta = mysqli_query($conexion, "select DISTINCT hasta1 from productos  where ano = '$ano' AND mes = '$mes' AND desde1='$desde' ") or die(mysqli_error($conexion));
+            $consulta = mysqli_query($conexion, "select DISTINCT hasta1 from productos  where ano = '$ano' AND mes = '$mes' AND desde1='$desde' AND libre > 0") or die(mysqli_error($conexion));
             $registro = mysqli_fetch_array($consulta);
 
             do {
