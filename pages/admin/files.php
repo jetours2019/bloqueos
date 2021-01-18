@@ -17,9 +17,9 @@ $consulta = mysqli_query($conexion, "select distinct programa from productos") o
 $programas = "";
 while ($registro = mysqli_fetch_array($consulta)) {
     $programas .= "<tr>";
-    $programas .= "<td>" . $registro['programa'] . "<td>";
-    $programas .= "<td>" . "NO" . "<td>";
-    $programas .= "<td>" . "<button> <i class='fa fa-upload'></i></button>" . "<td>";
+    $programas .= "<td>" . $registro['programa'] . "</td>";
+    $programas .= "<td>" . "NO" . "</td>";
+    $programas .= "<td>" . "<button> <i class='fa fa-upload'></i></button>" . "</td>";
     $programas .= "</tr>";
 }
 
