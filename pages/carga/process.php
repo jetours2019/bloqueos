@@ -49,7 +49,7 @@ if ($xlsx == 1 && $emparejado == 1) {
     $header = true;
     # Iterar filas
     foreach ($hojaActual->getRowIterator() as $fila) {
-        $row .= '<tr>';
+        $row = '<tr>';
         $dataRow = array();
         array_push($dataRow, 'value'); //Se inserta un valor en la primera posicion del arreglo para evitar cambiar los indices usados anteriormente
         foreach ($fila->getCellIterator() as $celda) {
