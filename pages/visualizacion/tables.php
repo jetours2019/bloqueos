@@ -233,10 +233,10 @@ switch ($mes) {
                                                             if (file_exists($nombre_fichero)) {
                                                                   $contentPrograma = "<a target='_blank' href='$nombre_fichero' title='$programa'>$programa <i class='fas fa-search-plus'></i></a>";
                                                             } else {
-                                                                  $contentPrograma = "$programaLink - No disponible";
+                                                                  $contentPrograma = "$programaLink - Sin vista previa";
                                                             }
                                                       } else {
-                                                            $contentPrograma = "No disponible";
+                                                            $contentPrograma = "Sin paquete";
                                                       }
                                                       #asignamos el nombre del mes de regreso
                                                       switch ($mes) {
