@@ -98,11 +98,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <h3 class="text-center font-weight-light my-4">Actualizar Tarifas</h3>
                                     <?php if ($carga) { ?>
                                         <div class="alert alert-info fz-12">El archivo de tarifas con código
-                                            <? php echo $codigo; ?> ha sido cargado con éxito
+                                            <?php echo $codigo; ?> ha sido cargado con éxito
                                         </div>
                                     <?php } elseif ($errorCarga) { ?>
                                         <div class="alert alert-warning fz-12">Error al cargar el archivo de tarifas con código. <?php echo $error ?>
-                                            <? php echo $codigo; ?>
+                                            <?php echo $codigo; ?>
                                         </div>
                                     <?php } ?>
 
