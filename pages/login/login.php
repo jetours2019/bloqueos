@@ -6,6 +6,7 @@ require_once "$level_file/db/conexion.php";
 session_start();
 
 $logginFailed = false;
+$msg = "";
 if (!empty($_POST)) {
 
     $user = $_POST['user'];
@@ -19,6 +20,7 @@ if (!empty($_POST)) {
     $row_cnt = mysqli_num_rows($consulta);
     if ($row_cnt == 0) {
         $logginFailed = true;
+        $msg = "Nombre de usuario o contraseña incorrectos";
         session_destroy();
     } else {
         $registro = mysqli_fetch_array($consulta);
@@ -41,10 +43,14 @@ if (!empty($_POST)) {
                 $header = "location: ../admin/reporte.php";
                 break;
             default:
-                $header = "HTTP/1.0 403 Forbidden";
+                $header = false;
+                $logginFailed = true;
+                $msg = "Usuario sin permisos asignados";
                 break;
         }
-        header($header);
+        if($header){
+            header($header);
+        }
     }
 }
 
@@ -135,7 +141,7 @@ if (!empty($_POST)) {
                                 </div>
                                 <button type="submit" class="btn btn-primary">Entrar</button>
                                 <?php if ($logginFailed) { ?>
-                                    <p class="alert alert-warning">Nombre de usuario o contraseña incorrectos</p>
+                                    <p class="alert alert-warning"><?php echo $msg; ?></p>
                                 <?php } ?>
 
                             </form>
