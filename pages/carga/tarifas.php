@@ -79,26 +79,23 @@ if (!$_SESSION['logged']) {
                                     <form name="frmcargararchivo" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
                                         <p>Subir PDF.</p>
                                         <div class="form-row align-items-center">
-                                            <div class="col-sm-3 my-1">
-                                                <label class="sr-only" for="inlineFormInputName">Name</label>
-                                                <input type="text" class="form-control" id="inlineFormInputName" placeholder="Jane Doe">
+                                            <div class="col-sm-4 my-1">
+                                                <label class="sr-only" for="inlineFormInputName">Agencia</label>
+                                                <input type="text" class="form-control" id="inlineFormInputName" value="AT" readonly>
                                             </div>
-                                            <div class="col-sm-3 my-1">
-                                                <label class="sr-only" for="inlineFormInputGroupUsername">Username</label>
+                                            <div class="col-sm-4 my-1">
+                                                <label class="sr-only" for="inlineFormInputGroupCodigo">Codigo</label>
                                                 <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <div class="input-group-text">@</div>
-                                                    </div>
-                                                    <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username">
+                                                    <input type="text" class="form-control" id="inlineFormInputGroupCodigo" placeholder="Codigo" required>
                                                 </div>
                                             </div>
-                                            <div class="col-auto my-1">
-                                                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-                                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                                                    <option selected>Choose...</option>
-                                                    <option value="1">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
+                                            <div class="col-sm-4 my-1">
+                                                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Tipo</label>
+                                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" required>
+                                                    <option selected>Elegir...</option>
+                                                    <option value="P">Promo</option>
+                                                    <option value="SP">Super Promo</option>
+                                                    <option value="R">Regular</option>
                                                 </select>
                                             </div>
                                         </div>
