@@ -35,7 +35,7 @@ $querys = array();
 
 if ($xlsx == 1 && $emparejado == 1) {
     $sql = "DELETE FROM productos WHERE id>=0";
-    // $borrado = $conexion->query($sql); 
+    $borrado = $conexion->query($sql); 
 
     $documento = IOFactory::load($rutaArchivo);
 
@@ -121,7 +121,7 @@ if ($xlsx == 1 && $emparejado == 1) {
         $sql = "INSERT INTO productos (no,id,vuelo1,desde1,hasta1,aerolineas1,fecha1,salida1,llegada1,vuelo2,desde2,hasta2,aerolineas2,fecha2,salida2,llegada2,total,libre,referencia, ano, mes, dia, tipo, ano2, mes2, dia2, programa) VALUE( '$no','$id','$vuelo1','$desde1','$hasta1','$aerolineas1','$fecha1','$salida1','$llegada1','$vuelo2','$desde2','$hasta2','$aerolineas2','$fecha2','$salida2','$llegada2','$total','$libre','$referencia','$ano','$mes','$dia','$tipo','$ano2','$mes2','$dia2', '$programa')";
         $row .= "</tr>";
         if ($id != "" && $id != "ID") {
-            // $result = $mysqli->query($sql);
+            $result = $mysqli->query($sql);
             $html .= $row;
             $querys[] = $sql;
         }
@@ -137,7 +137,7 @@ if ($xlsx == 1 && $emparejado == 1) {
     $sql = "INSERT INTO datos (fecha, hora, autor) VALUE( '$fechaData','$elH', 'Admin')";
     $querys[] = $sql;
 
-    // $result = $mysqli->query($sql);
+    $result = $mysqli->query($sql);
     $html .= '<div class="emparejado">El archivo se actualizo con fecha ' . $fechaData . ' a las ' . $elH . '</div>';
 } else {
     $html .= "<div class='alert alert-info'><a href='javascript:history.back(-1)'> Volver a cargar </a></div>";
