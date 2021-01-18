@@ -227,7 +227,7 @@ switch ($mes) {
                                                       $dia2 = $registro['dia2'];
                                                       $programa = $registro['programa'];
                                                       $contentPrograma = "";
-                                                      if(isset($programa) && $programa != null && $programa != "" && $programa != "NO DISPO" && $programa != "0" && $programa != " - " && $programa != "EXCURSIONES"){
+                                                      if(false && isset($programa) && $programa != null && $programa != "" && $programa != "NO DISPO" && $programa != "0" && $programa != " - " && $programa != "EXCURSIONES"){
                                                             $programaLink = str_replace(" ", "-", trim($programa));
                                                             $contentPrograma = "<a target='_blank' href='../carga/files/$programaLink.pdf' title='$programa'>$programa <i class='fas fa-search-plus'></i></a>";
                                                       }else{
