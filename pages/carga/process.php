@@ -14,10 +14,10 @@ $elH = date("H:i:s", time() - 18000);;
 $prox = $elM + 1;
 
 $fecha        = date("Y-m-d");
-$carpeta     = "./files/";
+$carpetaCarga     = "./files/";
 $excel      = $_FILES['excel']['name'];
 
-$rutaArchivo = "$carpeta$excel";
+$rutaArchivo = "$carpetaCarga$excel";
 
 if (move_uploaded_file($_FILES['excel']['tmp_name'], $rutaArchivo)) {
     $xlsx = 1;
@@ -133,6 +133,8 @@ if ($xlsx == 1 && $emparejado == 1) {
 }
 
 
+$url = $url . $carpeta;
+
 ?>
 
 
@@ -142,8 +144,8 @@ if ($xlsx == 1 && $emparejado == 1) {
 <head>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="<?php echo $url.$carpeta; ?>/assets/js/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-    <link rel="shortcut icon" type="image/png" href="<?php echo $url.$carpeta; ?>/assets/images/iconlogo.png" />
+    <link href="<?php echo $url; ?>/assets/js/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="<?php echo $url; ?>/assets/images/iconlogo.png" />
     <title>Aliados Travel | Control Charter</title>
 
     <style>
