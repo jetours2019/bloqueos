@@ -30,7 +30,7 @@ if (!empty($_POST)) {
 
         //TODO: Validar el usuario para la redireccion
         switch ($user) {
-            case 'admins':
+            case 'admin':
                 $header = "location: ../admin";
                 break;
             case 'productos':
@@ -45,6 +45,7 @@ if (!empty($_POST)) {
             default:
                 $header = false;
                 $logginFailed = true;
+                $_SESSION['logged'] = false;
                 $msg = "Usuario sin permisos asignados";
                 break;
         }

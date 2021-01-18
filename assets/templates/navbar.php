@@ -13,7 +13,17 @@ session_start();
         <?php
         if ($_SESSION['logged']) {
         ?>
-            <a class="dropdown-item" href="<?php echo $level_file; ?>/pages/carga">Carga</a>
+            <?php
+            if ($_SESSION['user'] == "admin") {
+            ?>
+                <a class="dropdown-item" href="<?php echo $level_file; ?>/pages/admin">Administración</a>
+            <?php } elseif ($_SESSION['user'] == "productos") { ?>
+                <a class="dropdown-item" href="<?php echo $level_file; ?>/pages/carga/tarifas.php">Carga</a>
+            <?php } elseif ($_SESSION['user'] == "bloqueos") { ?>
+                <a class="dropdown-item" href="<?php echo $level_file; ?>/pages/carga/info.php">Carga</a>
+            <?php } elseif ($_SESSION['user'] == "reportes") { ?>
+                <a class="dropdown-item" href="<?php echo $level_file; ?>/pages/admin/reporte.php">Reporte</a>
+            <?php } ?>
             <a class="dropdown-item" href="<?php echo $level_file; ?>/pages/login/logout.php">Salir</a>
         <?php } else { ?>
             <a class="dropdown-item" href="<?php echo $level_file; ?>/pages/login/login.php">Iniciar sesión</a>
