@@ -92,6 +92,7 @@ if (!$_SESSION['logged']) {
                                             <div class="col-sm-4 my-1">
                                                 <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Tipo</label>
                                                 <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" placeholder="Elegir..." required>
+                                                    <option value="" selected>Elegir...</option>
                                                     <option value="P">Promo</option>
                                                     <option value="SP">Super Promo</option>
                                                     <option value="R">Regular</option>
