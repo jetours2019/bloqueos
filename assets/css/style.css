@@ -352,10 +352,3 @@ div#videoInicio a {
 .fz-12{
     font-size: 12px;
 }
-
-.tab-content {
-    border: antiquewhite;
-    border: solid 0.1px;
-    border-color: #dddfeb #dddfeb;
-    width: max-content !important;
-}

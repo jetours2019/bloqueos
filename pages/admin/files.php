@@ -15,7 +15,8 @@ if (!$_SESSION['logged']) {
 // $programas = "";
 // while ($registro = mysqli_fetch_array($consulta)) {
 // }
-// ?>
+// 
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -81,7 +82,7 @@ if (!$_SESSION['logged']) {
                             </li>
                         </ul>
                     </div>
-
+                    <hr>
                     <div class="row">
                         <div class="tab-content justify-content-center" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
