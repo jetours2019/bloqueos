@@ -11,15 +11,28 @@ if (!$_SESSION['logged']) {
     }
 }
 
+$mensaje = "";
+$carga = false;
+$errorCarga = false;
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // $carpetaCarga     = "./files/";
-    // $filepdf      = $_FILES['filepdf']['name'];
+    $carpetaCarga     = "./files/";
+    $programa = $_POST['agencia'] . '-' . $_POST['codigo'] . '-' . $_POST['tipo'];
+    $rutaArchivo = "$carpetaCarga$programa";
 
-    // $rutaArchivo = "$carpetaCarga$filepdf";
+    $extension = pathinfo($_FILES['filepdf']['name'], PATHINFO_EXTENSION);
 
-    // if (move_uploaded_file($_FILES['filepdf']['tmp_name'], $rutaArchivo)) {
-    //     $mensaje = "El archivo de tarifas con código $codigo ha sido cargado con exito";
-    // }
+    if($extension != "pdf"){
+        $errorCarga = true;
+        $error = "Debe cargar archivos con extensión PDF.";
+    }else{
+        if (move_uploaded_file($_FILES['filepdf']['tmp_name'], $rutaArchivo)) {
+            $carga = true;
+        } else {
+            $errorCarga = true;
+            $error = "Error al subir archivo al servidor.";
+        }
+    }
 }
 ?>
 
@@ -83,6 +96,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header">
                                     <h3 class="text-center font-weight-light my-4">Actualizar Tarifas</h3>
+                                    <?php if ($carga) { ?>
+                                        <div class="alert alert-info fz-12">El archivo de tarifas con código
+                                            <? php echo $codigo; ?> ha sido cargado con éxito
+                                        </div>
+                                    <?php } elseif ($errorCarga) { ?>
+                                        <div class="alert alert-warning fz-12">Error al cargar el archivo de tarifas con código. <?php echo $error?>
+                                            <? php echo $codigo; ?>
+                                        </div>
+                                    <?php } ?>
+
                                 </div>
                                 <div class="card-body">
                                     <form name="frmcargararchivo" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>

@@ -348,3 +348,7 @@ div#videoInicio a {
 #videoInicio:target {
    display:none;
 }
+
+.fz-12{
+    font-size: 12px;
+}
