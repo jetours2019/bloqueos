@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         </div>
                                     <?php } elseif ($errorCarga) { ?>
                                         <div class="alert alert-warning fz-12">Error al cargar el archivo de tarifas con código: 
-                                            <?php echo $programa; ?><?php echo $error ?>
+                                            <?php echo $programa; ?>. <?php echo $error ?>
                                         </div>
                                     <?php } ?>
 
