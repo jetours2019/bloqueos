@@ -233,7 +233,7 @@ switch ($mes) {
                                                             if (file_exists($nombre_fichero)) {
                                                                   $contentPrograma = "<a target='_blank' href='$nombre_fichero' title='$programa'>$programa <i class='fas fa-search-plus'></i></a>";
                                                             } else {
-                                                                  $contentPrograma = "No disponible";
+                                                                  $contentPrograma = "No disponible - $programaLink";
                                                             }
                                                       } else {
                                                             $contentPrograma = "No disponible";
