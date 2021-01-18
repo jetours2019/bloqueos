@@ -71,7 +71,7 @@ if (!$_SESSION['logged']) {
                     <!-- Page Heading -->
 
                     <!-- Content Row -->
-                    <div class="row justify-content-center">
+                    <div class="row">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Programas</a>
