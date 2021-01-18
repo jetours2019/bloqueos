@@ -21,6 +21,7 @@ session_start();
                 <a class="dropdown-item" href="<?php echo $level_file; ?>/pages/carga/info.php">Carga Información</a>
             <?php } elseif ($_SESSION['user'] == "productos") { ?>
                 <a class="dropdown-item" href="<?php echo $level_file; ?>/pages/carga/tarifas.php">Carga</a>
+                <a class="dropdown-item" href="<?php echo $level_file; ?>/pages/admin/files.php">Archivos Cargados</a>
             <?php } elseif ($_SESSION['user'] == "bloqueos") { ?>
                 <a class="dropdown-item" href="<?php echo $level_file; ?>/pages/carga/info.php">Carga</a>
             <?php } elseif ($_SESSION['user'] == "reportes") { ?>
