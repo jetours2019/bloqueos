@@ -1,6 +1,7 @@
 <?php
 #conectar a base de datos 
 $level_file = "../..";
+session_start();
 
 if (isset($_GET['mes'])) {
   $mes = $_GET['mes'];
