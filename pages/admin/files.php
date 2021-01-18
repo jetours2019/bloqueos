@@ -11,29 +11,6 @@ if (!$_SESSION['logged']) {
     }
 }
 
-$mensaje = "";
-$carga = false;
-$errorCarga = false;
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $carpetaCarga     = "./files/";
-    $programa = $_POST['agencia'] . '-' . $_POST['codigo'] . '-' . $_POST['tipo'];
-    $rutaArchivo = "$carpetaCarga$programa.pdf";
-
-    $extension = pathinfo($_FILES['filepdf']['name'], PATHINFO_EXTENSION);
-
-    if ($extension != "pdf") {
-        $errorCarga = true;
-        $error = "Debe cargar archivos con extensión PDF.";
-    } else {
-        if (move_uploaded_file($_FILES['filepdf']['tmp_name'], $rutaArchivo)) {
-            $carga = true;
-        } else {
-            $errorCarga = true;
-            $error = "Error al subir archivo al servidor.";
-        }
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
 
     <?php include '../../assets/templates/header.php'; ?>
+    <link href="<?php echo $url; ?>/assets/js/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -137,6 +115,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     <?php include '../../assets/templates/scripts.php'; ?>
+    <?php include '../../assets/templates/datatables.php'; ?>
+
 </body>
 
 </html>
