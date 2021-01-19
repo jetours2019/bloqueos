@@ -43,6 +43,9 @@ if(array_key_exists('programa', $_GET)){
     $arrayPrograma = explode('-', $programa);
     $codigo = $arrayPrograma[1];
     $tipo = $arrayPrograma[2];
+    if($tipo != "P" && $tipo != "SP" && $tipo != "R"){
+        $tipo = "";
+    }
 }
 
 ?>
