@@ -13,16 +13,19 @@ if (!$_SESSION['logged']) {
 
 require_once("../../db/conexion.php");
 
-$query = "SELECT DISTINCT programa
-          FROM productos
-          WHERE programa != 'NO DISPO' AND programa != ' - ' AND programa != '0' AND programa != 'EXCURSIONES'";
+$query = "SELECT GROUP_CONCAT(fecha1 SEPARATOR ', ') as fechas, programa
+FROM productos 
+WHERE programa != 'NO DISPO' AND programa != ' - ' AND programa != '0' AND programa != 'EXCURSIONES'
+GROUP BY programa";
 
 $consulta = mysqli_query($conexion, $query) or die(mysqli_error($conexion));
 $programas = "";
 while ($registro = mysqli_fetch_array($consulta)) {
     $programa = str_replace(" ", "-", trim($registro['programa']));
+    $fechas = $registro['fechas'];
     $programas .= "<tr>";
     $programas .= "<td>" . $programa . "</td>";
+    $programas .= "<td>" . $fechas . "</td>";
 
     $nombre_fichero = "../carga/files/$programa.pdf";
     $exists = (file_exists($nombre_fichero)) ? "SI" : "NO";
@@ -135,6 +138,7 @@ foreach ($files_in_folder as $file) {
                                     <thead>
                                         <tr>
                                             <th>Programa</th>
+                                            <th>Fechas</th>
                                             <th>Archivo Cargado</th>
                                             <th>Cargar</th>
                                         </tr>
@@ -146,10 +150,12 @@ foreach ($files_in_folder as $file) {
                             </div>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <div class="row">
-                                <div class="col-md-4">
-                                    <button class="btn btn-danger">Borrar Seleccionados</button>
-                                    <button class="btn btn-info">Seleccionar Todos</button>
-                                </div>
+                                    <div class="col-md-4">
+                                        <button class="btn fz-12 btn-danger">Borrar Seleccionados</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <button class="fz-12 btn btn-info">Seleccionar Todos</button>
+                                    </div>
                                 </div>
                                 <table class="table table-responsive" id="archivos">
                                     <thead>
@@ -242,7 +248,7 @@ foreach ($files_in_folder as $file) {
                     },
                 },
                 "order": [
-                    [1, "asc"]
+                    [2, "asc"]
                 ],
                 "columnDefs": [{
                     "orderable": false,
