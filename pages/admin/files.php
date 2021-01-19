@@ -38,17 +38,29 @@ $files_in_folder = glob("../carga/files/*");
 foreach ($files_in_folder as $file) {
     if (pathinfo($file, PATHINFO_EXTENSION) == "pdf") {
         $archivos .= "<tr>";
+
         $fileName = basename($file, ".pdf");
+        $arrayName = explode("-", $fileName);
+        $programa = "{$arrayName[0]} {$arrayName[1]}-{$arrayName[2]}";
+        $asoc= "NO";
+        
+        $query = "SELECT * FROM productos WHERE programa = '$programa'";
+        $consulta = mysqli_query($conexion, $query) or die(mysqli_error($conexion));
+        $row_cnt = mysqli_num_rows($consulta);
+        
+        if($row_cnt > 0){
+            $asoc = "SI";
+        }
+
         $archivos .= "<td>" . '<input type="checkbox" aria-label="Seleccione para borrar archivo">' . " </td>";
         $archivos .= "<td>$fileName</td>";
-        $archivos .= "<td>Pendiente</td>";
-        $archivos .= "<td> <a class='btn btn-info' title='Ver' href='$file'><i class='fas fa-search-plus'></i> </a> <button class='btn btn-danger'><i class='fa fa-trash'></i></button> </td>";
+        $archivos .= "<td>$asoc</td>";
+        $archivos .= "<td> <a class='btn btn-info' target='_blank'  title='Ver archivo' href='$file'><i class='fas fa-search-plus'></i> </a> <button class='btn btn-danger' title='Eliminar Archivo'><i class='fa fa-trash'></i></button> </td>";
 
         $archivos .= "</tr>";
     }
 }
 
-$globAmadeus = glob("/home/reportes/$hoy/$amadeusFile*");
 ?>
 
 <!DOCTYPE html>
