@@ -145,6 +145,12 @@ foreach ($files_in_folder as $file) {
                                 </table>
                             </div>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <div class="row">
+                                <div class="col-md-4">
+                                    <button class="btn btn-danger">Borrar Seleccionados</button>
+                                    <button class="btn btn-info">Seleccionar Todos</button>
+                                </div>
+                                </div>
                                 <table class="table table-responsive" id="archivos">
                                     <thead>
                                         <tr>
@@ -241,13 +247,6 @@ foreach ($files_in_folder as $file) {
                 "columnDefs": [{
                     "orderable": false,
                     "targets": 0
-                }],
-                dom: 'Bfrtip',
-                buttons: [{
-                    text: 'My button',
-                    action: function(e, dt, node, config) {
-                        alert('Button activated');
-                    }
                 }]
             });
         });
