@@ -194,6 +194,7 @@ foreach ($files_in_folder as $file) {
     <?php include '../../assets/templates/scripts.php'; ?>
     <script src="<?php echo $url; ?>/assets/js/datatables/jquery.dataTables.min.js"></script>
     <script src="<?php echo $url; ?>/assets/js/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="<?php echo $url; ?>/assets/js/datatables/dataTables.buttons.min.js"></script>
     <script>
         // Call the dataTables jQuery plugin
         $(document).ready(function() {
