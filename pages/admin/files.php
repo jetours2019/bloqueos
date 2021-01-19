@@ -25,7 +25,7 @@ while ($registro = mysqli_fetch_array($consulta)) {
     $programas .= "<td>" . $programa . "</td>";
 
     $nombre_fichero = "../carga/files/$programa.pdf";
-    $exists = (file_exists($nombre_fichero)) ? "SI": "NO";
+    $exists = (file_exists($nombre_fichero)) ? "SI" : "NO";
 
     $programas .= "<td>" . $exists . "</td>";
     $programas .= "<td>" . "<a href='../carga/tarifas.php?programa=$programa' class='btn btn-info'> <i class='fa fa-upload'></i></a>" . "</td>";
@@ -183,7 +183,10 @@ while ($registro = mysqli_fetch_array($consulta)) {
                         "next": "Siguiente",
                         "previous": "Anterior"
                     },
-                }
+                },
+                "order": [
+                    [1, "desc"]
+                ],
             });
 
             $('#archivos').DataTable({
