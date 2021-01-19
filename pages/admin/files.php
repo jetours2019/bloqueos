@@ -42,7 +42,7 @@ foreach ($files_in_folder as $file) {
         $archivos .= "<td>" . '<input type="checkbox" aria-label="Seleccione para borrar archivo">' . " </td>";
         $archivos .= "<td>$fileName</td>";
         $archivos .= "<td>Pendiente</td>";
-        $archivos .= "<td> <button class='btn btn-danger'><i class='fa fa-trash'></i></button> </td>";
+        $archivos .= "<td> <a class='btn btn-info' title='Ver' href='$file'><i class='fas fa-search-plus'></i> </a> <button class='btn btn-danger'><i class='fa fa-trash'></i></button> </td>";
 
         $archivos .= "</tr>";
     }
@@ -139,7 +139,7 @@ $globAmadeus = glob("/home/reportes/$hoy/$amadeusFile*");
                                             <th></th>
                                             <th>Archivo Cargado</th>
                                             <th>Programa Asociado</th>
-                                            <th>Borrar</th>
+                                            <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
