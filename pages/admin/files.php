@@ -242,6 +242,7 @@ foreach ($files_in_folder as $file) {
                     "orderable": false,
                     "targets": 0
                 }],
+                dom: 'Bfrtip',
                 buttons: [{
                     text: 'My button',
                     action: function(e, dt, node, config) {
