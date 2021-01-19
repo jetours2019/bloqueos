@@ -34,6 +34,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
+
+$codigo = "";
+$tipo = "";
+
+if(array_key_exists('programa', $_GET)){
+    $programa = $_GET['programa'];
+    $arrayPrograma = explode('-', $programa);
+    $codigo = $arrayPrograma[1];
+    $tipo = $arrayPrograma[2];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -118,17 +129,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             <div class="col-sm-6 my-1">
                                                 <label class="sr-only" for="codigo">Codigo</label>
                                                 <div class="input-group">
-                                                    <input type="number" minlength="4" class="form-control" id="codigo" name="codigo" placeholder="Codigo" required>
+                                                    <input type="number" minlength="4" class="form-control" id="codigo" name="codigo" placeholder="Codigo" value="<?php echo $codigo; ?>" required>
                                                     <div class="invalid-feedback">Debe ingresar un código de tarifa válido (Mín 4 caracteres)</div>
                                                 </div>
                                             </div>
                                             <div class="col-sm-4 my-1">
                                                 <label class="mr-sm-2 sr-only" for="tipo">Tipo</label>
                                                 <select class="custom-select mr-sm-2" id="tipo" name="tipo" placeholder="Elegir..." required>
-                                                    <option value="" selected>Elegir...</option>
-                                                    <option value="P">Promo</option>
-                                                    <option value="SP">Super Promo</option>
-                                                    <option value="R">Regular</option>
+                                                    <option <?php if ($tipo == "") echo "selected"; ?> value="">Elegir...</option>
+                                                    <option <?php if ($tipo == "P") echo "selected"; ?> value="P">Promo</option>
+                                                    <option <?php if ($tipo == "SP") echo "selected"; ?> value="SP">Super Promo</option>
+                                                    <option <?php if ($tipo == "R") echo "selected"; ?> value="R">Regular</option>
                                                 </select>
                                                 <div class="invalid-feedback">Debe seleccionar un tipo de tarifa</div>
                                             </div>
