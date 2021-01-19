@@ -227,7 +227,7 @@ foreach ($files_in_folder as $file) {
                     },
                 },
                 "order": [
-                    [1, "asc"]
+                    [2, "asc"]
                 ],
             });
 
