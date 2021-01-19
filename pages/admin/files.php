@@ -32,6 +32,23 @@ while ($registro = mysqli_fetch_array($consulta)) {
     $programas .= "</tr>";
 }
 
+$archivos = "";
+$files_in_folder = glob("../carga/files/*");
+
+foreach ($files_in_folder as $file) {
+    if (pathinfo($file, PATHINFO_EXTENSION) == "pdf") {
+        $archivos .= "<tr>";
+        $fileName = basename($file, ".pdf");
+        $archivos .= "<td>" . '<input type="checkbox" aria-label="Seleccione para borrar archivo">' . " </td>";
+        $archivos .= "<td>$fileName</td>";
+        $archivos .= "<td>Pendiente</td>";
+        $archivos .= "<td> <button class='btn btn-danger'><i class='fa fa-trash'></i></button> </td>";
+
+        $archivos .= "</tr>";
+    }
+}
+
+$globAmadeus = glob("/home/reportes/$hoy/$amadeusFile*");
 ?>
 
 <!DOCTYPE html>
@@ -185,7 +202,7 @@ while ($registro = mysqli_fetch_array($consulta)) {
                     },
                 },
                 "order": [
-                    [1, "desc"]
+                    [1, "asc"]
                 ],
             });
 
