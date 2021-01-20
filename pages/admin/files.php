@@ -23,16 +23,19 @@ $programas = "";
 while ($registro = mysqli_fetch_array($consulta)) {
     $programa = str_replace(" ", "-", trim($registro['programa']));
     $fechas = $registro['fechas'];
-    $programas .= "<tr>";
-    $programas .= "<td>" . $programa . "</td>";
-    $programas .= "<td>" . $fechas . "</td>";
+    $arrayFechas = explode(", ", $fechas);
+    if (fechaValida($arrayFechas[0])) {
+        $programas .= "<tr>";
+        $programas .= "<td>" . $programa . "</td>";
+        $programas .= "<td>" . $fechas . "</td>";
 
-    $nombre_fichero = "../carga/files/$programa.pdf";
-    $exists = (file_exists($nombre_fichero)) ? "SI" : "NO";
+        $nombre_fichero = "../carga/files/$programa.pdf";
+        $exists = (file_exists($nombre_fichero)) ? "SI" : "NO";
 
-    $programas .= "<td>" . $exists . "</td>";
-    $programas .= "<td>" . "<a href='../carga/tarifas.php?programa=$programa' class='btn btn-info'> <i class='fa fa-upload'></i></a>" . "</td>";
-    $programas .= "</tr>";
+        $programas .= "<td>" . $exists . "</td>";
+        $programas .= "<td>" . "<a href='../carga/tarifas.php?programa=$programa' class='btn btn-info'> <i class='fa fa-upload'></i></a>" . "</td>";
+        $programas .= "</tr>";
+    }
 }
 
 $archivos = "";
@@ -64,6 +67,23 @@ foreach ($files_in_folder as $file) {
     }
 }
 
+
+function fechaValida($fecha)
+{
+    $year_now = intval(date("Y"));
+    $month_now = intval(date("m"));
+
+    $arrayFecha = explode("/", $fecha);
+    $month_compare = intval($arrayFecha[0]);
+    $year_compare = intval($arrayFecha[2]);
+    $valid = true;
+    if(($year_compare < $year_now) || ($month_compare < $month_now && $year_compare <= $year_now)){
+        $valid = false;
+    }
+
+    return $valid;
+
+}
 ?>
 
 <!DOCTYPE html>
