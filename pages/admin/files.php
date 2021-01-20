@@ -15,7 +15,7 @@ require_once("../../db/conexion.php");
 
 $query = "SELECT GROUP_CONCAT(fecha1 SEPARATOR ', ') as fechas, programa
 FROM productos 
-WHERE programa != 'NO DISPO' AND programa != ' - ' AND programa != '0' AND programa != 'EXCURSIONES'
+WHERE programa != 'NO DISPO' AND programa != '-' AND programa != '0' AND programa != 'EXCURSIONES'
 GROUP BY programa";
 
 $consulta = mysqli_query($conexion, $query) or die(mysqli_error($conexion));
