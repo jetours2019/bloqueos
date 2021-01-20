@@ -75,9 +75,18 @@
  }
 
  function confirm_delete_all_files() {
+     var atLeastOneIsChecked = $('input:checkbox:checked').length > 0;
+     if (!atLeastOneIsChecked) {
+         Swal.fire({
+             icon: 'error',
+             title: 'Oops...',
+             text: 'Debe seleccionar al menos un archivo!',
+         })
+         return;
+     }
      Swal.fire({
          title: '¿Seguro desea borrar los archivos seleccionados?',
-         text: "Una vez borrados del servidor no se podrá recuperar",
+         text: "Una vez borrados del servidor no se podrán recuperar",
          icon: 'warning',
          showCancelButton: true,
          confirmButtonColor: '#3085d6',
@@ -96,8 +105,8 @@
  }
 
  function select_all() {
-    $('input:checkbox').prop('checked', checked);
-    var newText = checked ? "Deseleccionar Todos" : "Seleccionar Todos";
-    $("#botonSel").html(newText).toggleClass('btn-info').toggleClass('btn-primary');
-    checked = checked ? false : true;
+     $('input:checkbox').prop('checked', checked);
+     var newText = checked ? "Deseleccionar Todos" : "Seleccionar Todos";
+     $("#botonSel").html(newText).toggleClass('btn-info').toggleClass('btn-primary');
+     checked = checked ? false : true;
  }
