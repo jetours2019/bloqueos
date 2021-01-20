@@ -84,6 +84,12 @@
          })
          return;
      }
+     var urls = [];
+     $('input:checkbox:checked').each(function () {
+         urls.push($(this).attr('data-url'));
+     })
+     console.log(urls);
+     
      Swal.fire({
          title: '¿Seguro desea borrar los archivos seleccionados?',
          text: "Una vez borrados del servidor no se podrán recuperar",
