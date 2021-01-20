@@ -126,7 +126,7 @@ function delete_files(urls) {
 
             setTimeout(() => {
                location.reload(); 
-            }, 3000);
+            }, 2000);
         },
         error: function (error) {
             Swal.fire(
