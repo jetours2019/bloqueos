@@ -91,7 +91,7 @@ if ($xlsx == 1 && $emparejado == 1) {
         $total = $dataRow[17];
         $libre = $dataRow[18];
         $referencia = $dataRow[19];
-        $programa = $dataRow[20];
+        $programa = trim($dataRow[20]);
 
 
         #Detectamos el Año y el mes de la salida
