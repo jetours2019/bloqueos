@@ -58,10 +58,10 @@ foreach ($files_in_folder as $file) {
             $asoc = "SI";
         }
 
-        $archivos .= "<td>" . '<input type="checkbox" aria-label="Seleccione para borrar archivo">' . " </td>";
+        $archivos .= "<td>" . '<input data-url="'.$file.'" type="checkbox" aria-label="Seleccione para borrar archivo">' . " </td>";
         $archivos .= "<td>$fileName</td>";
         $archivos .= "<td>$asoc</td>";
-        $archivos .= "<td> <a class='btn btn-info' target='_blank'  title='Ver archivo' href='$file'><i class='fas fa-search-plus'></i> </a> <button class='btn btn-danger' title='Eliminar Archivo'><i class='fa fa-trash'></i></button> </td>";
+        $archivos .= "<td> <a class='btn btn-info' target='_blank'  title='Ver archivo' href='$file'><i class='fas fa-search-plus'></i> </a> <button class='btn btn-danger' onclick='confirm_delete_one_file()' title='Eliminar Archivo' data-name='$fileName.pdf' data-url='$file'><i class='fa fa-trash'></i></button> </td>";
 
         $archivos .= "</tr>";
     }
@@ -174,12 +174,13 @@ function fechaValida($fechas)
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <button class="btn fz-12 btn-danger">Borrar Seleccionados</button>
+                                        <button onclick='confirm_delete_all_files()' class="btn fz-12 btn-danger">Borrar Seleccionados</button>
                                     </div>
                                     <div class="col-md-4">
-                                        <button class="fz-12 btn btn-info">Seleccionar Todos</button>
+                                        <button onclick="select_all()" class="fz-12 btn btn-info">Seleccionar Todos</button>
                                     </div>
                                 </div>
+                                <br>
                                 <table class="table table-responsive" id="archivos">
                                     <thead>
                                         <tr>
@@ -230,56 +231,8 @@ function fechaValida($fechas)
     <script src="<?php echo $url; ?>/assets/js/datatables/jquery.dataTables.min.js"></script>
     <script src="<?php echo $url; ?>/assets/js/datatables/dataTables.bootstrap4.min.js"></script>
     <script src="<?php echo $url; ?>/assets/js/datatables/dataTables.buttons.min.js"></script>
-    <script>
-        // Call the dataTables jQuery plugin
-        $(document).ready(function() {
-            $('#programas').DataTable({
-                "language": {
-                    "lengthMenu": "Mostrando _MENU_ registros por página",
-                    "zeroRecords": "No se encuentran registros",
-                    "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
-                    "infoEmpty": "No se encuentran registros",
-                    "infoFiltered": "(Filtrado de _MAX_ registros totales)",
-                    "lengthMenu": "Mostrar _MENU_ registros",
-                    "search": "Buscar:",
-                    "paginate": {
-                        "first": "Primera",
-                        "last": "Última",
-                        "next": "Siguiente",
-                        "previous": "Anterior"
-                    },
-                },
-                "order": [
-                    [2, "asc"]
-                ],
-            });
-
-            $('#archivos').DataTable({
-                "language": {
-                    "lengthMenu": "Mostrando _MENU_ registros por página",
-                    "zeroRecords": "No se encuentran registros",
-                    "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
-                    "infoEmpty": "No se encuentran registros",
-                    "infoFiltered": "(Filtrado de _MAX_ registros totales)",
-                    "lengthMenu": "Mostrar _MENU_ registros",
-                    "search": "Buscar:",
-                    "paginate": {
-                        "first": "Primera",
-                        "last": "Última",
-                        "next": "Siguiente",
-                        "previous": "Anterior"
-                    },
-                },
-                "order": [
-                    [2, "asc"]
-                ],
-                "columnDefs": [{
-                    "orderable": false,
-                    "targets": 0
-                }]
-            });
-        });
-    </script>
+    <script src="<?php echo $url; ?>/assets/js/files.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 </body>
 
