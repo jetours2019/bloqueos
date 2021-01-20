@@ -97,5 +97,7 @@
 
  function select_all() {
     $('input:checkbox').prop('checked', checked);
+    var newText = checked ? "Deseleccionar Todos" : "Seleccionar Todos";
+    $("#botonSel").html(newText).toggleClass('btn-info').toggleClass('btn-primary');
     checked = checked ? false : true;
  }

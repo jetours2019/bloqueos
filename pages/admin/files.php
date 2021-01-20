@@ -177,7 +177,7 @@ function fechaValida($fechas)
                                         <button onclick='confirm_delete_all_files()' class="btn fz-12 btn-danger">Borrar Seleccionados</button>
                                     </div>
                                     <div class="col-md-4">
-                                        <button onclick="select_all()" class="fz-12 btn btn-info">Seleccionar Todos</button>
+                                        <button onclick="select_all()" class="fz-12 btn btn-info" id="botonSel">Seleccionar Todos</button>
                                     </div>
                                 </div>
                                 <br>
