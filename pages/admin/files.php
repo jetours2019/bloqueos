@@ -50,7 +50,7 @@ foreach ($files_in_folder as $file) {
         $programa = "{$arrayName[0]} {$arrayName[1]}-{$arrayName[2]}";
         $asoc = "NO";
 
-        $query = "SELECT * FROM productos WHERE programa = '$programa'";
+        $query = "SELECT * FROM productos WHERE programa LIKE '$programa%'";
         $consulta = mysqli_query($conexion, $query) or die(mysqli_error($conexion));
         $row_cnt = mysqli_num_rows($consulta);
 
