@@ -52,7 +52,7 @@
 
  function confirm_delete_one_file() {
 
-     var filename = $(this).data('name');
+     var filename = $(this).attr('data-name');
 
      Swal.fire({
          title: '¿Seguro desea borrar el archivo ' + filename + '?',
@@ -61,7 +61,7 @@
          showCancelButton: true,
          confirmButtonColor: '#3085d6',
          cancelButtonColor: '#d33',
-         confirmButtonText: 'Si, Borrar.',
+         confirmButtonText: 'Si, Borrar',
          cancelButtonText: 'Cancelar'
      }).then((result) => {
          if (result.isConfirmed) {
@@ -91,7 +91,7 @@
          showCancelButton: true,
          confirmButtonColor: '#3085d6',
          cancelButtonColor: '#d33',
-         confirmButtonText: 'Si, Borrar.',
+         confirmButtonText: 'Si, Borrar',
          cancelButtonText: 'Cancelar'
      }).then((result) => {
          if (result.isConfirmed) {
