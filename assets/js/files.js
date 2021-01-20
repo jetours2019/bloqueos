@@ -50,9 +50,9 @@
      });
  });
 
- function confirm_delete_one_file() {
+ function confirm_delete_one_file(button) {
 
-     var filename = $(this).attr('data-name');
+     var filename = button.attr('data-name');
 
      Swal.fire({
          title: '¿Seguro desea borrar el archivo ' + filename + '?',

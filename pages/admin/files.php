@@ -61,7 +61,7 @@ foreach ($files_in_folder as $file) {
         $archivos .= "<td>" . '<input data-url="'.$file.'" type="checkbox" aria-label="Seleccione para borrar archivo">' . " </td>";
         $archivos .= "<td>$fileName</td>";
         $archivos .= "<td>$asoc</td>";
-        $archivos .= "<td> <a class='btn btn-info' target='_blank'  title='Ver archivo' href='$file'><i class='fas fa-search-plus'></i> </a> <button class='btn btn-danger' onclick='confirm_delete_one_file()' title='Eliminar Archivo' data-name='$fileName.pdf' data-url='$file'><i class='fa fa-trash'></i></button> </td>";
+        $archivos .= "<td> <a class='btn btn-info' target='_blank'  title='Ver archivo' href='$file'><i class='fas fa-search-plus'></i> </a> <button class='btn btn-danger' onclick='confirm_delete_one_file($(this))' title='Eliminar Archivo' data-name='$fileName.pdf' data-url='$file'><i class='fa fa-trash'></i></button> </td>";
 
         $archivos .= "</tr>";
     }
