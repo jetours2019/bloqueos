@@ -24,7 +24,7 @@ while ($registro = mysqli_fetch_array($consulta)) {
     $programa = str_replace(" ", "-", trim($registro['programa']));
     $fechas = $registro['fechas'];
     $arrayFechas = explode(", ", $fechas);
-    if (fechaValida($arrayFechas[0])) {
+    if (fechaValida($arrayFechas)) {
         $programas .= "<tr>";
         $programas .= "<td>" . $programa . "</td>";
         $programas .= "<td>" . $fechas . "</td>";
@@ -68,21 +68,24 @@ foreach ($files_in_folder as $file) {
 }
 
 
-function fechaValida($fecha)
+function fechaValida($fechas)
 {
     $year_now = intval(date("Y"));
     $month_now = intval(date("m"));
 
-    $arrayFecha = explode("/", $fecha);
-    $month_compare = intval($arrayFecha[0]);
-    $year_compare = intval($arrayFecha[2]);
-    $valid = true;
-    if(($year_compare < $year_now) || ($month_compare < $month_now && $year_compare <= $year_now)){
-        $valid = false;
+    foreach ($fechas as $fecha) {
+        $arrayFecha = explode("/", $fecha);
+        $month_compare = intval($arrayFecha[0]);
+        $year_compare = intval($arrayFecha[2]);
+        if (($year_compare < $year_now) || ($month_compare < $month_now && $year_compare <= $year_now)) {
+            $valid = false;
+        }else{
+            $valid = true;
+            break;
+        }
     }
 
     return $valid;
-
 }
 ?>
 
