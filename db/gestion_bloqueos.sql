@@ -78,7 +78,7 @@ CREATE TABLE `productos` (
 CREATE TABLE `usuarios` (
   `id` int(10) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- Indices de la tabla `datos`
