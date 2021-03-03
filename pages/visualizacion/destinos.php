@@ -119,8 +119,8 @@ switch ($mes) {
             <div class="card shadow mb-4 tituloDest">
               <img src="<?php echo $url; ?>/assets/images/nov.jpg" width="100%">
               <h1>
-                <? echo $mes2 ?> /
-                <? echo $ano ?>
+                <?php echo $mes2 ?> /
+                <?php echo $ano ?>
               </h1>
             </div>
           </div>
@@ -128,7 +128,7 @@ switch ($mes) {
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Saliendo desde
-              <? echo $desde2 ?>
+              <?php echo $desde2 ?>
             </h1>
 
           </div>
@@ -195,7 +195,7 @@ switch ($mes) {
 
 
                 <div class="col-xl-3 col-md-6 mb-4">
-                  <a href="<? echo 'tables.php?mes='.$mes.'&ano='.$ano.'&destino='.$hacia.'&desde='.$desde ?>" class="dest">
+                  <a href="<?php echo 'tables.php?mes='.$mes.'&ano='.$ano.'&destino='.$hacia.'&desde='.$desde ?>" class="dest">
                     <div class="card border-left-primary shadow h-100 py-2">
                       <div class="card-body">
                         <div class="row no-gutters align-items-center">

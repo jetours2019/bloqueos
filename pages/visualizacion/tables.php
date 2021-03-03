@@ -151,11 +151,11 @@ switch ($mes) {
                               <div class="mb-4 tituloDest">
                                     <img src="<?php echo $url; ?>/assets/images/banner1.jpg" width="100%">
                                     <h1>
-                                          <? echo $destino2 ?> <br>
-                                          <? echo $ano ?>
+                                          <?php echo $destino2 ?> <br>
+                                          <?php echo $ano ?>
                                     </h1>
                                     <h4>Saliendo desde
-                                          <? echo $desde2 ?>
+                                          <?php echo $desde2 ?>
                                     </h4>
                               </div>
 
@@ -163,7 +163,7 @@ switch ($mes) {
                               <div class="card shadow mb-4">
                                     <div class="card-header py-3">
                                           <h6 class="m-0 font-weight-bold text-primary">Salidas en
-                                                <? echo $mes2 ?>
+                                                <?php echo $mes2 ?>
                                           </h6>
                                     </div>
 

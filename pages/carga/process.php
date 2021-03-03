@@ -1,5 +1,6 @@
 <?php
 ini_set('display_errors', 1);
+date_default_timezone_set('America/Bogota');
 
 require_once '../../db/conexion.php';
 require_once "../../build/vendor/autoload.php";
@@ -9,7 +10,7 @@ use PhpOffice\PhpSpreadsheet\IOFactory;
 $elA = date("Y");
 $elM = date("m");
 $elD = date("d");
-$elH = date("H:i:s", time() - 18000);;
+$elH = date("H:i:s", time());
 
 $prox = $elM + 1;
 
@@ -18,12 +19,12 @@ $carpetaCarga     = "./files/";
 $excel      = $_FILES['excel']['name'];
 
 $rutaArchivo = "$carpetaCarga$excel";
-
+$xlsx = 0;
 if (move_uploaded_file($_FILES['excel']['tmp_name'], $rutaArchivo)) {
     $xlsx = 1;
 }
 
-
+$emparejado = 0;
 if ($excel == "ControlCharters.xlsx") {
     $html = "<div class='ok'>El archivo se emparejo correctamente.</div>";
     $emparejado = 1;
@@ -96,16 +97,16 @@ if ($xlsx == 1 && $emparejado == 1) {
 
         #Detectamos el Año y el mes de la salida
         $salidas = explode("/", $fecha1);
-        $ano = $salidas[2];
-        $mes = $salidas[0];
-        $dia = $salidas[1];
+        $ano = array_key_exists(2, $salidas) ? $salidas[2] : "";
+        $mes = array_key_exists(0, $salidas) ? $salidas[0] : "";
+        $dia = array_key_exists(1, $salidas) ? $salidas[1] : "";
 
 
         #Detectamos el Año y el mes del regreso
         $salidas2 = explode("/", $fecha2);
-        $ano2 = $salidas2[2];
-        $mes2 = $salidas2[0];
-        $dia2 = $salidas2[1];
+        $ano2 = array_key_exists(2, $salidas2) ? $salidas2[2] : "";
+        $mes2 = array_key_exists(0, $salidas2) ? $salidas2[0] : "";
+        $dia2 = array_key_exists(1, $salidas2) ? $salidas2[1] : "";
 
 
 

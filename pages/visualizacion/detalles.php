@@ -469,7 +469,7 @@ switch ($aero) {
           #Detectamos la hora actual
           $horazz = explode(":", $elH);
           $h = $horazz[0];
-          if ($elM == $meses && $elD == $dias && ($horax + 4) > $h) {
+          if ($elM == $meses && $elD == $dias && ($horax + 20) > $h) {
             $clase = "ok";
           } else {
             $clase = "alertas";
