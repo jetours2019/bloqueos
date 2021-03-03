@@ -176,17 +176,30 @@ switch ($mes) {
                                                 $registro = mysqli_fetch_array($consulta);
                                                 //IMPRIMIR TABLA DE TODOS LOS REGISTROS
                                                 echo "<table class='table table-bordered' id='dataTable' width='100%' cellspacing='0'>
+                                                <colgroup>
+                                                <col span='1' style='width: 101px !important;'>
+                                                <col span='1' style='width: 101px !important;'>
+                                                <col span='1' style='width: 60px !important;'>
+                                                <col span='1' style='width: 77px !important;'>
+                                                <col span='1' style='width: 65px !important;'>
+                                                <col span='1' style='width: 65px !important;'>
+                                                <col span='1' style='width: 80px !important;'>
+                                                <col span='1' style='width: 100px !important;'>
+                                                <col span='1' style='width: 125px !important;'>
+                                                <col span='1' style='width: 125px !important;'>
+                                             </colgroup>
                 <thead>
                 <tr>
                 <th>Ruta ida</th>
                 <th>Ruta Regreso</th>
                 <th>Mes</th> 
                 <th>Tipo</th> 
-                <th>Saliendo</th>
-                <th>Regresando</th>
+                <th>Salida</th>
+                <th>Regreso</th>
                 <th>Sillas Libres</th>  
-                <th>Ver Itinerario</th>
-                <th>Ver Programa</th>
+                <th>Itinerario</th>
+                <th>Programa</th>
+                <th>Flyer</th>
                 </tr>
                 </thead>
                 <tfoot>
@@ -195,11 +208,12 @@ switch ($mes) {
                 <th>Ruta de Regreso</th>
                 <th>Mes</th> 
                 <th>Tipo</th> 
-                <th>Saliendo</th>
-                <th>Regresando</th>
+                <th>Salida</th>
+                <th>Regreso</th>
                 <th>Sillas Libres</th>
-                <th>Ver Itinerario</th>
-                <th>Ver Programa</th>
+                <th>Itinerario</th>
+                <th>Programa</th>
+                <th>Flyer</th>
                 </tr>
                 </tfoot>
                 <tbody>
@@ -226,17 +240,31 @@ switch ($mes) {
                                                       $mes22 = $registro['mes2'];
                                                       $dia2 = $registro['dia2'];
                                                       $programa = $registro['programa'];
-                                                      $contentPrograma = "";
+                                                      $contentPrograma = $contentFlyer = "";
                                                       if (isset($programa) && $programa != null && $programa != "" && $programa != "NO DISPO" && $programa != "0" && $programa != " - " && $programa != "EXCURSIONES") {
                                                             $programaLink = str_replace(" ", "-", trim($programa));
-                                                            $nombre_fichero = "../carga/files/$programaLink.pdf";
-                                                            if (file_exists($nombre_fichero)) {
-                                                                  $contentPrograma = "<a target='_blank' href='$nombre_fichero' title='$programa'>$programa <i class='fas fa-search-plus'></i></a>";
+                                                            $nombre_fichero = "../carga/files/$programaLink";
+                                                            if (file_exists($nombre_fichero . ".pdf")) {
+                                                                  $contentPrograma = "<a target='_blank' href='$nombre_fichero.pdf' title='$programa'>$programa <i class='fas fa-search-plus'></i></a>";
+                                                            }elseif (file_exists($nombre_fichero . ".PDF")) {
+                                                                  $contentPrograma = "<a target='_blank' href='$nombre_fichero.PDF' title='$programa'>$programa <i class='fas fa-search-plus'></i></a>";
+                                                            }  else {
+                                                                  $contentPrograma = "$programa - Sin vista previa";
+                                                            }
+
+                                                            $programaFlyer = trim($programa, "AT ");
+                                                            if (file_exists($nombre_fichero . ".jpg")) {
+                                                                  $contentFlyer = "<a target='_blank' href='$nombre_fichero.jpg' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
+                                                            }elseif (file_exists($nombre_fichero . ".jpeg")){
+                                                                  $contentFlyer = "<a target='_blank' href='$nombre_fichero.jpeg' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
+                                                            }elseif (file_exists($nombre_fichero . ".png")){
+                                                                  $contentFlyer = "<a target='_blank' href='$nombre_fichero.png' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
                                                             } else {
-                                                                  $contentPrograma = "$programaLink - Sin vista previa";
+                                                                  $contentFlyer = "$programaFlyer - Sin vista previa";
                                                             }
                                                       } else {
                                                             $contentPrograma = "Sin paquete";
+                                                            $contentFlyer = "Sin paquete";
                                                       }
                                                       #asignamos el nombre del mes de regreso
                                                       switch ($mes) {
@@ -307,8 +335,9 @@ switch ($mes) {
                         <td class='dia'>$dia <a title='$fecha'><i class='far fa-calendar-check dat'></i></td>
                         <td class='dia'>$dia2 <a title='$fecha2'><i class='far fa-calendar-check dat'></i></td>
                         <td align='center'><img src='$url/assets/images/$aero.png'> $libre</td>
-                        <td align='center'> <a href='detalles.php?id=$referencia&desde=$desde' title='$referencia'>Ver itinerario <i class='fas fa-search-plus'></i></a></td>
+                        <td align='center'> <a href='detalles.php?id=$referencia&desde=$desde' title='$referencia'><i class='fas fa-plane-departure'> </i> <i class='fas fa-calendar-alt'></i></a></td>
                         <td align='center'> $contentPrograma</td>
+                        <td align='center'> $contentFlyer</td>
                         </tr>     
                         ";
                                                       };
@@ -373,8 +402,31 @@ switch ($mes) {
 
       <!-- Bootstrap core JavaScript-->
       <?php include '../../assets/templates/scripts.php'; ?>
-      <?php include '../../assets/templates/datatables.php'; ?>
-
+      <script src="<?php echo $url; ?>/assets/js/datatables/jquery.dataTables.min.js"></script>
+      <script src="<?php echo $url; ?>/assets/js/datatables/dataTables.bootstrap4.min.js"></script>
+      <script>
+            $(document).ready(function() {
+                  var table = $('#dataTable').DataTable({
+                        "language": {
+                              "lengthMenu": "Mostrando _MENU_ registros por página",
+                              "zeroRecords": "No se encuentran registros",
+                              "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
+                              "infoEmpty": "No se encuentran registros",
+                              "infoFiltered": "(Filtrado de _MAX_ registros totales)",
+                              "lengthMenu": "Mostrar _MENU_ registros",
+                              "search": "Buscar:",
+                              "paginate": {
+                                    "first": "Primera",
+                                    "last": "Última",
+                                    "next": "Siguiente",
+                                    "previous": "Anterior"
+                              },
+                        },
+                        "autoWidth": false,
+                        bAutoWidth: false,
+                  });;
+            });
+      </script>
 </body>
 
 </html>
