@@ -3,7 +3,7 @@ $carpeta = "bloqueos";
 $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]/$carpeta";
 
 if (array_key_exists('url', $_GET)) {
-    $url_img = $_GET['url'];
+    $url_img = $_GET['url'] . "?". time();
 } else {
     http_response_code(404);
     echo "Error. No ha ingresado ninguna url";
