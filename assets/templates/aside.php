@@ -58,6 +58,9 @@
             <a class="collapse-item <?php if($_GET['desde'] == "CLO" && $_GET['mes'] == 10) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=10&ano=2021&desde=CLO">Octubre</a>
             <a class="collapse-item <?php if($_GET['desde'] == "CLO" && $_GET['mes'] == 11) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=11&ano=2021&desde=CLO">Noviembre</a>
             <a class="collapse-item <?php if($_GET['desde'] == "CLO" && $_GET['mes'] == 12) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=12&ano=2021&desde=CLO">Diciembre</a>
+            <h6 class="collapse-header">2022</h6>
+            <a class="collapse-item <?php if($_GET['desde'] == "CLO" && $_GET['mes'] == 1) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=1&ano=2022&desde=CLO">Enero</a>
+          
           </div>
         </div>
       </li>
@@ -87,7 +90,9 @@
             <a class="collapse-item <?php if($_GET['desde'] == "BOG" && $_GET['mes'] == 10) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=10&ano=2021&desde=BOG">Octubre</a>
             <a class="collapse-item <?php if($_GET['desde'] == "BOG" && $_GET['mes'] == 11) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=11&ano=2021&desde=BOG">Noviembre</a>
             <a class="collapse-item <?php if($_GET['desde'] == "BOG" && $_GET['mes'] == 12) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=12&ano=2021&desde=BOG">Diciembre</a>
-            
+            <h6 class="collapse-header">2022</h6>
+            <a class="collapse-item <?php if($_GET['desde'] == "BOG" && $_GET['mes'] == 1) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=1&ano=2022&desde=BOG">Enero</a>
+          
           </div>
         </div>
       </li>
