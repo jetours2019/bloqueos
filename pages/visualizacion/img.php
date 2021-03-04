@@ -24,6 +24,7 @@ if (array_key_exists('url', $_GET)) {
     <meta http-equiv='pragma' content='no-cache'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="<?php echo $url; ?>/assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="<?php echo $url; ?>/assets/images/iconlogo.png" />
 
     <title>Flyer</title>
     <style>
