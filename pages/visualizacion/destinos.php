@@ -18,6 +18,8 @@ switch ($desde) {
   case "BOG":
     $desde2 = "Bogotá";
     break;
+  case "PSO":
+    $desde2 = "Pasto";
 }
 
 #asignamos el nombre del mes de regreso
@@ -126,7 +128,7 @@ switch ($mes) {
           </div>
 
           <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4 ml-2">
             <h1 class="h3 mb-0 text-gray-800">Saliendo desde
               <?php echo $desde2 ?>
             </h1>
@@ -134,7 +136,7 @@ switch ($mes) {
           </div>
 
           <!-- Content Row -->
-          <div class="row">
+          <div class="row ml-3">
 
 
 
@@ -184,10 +186,13 @@ switch ($mes) {
                 case "CUN":
                   $hacia2 = "Cancún";
                   break;
+                case "PSO":
+                  $hacia2 = "Pasto";
+                  break;
               }
 
               if ($registro == 0) {
-                echo "No hay Bloqueos.";
+                echo "No hay Bloqueos registrados.";
               } else if ($hacia == 'CLO') {
               } else {;
             ?>
