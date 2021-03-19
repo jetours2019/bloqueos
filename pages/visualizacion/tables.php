@@ -56,6 +56,9 @@ function asignarNombreCiudad($codigo)
             case "CUN":
                   $ciudad = "Cancún";
                   break;
+            case "PSO":
+                  $ciudad = "Pasto";
+                  break;
       }
 
       return $ciudad;
