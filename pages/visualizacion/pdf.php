@@ -18,7 +18,7 @@
 
     if (array_key_exists('url', $_GET)) {
         header("Content-type: application/pdf");
-        header("Content-Disposition: inline; filename=Programa");
+        header("Content-Disposition: inline; filename=Programa.pdf");
         @readfile($_GET['url']);
     } else {
         http_response_code(404);
