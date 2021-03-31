@@ -108,10 +108,10 @@
             <h6 class="collapse-header">2021</h6>
             <a class="collapse-item <?php if ($_GET['desde'] == "PSO" && $_GET['mes'] == 7) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=7&ano=2021&desde=PSO">Julio</a>
             <a class="collapse-item <?php if ($_GET['desde'] == "PSO" && $_GET['mes'] == 8) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=8&ano=2021&desde=PSO">Agosto</a>
-            <a class="collapse-item <?php if ($_GET['desde'] == "PSO" && $_GET['mes'] == 9) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=8&ano=2021&desde=PSO">Septiembre</a>
-            <a class="collapse-item <?php if ($_GET['desde'] == "PSO" && $_GET['mes'] == 10) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=8&ano=2021&desde=PSO">Octubre</a>
-            <a class="collapse-item <?php if ($_GET['desde'] == "PSO" && $_GET['mes'] == 11) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=8&ano=2021&desde=PSO">Noviembre</a>
-            <a class="collapse-item <?php if ($_GET['desde'] == "PSO" && $_GET['mes'] == 12) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=8&ano=2021&desde=PSO">Diciembre</a>
+            <a class="collapse-item <?php if ($_GET['desde'] == "PSO" && $_GET['mes'] == 9) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=9&ano=2021&desde=PSO">Septiembre</a>
+            <a class="collapse-item <?php if ($_GET['desde'] == "PSO" && $_GET['mes'] == 10) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=10&ano=2021&desde=PSO">Octubre</a>
+            <a class="collapse-item <?php if ($_GET['desde'] == "PSO" && $_GET['mes'] == 11) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=11&ano=2021&desde=PSO">Noviembre</a>
+            <a class="collapse-item <?php if ($_GET['desde'] == "PSO" && $_GET['mes'] == 12) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=12&ano=2021&desde=PSO">Diciembre</a>
             <h6 class="collapse-header">2022</h6>
             <a class="collapse-item <?php if ($_GET['desde'] == "PSO" && $_GET['mes'] == 1) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=1&ano=2022&desde=PSO">Enero</a>
 
