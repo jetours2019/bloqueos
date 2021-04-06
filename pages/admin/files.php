@@ -59,7 +59,31 @@ foreach ($files_in_folder as $file) {
         }
 
         $archivos .= "<td>" . '<input data-url="'.$file.'" type="checkbox" aria-label="Seleccione para borrar archivo">' . " </td>";
-        $archivos .= "<td>$fileName</td>";
+        $archivos .= "<td>$fileName.pdf</td>";
+        $archivos .= "<td>$asoc</td>";
+        $archivos .= "<td> <a class='btn btn-info' target='_blank'  title='Ver archivo' href='$file'><i class='fas fa-search-plus'></i> </a> <button class='btn btn-danger' onclick='confirm_delete_one_file($(this))' title='Eliminar Archivo' data-name='$fileName.pdf' data-url='$file'><i class='fa fa-trash'></i></button> </td>";
+
+        $archivos .= "</tr>";
+    }
+    
+    if (pathinfo($file, PATHINFO_EXTENSION) == "jpg") {
+        $archivos .= "<tr>";
+
+        $fileName = basename($file, ".jpg");
+        $arrayName = explode("-", $fileName);
+        $programa = "{$arrayName[0]} {$arrayName[1]}-{$arrayName[2]}";
+        $asoc = "NO";
+
+        $query = "SELECT * FROM productos WHERE programa LIKE '%$programa%'";
+        $consulta = mysqli_query($conexion, $query) or die(mysqli_error($conexion));
+        $row_cnt = mysqli_num_rows($consulta);
+
+        if ($row_cnt > 0) {
+            $asoc = "SI";
+        }
+
+        $archivos .= "<td>" . '<input data-url="'.$file.'" type="checkbox" aria-label="Seleccione para borrar archivo">' . " </td>";
+        $archivos .= "<td>$fileName.jpg</td>";
         $archivos .= "<td>$asoc</td>";
         $archivos .= "<td> <a class='btn btn-info' target='_blank'  title='Ver archivo' href='$file'><i class='fas fa-search-plus'></i> </a> <button class='btn btn-danger' onclick='confirm_delete_one_file($(this))' title='Eliminar Archivo' data-name='$fileName.pdf' data-url='$file'><i class='fa fa-trash'></i></button> </td>";
 
