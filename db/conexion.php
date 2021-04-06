@@ -1,9 +1,9 @@
 <?php
 
 $host = "localhost";
-$db = "gestion_bloqueos";
-$user = "gestion_aliados_bloqueo";
-$pass = "Pl1221141!!";
+$db = "jetours1_bloqueos";
+$user = "jetours1_disponibilidad";
+$pass = "(!mEkkfrKuS9";
 
 $conexion = $mysqli = new mysqli($host, $user, $pass, $db);
 
