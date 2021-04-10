@@ -117,7 +117,27 @@
         </div>
       </li>
 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePereira" aria-expanded="true" aria-controls="collapsePereira">
+          <i class="fas fa-star-and-crescent"></i>
+          <span>Salidas Pereira</span>
+        </a>
+        <div id="collapsePereira" class="collapse <?php if ($_GET['desde'] == "PEI") echo 'show'; ?> " aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
 
+            <h6 class="collapse-header">2021</h6>
+            <a class="collapse-item <?php if ($_GET['desde'] == "PEI" && $_GET['mes'] == 7) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=7&ano=2021&desde=PEI">Julio</a>
+            <a class="collapse-item <?php if ($_GET['desde'] == "PEI" && $_GET['mes'] == 8) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=8&ano=2021&desde=PEI">Agosto</a>
+            <a class="collapse-item <?php if ($_GET['desde'] == "PEI" && $_GET['mes'] == 9) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=9&ano=2021&desde=PEI">Septiembre</a>
+            <a class="collapse-item <?php if ($_GET['desde'] == "PEI" && $_GET['mes'] == 10) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=10&ano=2021&desde=PEI">Octubre</a>
+            <a class="collapse-item <?php if ($_GET['desde'] == "PEI" && $_GET['mes'] == 11) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=11&ano=2021&desde=PEI">Noviembre</a>
+            <a class="collapse-item <?php if ($_GET['desde'] == "PEI" && $_GET['mes'] == 12) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=12&ano=2021&desde=PEI">Diciembre</a>
+            <h6 class="collapse-header">2022</h6>
+            <a class="collapse-item <?php if ($_GET['desde'] == "PEI" && $_GET['mes'] == 1) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=1&ano=2022&desde=PEI">Enero</a>
+
+          </div>
+        </div>
+      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">

@@ -59,6 +59,9 @@ function asignarNombreCiudad($codigo)
             case "PSO":
                   $ciudad = "Pasto";
                   break;
+            case "PEI":
+                  $ciudad = "Pereira";
+                  break;
       }
 
       return $ciudad;
@@ -250,10 +253,10 @@ switch ($mes) {
                                                             if (file_exists($nombre_fichero . ".pdf")) {
                                                                   // $contentPrograma = "<a target='_blank' href='$nombre_fichero.pdf' title='$programa'>$programa <i class='fas fa-search-plus'></i></a>";
                                                                   $contentPrograma = "<a target='_blank' href='pdf.php?url=$nombre_fichero.pdf' title='$programa'>$programa <i class='fas fa-search-plus'></i></a>";
-                                                            }elseif (file_exists($nombre_fichero . ".PDF")) {
+                                                            } elseif (file_exists($nombre_fichero . ".PDF")) {
                                                                   // $contentPrograma = "<a target='_blank' href='$nombre_fichero.PDF' title='$programa'>$programa <i class='fas fa-search-plus'></i></a>";
                                                                   $contentPrograma = "<a target='_blank' href='pdf.php?url=$nombre_fichero.PDF' title='$programa'>$programa <i class='fas fa-search-plus'></i></a>";
-                                                            }  else {
+                                                            } else {
                                                                   $contentPrograma = "$programa - Sin vista previa";
                                                             }
 
@@ -261,10 +264,10 @@ switch ($mes) {
                                                             if (file_exists($nombre_fichero . ".jpg")) {
                                                                   $contentFlyer = "<a target='_blank' href='img.php?url=$nombre_fichero.jpg' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
                                                                   // $contentFlyer = "<a target='_blank' href='$nombre_fichero.jpg' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
-                                                            }elseif (file_exists($nombre_fichero . ".jpeg")){
+                                                            } elseif (file_exists($nombre_fichero . ".jpeg")) {
                                                                   $contentFlyer = "<a target='_blank' href='img.php?url=$nombre_fichero.jpeg' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
                                                                   // $contentFlyer = "<a target='_blank' href='$nombre_fichero.jpeg' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
-                                                            }elseif (file_exists($nombre_fichero . ".png")){
+                                                            } elseif (file_exists($nombre_fichero . ".png")) {
                                                                   $contentFlyer = "<a target='_blank' href='img.php?url=$nombre_fichero.png' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
                                                                   // $contentFlyer = "<a target='_blank' href='$nombre_fichero.png' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
                                                             } else {

@@ -189,6 +189,9 @@ switch ($mes) {
                 case "PSO":
                   $hacia2 = "Pasto";
                   break;
+                case "PEI":
+                  $hacia2 = "Pereira";
+                  break;
               }
 
               if ($registro == 0) {
@@ -200,7 +203,7 @@ switch ($mes) {
 
 
                 <div class="col-xl-3 col-md-6 mb-4">
-                  <a href="<?php echo 'tables.php?mes='.$mes.'&ano='.$ano.'&destino='.$hacia.'&desde='.$desde ?>" class="dest">
+                  <a href="<?php echo 'tables.php?mes=' . $mes . '&ano=' . $ano . '&destino=' . $hacia . '&desde=' . $desde ?>" class="dest">
                     <div class="card border-left-primary shadow h-100 py-2">
                       <div class="card-body">
                         <div class="row no-gutters align-items-center">
