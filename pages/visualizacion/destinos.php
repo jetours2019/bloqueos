@@ -20,6 +20,8 @@ switch ($desde) {
     break;
   case "PSO":
     $desde2 = "Pasto";
+  case "PEI":
+    $desde2 = "Pereira";
 }
 
 #asignamos el nombre del mes de regreso
