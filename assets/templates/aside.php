@@ -126,6 +126,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
 
             <h6 class="collapse-header">2021</h6>
+            <a class="collapse-item <?php if ($_GET['desde'] == "PEI" && $_GET['mes'] == 6) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=6&ano=2021&desde=PEI">Junio</a>
             <a class="collapse-item <?php if ($_GET['desde'] == "PEI" && $_GET['mes'] == 7) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=7&ano=2021&desde=PEI">Julio</a>
             <a class="collapse-item <?php if ($_GET['desde'] == "PEI" && $_GET['mes'] == 8) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=8&ano=2021&desde=PEI">Agosto</a>
             <a class="collapse-item <?php if ($_GET['desde'] == "PEI" && $_GET['mes'] == 9) echo 'showMes'; ?>" href="<?php echo $level_file; ?>/pages/visualizacion/destinos.php?mes=9&ano=2021&desde=PEI">Septiembre</a>
