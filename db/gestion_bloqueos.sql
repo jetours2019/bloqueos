@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- Base de datos: `gestion_bloqueos`
 --
 
-CREATE DATABASE gestion_bloqueos;
+-- CREATE DATABASE gestion_bloqueos;
 
 -- --------------------------------------------------------
 
