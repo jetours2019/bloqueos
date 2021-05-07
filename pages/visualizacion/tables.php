@@ -251,10 +251,8 @@ switch ($mes) {
                                                             $programaLink = str_replace(" ", "-", trim($programa));
                                                             $nombre_fichero = "../carga/files/$programaLink";
                                                             if (file_exists($nombre_fichero . ".pdf")) {
-                                                                  // $contentPrograma = "<a target='_blank' href='$nombre_fichero.pdf' title='$programa'>$programa <i class='fas fa-search-plus'></i></a>";
                                                                   $contentPrograma = "<a target='_blank' href='pdf.php?url=$nombre_fichero.pdf' title='$programa'>$programa <i class='fas fa-search-plus'></i></a>";
                                                             } elseif (file_exists($nombre_fichero . ".PDF")) {
-                                                                  // $contentPrograma = "<a target='_blank' href='$nombre_fichero.PDF' title='$programa'>$programa <i class='fas fa-search-plus'></i></a>";
                                                                   $contentPrograma = "<a target='_blank' href='pdf.php?url=$nombre_fichero.PDF' title='$programa'>$programa <i class='fas fa-search-plus'></i></a>";
                                                             } else {
                                                                   $contentPrograma = "$programa - Sin vista previa";
@@ -263,21 +261,21 @@ switch ($mes) {
                                                             $programaFlyer = trim($programa, "AT ");
                                                             if (file_exists($nombre_fichero . ".jpg")) {
                                                                   $contentFlyer = "<a target='_blank' href='img.php?url=$nombre_fichero.jpg' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
-                                                                  if (file_exists($nombre_fichero . ".jpg")) {
+                                                                  if (file_exists($nombre_fichero . "-2.jpg")) {
                                                                         $contentFlyer .= "<br><a target='_blank' href='img.php?url=$nombre_fichero-2.jpg' title='$programa'>$programaFlyer-B&I <i class='fas fa-camera'></i></a>";
                                                                   }
                                                             } elseif (file_exists($nombre_fichero . ".jpeg")) {
                                                                   $contentFlyer = "<a target='_blank' href='img.php?url=$nombre_fichero.jpeg' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
-                                                                  if (file_exists($nombre_fichero . ".jpg")) {
+                                                                  if (file_exists($nombre_fichero . "-2.jpg")) {
                                                                         $contentFlyer .= "<br><a target='_blank' href='img.php?url=$nombre_fichero-2.jpg' title='$programa'>$programaFlyer-B&I <i class='fas fa-camera'></i></a>";
                                                                   }   
                                                             } elseif (file_exists($nombre_fichero . ".png")) {
                                                                   $contentFlyer = "<a target='_blank' href='img.php?url=$nombre_fichero.png' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
-                                                                  if (file_exists($nombre_fichero . ".jpg")) {
+                                                                  if (file_exists($nombre_fichero . "-2.jpg")) {
                                                                         $contentFlyer .= "<br><a target='_blank' href='img.php?url=$nombre_fichero-2.jpg' title='$programa'>$programaFlyer-B&I <i class='fas fa-camera'></i></a>";
                                                                   }   
                                                             } else {
-                                                                  if (file_exists($nombre_fichero . ".jpg")) {
+                                                                  if (file_exists($nombre_fichero . "-2.jpg")) {
                                                                         $contentFlyer = "<a target='_blank' href='img.php?url=$nombre_fichero-2.jpg' title='$programa'>$programaFlyer-B&I <i class='fas fa-camera'></i></a>";
                                                                   }else{
                                                                         $contentFlyer = "$programaFlyer - Sin vista previa";
