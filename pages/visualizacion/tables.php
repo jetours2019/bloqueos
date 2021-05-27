@@ -1,6 +1,7 @@
 <?php
 session_start();
 $level_file = "../..";
+include_once "$level_file/assets/templates/cities.php";
 
 if (isset($_GET['mes'])) {
       $mes = $_GET['mes'];
@@ -15,57 +16,6 @@ $destino2 = asignarNombreCiudad($destino);
 
 #asignamos el nombre del mes de origen
 $desde2 = asignarNombreCiudad($desde);
-
-function asignarNombreCiudad($codigo)
-{
-      $ciudad = "";
-      switch ($codigo) {
-            case "CLO":
-                  $ciudad = "Cali";
-                  break;
-            case "BOG":
-                  $ciudad = "Bogotá";
-                  break;
-            case "SMR":
-                  $ciudad = "Santa Marta";
-                  break;
-            case "CTG":
-                  $ciudad = "Cartagena";
-                  break;
-            case "ADZ":
-                  $ciudad = "San Andrés";
-                  break;
-            case "BAQ":
-                  $ciudad = "Barranquilla";
-                  break;
-            case "SDQ":
-                  $ciudad = "Santo Domingo";
-                  break;
-            case "PTY":
-                  $ciudad = "Panamá";
-                  break;
-            case "AUA":
-                  $ciudad = "Aruba";
-                  break;
-            case "CUR":
-                  $ciudad = "Curazao";
-                  break;
-            case "PUJ":
-                  $ciudad = "Punta Cana";
-                  break;
-            case "CUN":
-                  $ciudad = "Cancún";
-                  break;
-            case "PSO":
-                  $ciudad = "Pasto";
-                  break;
-            case "PEI":
-                  $ciudad = "Pereira";
-                  break;
-      }
-
-      return $ciudad;
-}
 
 #asignamos el nombre del mes
 switch ($mes) {
@@ -177,6 +127,10 @@ switch ($mes) {
                                           <div class="table-responsive">
 
                                                 <?php
+                                                $mes = $_GET['mes'];
+                                                $ano = $_GET['ano'];
+                                                $desde = $_GET['desde'];
+                                                $destino = $_GET['destino'];
                                                 $consulta = mysqli_query($conexion, "select * from productos  where ano = '$ano' AND mes = '$mes' AND desde1='$desde'  AND hasta1='$destino' ORDER BY dia ASC") or die(mysqli_error($conexion));
                                                 //$consulta=mysqli_query($conexion,"select * from productos vuelo1 = 0") or die(mysqli_error($conexion));
                                                 $registro = mysqli_fetch_array($consulta);
@@ -268,18 +222,18 @@ switch ($mes) {
                                                                   $contentFlyer = "<a target='_blank' href='img.php?url=$nombre_fichero.jpeg' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
                                                                   if (file_exists($nombre_fichero . "-2.jpg")) {
                                                                         $contentFlyer .= "<br><a target='_blank' href='img.php?url=$nombre_fichero-2.jpg' title='$programa'>$programaFlyer-B&I <i class='fas fa-camera'></i></a>";
-                                                                  }   
+                                                                  }
                                                             } elseif (file_exists($nombre_fichero . ".png")) {
                                                                   $contentFlyer = "<a target='_blank' href='img.php?url=$nombre_fichero.png' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
                                                                   if (file_exists($nombre_fichero . "-2.jpg")) {
                                                                         $contentFlyer .= "<br><a target='_blank' href='img.php?url=$nombre_fichero-2.jpg' title='$programa'>$programaFlyer-B&I <i class='fas fa-camera'></i></a>";
-                                                                  }   
+                                                                  }
                                                             } else {
                                                                   if (file_exists($nombre_fichero . "-2.jpg")) {
                                                                         $contentFlyer = "<a target='_blank' href='img.php?url=$nombre_fichero-2.jpg' title='$programa'>$programaFlyer-B&I <i class='fas fa-camera'></i></a>";
-                                                                  }else{
+                                                                  } else {
                                                                         $contentFlyer = "$programaFlyer - Sin vista previa";
-                                                                  }   
+                                                                  }
                                                             }
                                                       } else {
                                                             $contentPrograma = "Sin paquete";
@@ -428,7 +382,7 @@ switch ($mes) {
                   var table = $('#dataTable').DataTable({
                         "language": {
                               "lengthMenu": "Mostrando _MENU_ registros por página",
-                              "zeroRecords": "No se encuentran registros",
+                              "zeroRecords": "No se encuentran registros con sillas libres",
                               "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
                               "infoEmpty": "No se encuentran registros",
                               "infoFiltered": "(Filtrado de _MAX_ registros totales)",

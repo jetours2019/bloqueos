@@ -1,6 +1,8 @@
 <?php
 #conectar a base de datos 
 $level_file = "../..";
+include_once "$level_file/assets/templates/cities.php"; 
+
 session_start();
 
 if (isset($_GET['mes'])) {
@@ -11,18 +13,7 @@ if (isset($_GET['mes'])) {
 
 
 #asignamos el nombre del mes de regreso
-switch ($desde) {
-  case "CLO":
-    $desde2 = "Cali";
-    break;
-  case "BOG":
-    $desde2 = "Bogotá";
-    break;
-  case "PSO":
-    $desde2 = "Pasto";
-  case "PEI":
-    $desde2 = "Pereira";
-}
+$desde2 = asignarNombreCiudad($desde);
 
 #asignamos el nombre del mes de regreso
 switch ($mes) {
@@ -145,56 +136,16 @@ switch ($mes) {
 
 
             <?php
+            $mes = $_GET['mes'];
+            $ano = $_GET['ano'];
+            $desde = $_GET['desde'];
             $consulta = mysqli_query($conexion, "select DISTINCT hasta1 from productos  where ano = '$ano' AND mes = '$mes' AND desde1='$desde' AND libre > 0") or die(mysqli_error($conexion));
             $registro = mysqli_fetch_array($consulta);
 
             do {
               $hacia = $registro['hasta1'];
               #asignamos el nombre del mes de Destino
-              switch ($hacia) {
-                case "CLO":
-                  $hacia2 = "Cali";
-                  break;
-                case "BOG":
-                  $hacia2 = "Bogotá";
-                  break;
-                case "SMR":
-                  $hacia2 = "Santa Marta";
-                  break;
-                case "CTG":
-                  $hacia2 = "Cartagena";
-                  break;
-                case "ADZ":
-                  $hacia2 = "San Andrés";
-                  break;
-                case "BAQ":
-                  $hacia2 = "Barranquilla";
-                  break;
-                case "SDQ":
-                  $hacia2 = "Santo Domingo";
-                  break;
-                case "PTY":
-                  $hacia2 = "Panamá";
-                  break;
-                case "AUA":
-                  $hacia2 = "Aruba";
-                  break;
-                case "CUR":
-                  $hacia2 = "Curazao";
-                  break;
-                case "PUJ":
-                  $hacia2 = "Punta Cana";
-                  break;
-                case "CUN":
-                  $hacia2 = "Cancún";
-                  break;
-                case "PSO":
-                  $hacia2 = "Pasto";
-                  break;
-                case "PEI":
-                  $hacia2 = "Pereira";
-                  break;
-              }
+              $hacia2 = asignarNombreCiudad($hacia);
 
               if ($registro == 0) {
                 echo "No hay Bloqueos registrados.";
