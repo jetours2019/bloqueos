@@ -163,8 +163,8 @@ switch ($mes) {
                               <div class="mb-4 tituloDest">
                                     <img src="<?php echo $url; ?>/assets/images/banner1.jpg" width="100%">
                                     <h1 class="subtitle">
-                                          <?php echo $destino2 ?> <br>
-                                          <?php echo $ano ?>
+                                          <?php echo trim($destino2) ?> <br>
+                                          <?php echo trim($ano) ?>
                                     </h1>
                                     <h4>Saliendo desde
                                           <?php echo $desde2 ?>
