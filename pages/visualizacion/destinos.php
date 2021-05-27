@@ -115,7 +115,7 @@ switch ($mes) {
               <img src="<?php echo $url; ?>/assets/images/nov.jpg" width="100%">
               <h1>
                 <?php echo $mes2 ?> /
-                <?php echo $ano ?>
+                <?php echo $_GET['ano'] ?>
               </h1>
             </div>
           </div>
