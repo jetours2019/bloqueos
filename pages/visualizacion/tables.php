@@ -11,7 +11,7 @@ if (isset($_GET['mes'])) {
 
 
 #asignamos el nombre del mes de regreso
-$destino2 = asignarNombreCiudad($destino2);
+$destino2 = asignarNombreCiudad($destino);
 
 #asignamos el nombre del mes de origen
 $desde2 = asignarNombreCiudad($desde);
@@ -156,7 +156,7 @@ switch ($mes) {
                               <!-- Page Heading -->
                               <div class="mb-4 tituloDest">
                                     <img src="<?php echo $url; ?>/assets/images/banner1.jpg" width="100%">
-                                    <h1>
+                                    <h1 class="subtitle">
                                           <?php echo $destino2 ?> <br>
                                           <?php echo $ano ?>
                                     </h1>

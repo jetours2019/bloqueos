@@ -25,16 +25,21 @@
       <!-- Divider -->
       <hr class="sidebar-divider">
 
+      <div class="text-center d-inline">
+        <form action="<?php echo $level_file; ?>/pages/visualizacion/search_bar.php" method="get">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Buscar Record <i class="fas fa-search-plus"></i> </label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          </div>
+        </form>
+      </div>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
       <!-- Heading -->
       <div class="sidebar-heading">
         Menu
       </div>
-
-
-
-
-
-
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
@@ -62,10 +67,6 @@
           </div>
         </div>
       </li>
-
-
-
-
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
