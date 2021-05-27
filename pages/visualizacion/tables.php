@@ -118,8 +118,8 @@ switch ($mes) {
       <link href="<?php echo $url; ?>/assets/js/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
       <style>
       .subtitle{
-            top: 65%;
-            font-size: 1.5em;
+            top: 65% !important;
+            font-size: 1.5em !important;
       }
       </style>
 </head>
