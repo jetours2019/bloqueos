@@ -26,10 +26,10 @@
       <hr class="sidebar-divider">
 
       <div class="text-center d-inline">
-        <form action="<?php echo $level_file; ?>/pages/visualizacion/search_bar.php" method="get">
+        <form action="<?php echo $level_file; ?>/pages/visualizacion/search_bar_result.php" method="GET">
           <div class="form-group">
-            <label for="exampleInputEmail1">Buscar Record <i class="fas fa-search-plus"></i> </label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <label for="exampleInputEmail1">Buscar Programa <i class="fas fa-search-plus"></i> </label>
+            <input type="text" class="form-control search-bar" name="programa" placeholder="AT 0000 P">
           </div>
         </form>
       </div>
