@@ -29,7 +29,7 @@
         <form action="<?php echo $level_file; ?>/pages/visualizacion/search_bar_result.php" method="GET">
           <div class="form-group">
             <label for="exampleInputEmail1">Buscar Programa <i class="fas fa-search-plus"></i> </label>
-            <input type="text" class="form-control search-bar" name="programa" placeholder="AT 0000 P">
+            <input type="text" class="form-control search-bar" name="programa" placeholder="AT 0000 P" minlength="4" oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Ingrese el codigo del programa completo')">
           </div>
         </form>
       </div>
