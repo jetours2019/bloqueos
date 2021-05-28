@@ -2,6 +2,7 @@
 #conectar a base de datos 
 $level_file = "../..";
 session_start();
+date_default_timezone_set('America/Bogota');
 
 if (!$_SESSION['logged']) {
     header('location: ../login/login.php');
