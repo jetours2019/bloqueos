@@ -213,27 +213,51 @@ switch ($mes) {
                                                             }
 
                                                             $programaFlyer = trim($programa, "AT ");
+                                                            //Validar FLyer 1
+                                                            $existe1 = false;
                                                             if (file_exists($nombre_fichero . ".jpg")) {
-                                                                  $contentFlyer = "<a target='_blank' href='img.php?url=$nombre_fichero.jpg' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
-                                                                  if (file_exists($nombre_fichero . "-2.jpg")) {
-                                                                        $contentFlyer .= "<br><a target='_blank' href='img.php?url=$nombre_fichero-2.jpg' title='$programa'>$programaFlyer-B&I <i class='fas fa-camera'></i></a>";
-                                                                  }
+                                                                  $existe1 = true;
+                                                                  $contentFlyer .= "<a target='_blank' href='img.php?url=$nombre_fichero.jpg' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
                                                             } elseif (file_exists($nombre_fichero . ".jpeg")) {
-                                                                  $contentFlyer = "<a target='_blank' href='img.php?url=$nombre_fichero.jpeg' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
-                                                                  if (file_exists($nombre_fichero . "-2.jpg")) {
-                                                                        $contentFlyer .= "<br><a target='_blank' href='img.php?url=$nombre_fichero-2.jpg' title='$programa'>$programaFlyer-B&I <i class='fas fa-camera'></i></a>";
-                                                                  }
+                                                                  $existe1 = true;
+                                                                  $contentFlyer .= "<a target='_blank' href='img.php?url=$nombre_fichero.jpeg' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
                                                             } elseif (file_exists($nombre_fichero . ".png")) {
-                                                                  $contentFlyer = "<a target='_blank' href='img.php?url=$nombre_fichero.png' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
-                                                                  if (file_exists($nombre_fichero . "-2.jpg")) {
-                                                                        $contentFlyer .= "<br><a target='_blank' href='img.php?url=$nombre_fichero-2.jpg' title='$programa'>$programaFlyer-B&I <i class='fas fa-camera'></i></a>";
-                                                                  }
-                                                            } else {
-                                                                  if (file_exists($nombre_fichero . "-2.jpg")) {
-                                                                        $contentFlyer = "<a target='_blank' href='img.php?url=$nombre_fichero-2.jpg' title='$programa'>$programaFlyer-B&I <i class='fas fa-camera'></i></a>";
-                                                                  } else {
-                                                                        $contentFlyer = "$programaFlyer - Sin vista previa";
-                                                                  }
+                                                                  $existe1 = true;
+                                                                  $contentFlyer .= "<a target='_blank' href='img.php?url=$nombre_fichero.png' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
+                                                            }
+
+                                                            //Validar FLyer 2
+                                                            $existe2 = false;
+                                                            $br = $existe1 ? "<br>" : "";
+                                                            if (file_exists($nombre_fichero . "-2.jpg")) {
+                                                                  $existe2 = true;
+                                                                  $contentFlyer .= "$br<a target='_blank' href='img.php?url=$nombre_fichero-2.jpg' title='$programa'>$programaFlyer-2 <i class='fas fa-camera'></i></a>";
+                                                            } elseif (file_exists($nombre_fichero . "-2.jpeg")) {
+                                                                  $existe2 = true;
+                                                                  $contentFlyer .= "$br<a target='_blank' href='img.php?url=$nombre_fichero-2.jpeg' title='$programa'>$programaFlyer-2 <i class='fas fa-camera'></i></a>";
+                                                            } elseif (file_exists($nombre_fichero . "-2.png")) {
+                                                                  $existe2 = true;
+                                                                  $contentFlyer .= "$br<a target='_blank' href='img.php?url=$nombre_fichero-2.png' title='$programa'>$programaFlyer-2 <i class='fas fa-camera'></i></a>";
+                                                            }
+
+                                                            $br = ($existe2 || $existe1) ? "<br>" : "";
+
+                                                            //Validar FLyer 3
+                                                            $existe3 = false;
+                                                            $br = $existe1 ? "<br>" : "";
+                                                            if (file_exists($nombre_fichero . "-3.jpg")) {
+                                                                  $existe3 = true;
+                                                                  $contentFlyer .= "$br<a target='_blank' href='img.php?url=$nombre_fichero-3.jpg' title='$programa'>$programaFlyer-3 <i class='fas fa-camera'></i></a>";
+                                                            } elseif (file_exists($nombre_fichero . "-3.jpeg")) {
+                                                                  $existe3 = true;
+                                                                  $contentFlyer .= "$br<a target='_blank' href='img.php?url=$nombre_fichero-3.jpeg' title='$programa'>$programaFlyer-3 <i class='fas fa-camera'></i></a>";
+                                                            } elseif (file_exists($nombre_fichero . "-3.png")) {
+                                                                  $existe3 = true;
+                                                                  $contentFlyer .= "$br<a target='_blank' href='img.php?url=$nombre_fichero-3.png' title='$programa'>$programaFlyer-3 <i class='fas fa-camera'></i></a>";
+                                                            }
+
+                                                            if (!$existe1 && !$existe2 && !$existe3) {
+                                                                  $contentFlyer .= "$programaFlyer - Sin vista previa";
                                                             }
                                                       } else {
                                                             $contentPrograma = "Sin paquete";
@@ -310,7 +334,7 @@ switch ($mes) {
                         <td align='center'><img src='$url/assets/images/$aero.png'> $libre</td>
                         <td align='center'> <a href='detalles.php?id=$referencia&desde=$desde' title='$referencia'><i class='fas fa-plane-departure'> </i> <i class='fas fa-calendar-alt'></i></a></td>
                         <td align='center'> $contentPrograma</td>
-                        <td align='center'> $contentFlyer</td>
+                        <td> $contentFlyer</td>
                         </tr>     
                         ";
                                                       };

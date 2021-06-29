@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $carpetaCarga     = "./files/";
     $programa = $_POST['agencia'] . '-' . $_POST['codigo'] . '-' . $_POST['tipo'];
 
-    if ($_FILES['filepdf']['size'] == 0 && $_FILES['filejpg']['size'] == 0 && $_FILES['filejpg2']['size'] == 0) {
+    if ($_FILES['filepdf']['size'] == 0 && $_FILES['filejpg']['size'] == 0 && $_FILES['filejpg2']['size'] == 0 && $_FILES['filejpg3']['size'] == 0) {
         $errorCarga = true;
         $error = "Debe subir al menos un archivo.";
     } else {
@@ -71,6 +71,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $error = "Debe cargar archivos con extensión de imagen (.jpg, .jpeg, .png).";
             } else {
                 if (move_uploaded_file($_FILES['filejpg2']['tmp_name'], $rutaArchivo)) {
+                    $carga = true;
+                } else {
+                    $errorCarga = true;
+                    $error = "Error al subir archivo de imagen al servidor.";
+                }
+            }
+        }
+
+        if ($_FILES['filejpg3']['size'] != 0) {
+
+            $rutaArchivo = "$carpetaCarga$programa-3.jpg";
+
+            $extension = pathinfo($_FILES['filejpg3']['name'], PATHINFO_EXTENSION);
+
+            if ($extension != "jpg" && $extension != "jpg" && $extension != "png") {
+                $errorCarga = true;
+                $error = "Debe cargar archivos con extensión de imagen (.jpg, .jpeg, .png).";
+            } else {
+                if (move_uploaded_file($_FILES['filejpg3']['tmp_name'], $rutaArchivo)) {
                     $carga = true;
                 } else {
                     $errorCarga = true;
@@ -203,16 +222,22 @@ if (array_key_exists('programa', $_GET)) {
                                             <label class="custom-file-label" for="filepdf" id="label-filepdf">Seleccione Archivo...</label>
                                             <div class="invalid-feedback">Debe seleccionar un archivo en formato pdf</div>
                                         </div>
-                                        <p class="label-carga">Subir Flyer.</p>
+                                        <p class="label-carga">Subir Flyer 1.</p>
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="filejpg" name="filejpg" onchange="validateExtension($(this), ['jpg', 'jpeg', 'png']);">
                                             <label class="custom-file-label" for="filejpg" id="label-filejpg">Seleccione Archivo...</label>
                                             <div class="invalid-feedback">Debe seleccionar un archivo de imagen</div>
                                         </div>
-                                        <p class="label-carga">Subir Flyer Holding Propio.</p>
+                                        <p class="label-carga">Subir Flyer Adicional 2.</p>
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="filejpg2" name="filejpg2" onchange="validateExtension($(this), ['jpg', 'jpeg', 'png']);">
                                             <label class="custom-file-label" for="filejpg2" id="label-filejpg2">Seleccione Archivo...</label>
+                                            <div class="invalid-feedback">Debe seleccionar un archivo de imagen</div>
+                                        </div>
+                                        <p class="label-carga">Subir Flyer Adicional 3.</p>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="filejpg3" name="filejpg3" onchange="validateExtension($(this), ['jpg', 'jpeg', 'png']);">
+                                            <label class="custom-file-label" for="filejpg3" id="label-filejpg3">Seleccione Archivo...</label>
                                             <div class="invalid-feedback">Debe seleccionar un archivo de imagen</div>
                                         </div>
                                         <hr>
