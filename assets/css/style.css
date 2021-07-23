@@ -211,6 +211,16 @@ a.back:hover {
     line-height: 55px;
 }
 
+.subtitle{
+    top: 65% !important;
+    font-size: 1.5em !important;
+}
+
+.search-bar{
+    width: 80%;
+    margin-left: 10%;
+}
+
 .tituloDest h4 {
     position: absolute;
     top: 50%;

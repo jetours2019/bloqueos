@@ -1,6 +1,7 @@
 <?php
 session_start();
 $level_file = "../..";
+include_once "$level_file/assets/templates/cities.php";
 
 if (isset($_GET['mes'])) {
       $mes = $_GET['mes'];
@@ -15,57 +16,6 @@ $destino2 = asignarNombreCiudad($destino);
 
 #asignamos el nombre del mes de origen
 $desde2 = asignarNombreCiudad($desde);
-
-function asignarNombreCiudad($codigo)
-{
-      $ciudad = "";
-      switch ($codigo) {
-            case "CLO":
-                  $ciudad = "Cali";
-                  break;
-            case "BOG":
-                  $ciudad = "Bogotá";
-                  break;
-            case "SMR":
-                  $ciudad = "Santa Marta";
-                  break;
-            case "CTG":
-                  $ciudad = "Cartagena";
-                  break;
-            case "ADZ":
-                  $ciudad = "San Andrés";
-                  break;
-            case "BAQ":
-                  $ciudad = "Barranquilla";
-                  break;
-            case "SDQ":
-                  $ciudad = "Santo Domingo";
-                  break;
-            case "PTY":
-                  $ciudad = "Panamá";
-                  break;
-            case "AUA":
-                  $ciudad = "Aruba";
-                  break;
-            case "CUR":
-                  $ciudad = "Curazao";
-                  break;
-            case "PUJ":
-                  $ciudad = "Punta Cana";
-                  break;
-            case "CUN":
-                  $ciudad = "Cancún";
-                  break;
-            case "PSO":
-                  $ciudad = "Pasto";
-                  break;
-            case "PEI":
-                  $ciudad = "Pereira";
-                  break;
-      }
-
-      return $ciudad;
-}
 
 #asignamos el nombre del mes
 switch ($mes) {
@@ -164,7 +114,7 @@ switch ($mes) {
                                     <img src="<?php echo $url; ?>/assets/images/banner1.jpg" width="100%">
                                     <h1 class="subtitle">
                                           <?php echo trim($destino2) ?> <br>
-                                          <?php echo trim($ano) ?>
+                                          <?php echo trim($_GET['ano']) ?>
                                     </h1>
                                     <h4>Saliendo desde
                                           <?php echo $desde2 ?>
@@ -183,6 +133,10 @@ switch ($mes) {
                                           <div class="table-responsive">
 
                                                 <?php
+                                                $mes = $_GET['mes'];
+                                                $ano = $_GET['ano'];
+                                                $desde = $_GET['desde'];
+                                                $destino = $_GET['destino'];
                                                 $consulta = mysqli_query($conexion, "select * from productos  where ano = '$ano' AND mes = '$mes' AND desde1='$desde'  AND hasta1='$destino' ORDER BY dia ASC") or die(mysqli_error($conexion));
                                                 //$consulta=mysqli_query($conexion,"select * from productos vuelo1 = 0") or die(mysqli_error($conexion));
                                                 $registro = mysqli_fetch_array($consulta);
@@ -265,27 +219,51 @@ switch ($mes) {
                                                             }
 
                                                             $programaFlyer = trim($programa, "AT ");
+                                                            //Validar FLyer 1
+                                                            $existe1 = false;
                                                             if (file_exists($nombre_fichero . ".jpg")) {
-                                                                  $contentFlyer = "<a target='_blank' href='img.php?url=$nombre_fichero.jpg' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
-                                                                  if (file_exists($nombre_fichero . "-2.jpg")) {
-                                                                        $contentFlyer .= "<br><a target='_blank' href='img.php?url=$nombre_fichero-2.jpg' title='$programa'>$programaFlyer-B&I <i class='fas fa-camera'></i></a>";
-                                                                  }
+                                                                  $existe1 = true;
+                                                                  $contentFlyer .= "<a target='_blank' href='img.php?url=$nombre_fichero.jpg' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
                                                             } elseif (file_exists($nombre_fichero . ".jpeg")) {
-                                                                  $contentFlyer = "<a target='_blank' href='img.php?url=$nombre_fichero.jpeg' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
-                                                                  if (file_exists($nombre_fichero . "-2.jpg")) {
-                                                                        $contentFlyer .= "<br><a target='_blank' href='img.php?url=$nombre_fichero-2.jpg' title='$programa'>$programaFlyer-B&I <i class='fas fa-camera'></i></a>";
-                                                                  }   
+                                                                  $existe1 = true;
+                                                                  $contentFlyer .= "<a target='_blank' href='img.php?url=$nombre_fichero.jpeg' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
                                                             } elseif (file_exists($nombre_fichero . ".png")) {
-                                                                  $contentFlyer = "<a target='_blank' href='img.php?url=$nombre_fichero.png' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
-                                                                  if (file_exists($nombre_fichero . "-2.jpg")) {
-                                                                        $contentFlyer .= "<br><a target='_blank' href='img.php?url=$nombre_fichero-2.jpg' title='$programa'>$programaFlyer-B&I <i class='fas fa-camera'></i></a>";
-                                                                  }   
-                                                            } else {
-                                                                  if (file_exists($nombre_fichero . "-2.jpg")) {
-                                                                        $contentFlyer = "<a target='_blank' href='img.php?url=$nombre_fichero-2.jpg' title='$programa'>$programaFlyer-B&I <i class='fas fa-camera'></i></a>";
-                                                                  }else{
-                                                                        $contentFlyer = "$programaFlyer - Sin vista previa";
-                                                                  }   
+                                                                  $existe1 = true;
+                                                                  $contentFlyer .= "<a target='_blank' href='img.php?url=$nombre_fichero.png' title='$programa'>$programaFlyer <i class='fas fa-camera'></i></a>";
+                                                            }
+
+                                                            //Validar FLyer 2
+                                                            $existe2 = false;
+                                                            $br = $existe1 ? "<br>" : "";
+                                                            if (file_exists($nombre_fichero . "-2.jpg")) {
+                                                                  $existe2 = true;
+                                                                  $contentFlyer .= "$br<a target='_blank' href='img.php?url=$nombre_fichero-2.jpg' title='$programa'>$programaFlyer-2 <i class='fas fa-camera'></i></a>";
+                                                            } elseif (file_exists($nombre_fichero . "-2.jpeg")) {
+                                                                  $existe2 = true;
+                                                                  $contentFlyer .= "$br<a target='_blank' href='img.php?url=$nombre_fichero-2.jpeg' title='$programa'>$programaFlyer-2 <i class='fas fa-camera'></i></a>";
+                                                            } elseif (file_exists($nombre_fichero . "-2.png")) {
+                                                                  $existe2 = true;
+                                                                  $contentFlyer .= "$br<a target='_blank' href='img.php?url=$nombre_fichero-2.png' title='$programa'>$programaFlyer-2 <i class='fas fa-camera'></i></a>";
+                                                            }
+
+                                                            $br = ($existe2 || $existe1) ? "<br>" : "";
+
+                                                            //Validar FLyer 3
+                                                            $existe3 = false;
+                                                            $br = $existe1 ? "<br>" : "";
+                                                            if (file_exists($nombre_fichero . "-3.jpg")) {
+                                                                  $existe3 = true;
+                                                                  $contentFlyer .= "$br<a target='_blank' href='img.php?url=$nombre_fichero-3.jpg' title='$programa'>$programaFlyer-3 <i class='fas fa-camera'></i></a>";
+                                                            } elseif (file_exists($nombre_fichero . "-3.jpeg")) {
+                                                                  $existe3 = true;
+                                                                  $contentFlyer .= "$br<a target='_blank' href='img.php?url=$nombre_fichero-3.jpeg' title='$programa'>$programaFlyer-3 <i class='fas fa-camera'></i></a>";
+                                                            } elseif (file_exists($nombre_fichero . "-3.png")) {
+                                                                  $existe3 = true;
+                                                                  $contentFlyer .= "$br<a target='_blank' href='img.php?url=$nombre_fichero-3.png' title='$programa'>$programaFlyer-3 <i class='fas fa-camera'></i></a>";
+                                                            }
+
+                                                            if (!$existe1 && !$existe2 && !$existe3) {
+                                                                  $contentFlyer .= "$programaFlyer - Sin vista previa";
                                                             }
                                                       } else {
                                                             $contentPrograma = "Sin paquete";
@@ -362,7 +340,7 @@ switch ($mes) {
                         <td align='center'><img src='$url/assets/images/$aero.png'> $libre</td>
                         <td align='center'> <a href='detalles.php?id=$referencia&desde=$desde' title='$referencia'><i class='fas fa-plane-departure'> </i> <i class='fas fa-calendar-alt'></i></a></td>
                         <td align='center'> $contentPrograma</td>
-                        <td align='center'> $contentFlyer</td>
+                        <td> $contentFlyer</td>
                         </tr>     
                         ";
                                                       };
@@ -434,7 +412,7 @@ switch ($mes) {
                   var table = $('#dataTable').DataTable({
                         "language": {
                               "lengthMenu": "Mostrando _MENU_ registros por página",
-                              "zeroRecords": "No se encuentran registros",
+                              "zeroRecords": "No se encuentran registros con sillas libres",
                               "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
                               "infoEmpty": "No se encuentran registros",
                               "infoFiltered": "(Filtrado de _MAX_ registros totales)",

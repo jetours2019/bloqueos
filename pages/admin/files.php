@@ -2,6 +2,7 @@
 #conectar a base de datos 
 $level_file = "../..";
 session_start();
+date_default_timezone_set('America/Bogota');
 
 if (!$_SESSION['logged']) {
     header('location: ../login/login.php');
@@ -53,7 +54,7 @@ foreach ($files_in_folder as $file) {
         $query = "SELECT * FROM productos WHERE programa LIKE '%$programa%'";
         $consulta = mysqli_query($conexion, $query) or die(mysqli_error($conexion));
         $row_cnt = mysqli_num_rows($consulta);
-
+        $fecha =  date ("d-M-Y H:i",filemtime($file));
         if ($row_cnt > 0) {
             $asoc = "SI";
         }
@@ -61,6 +62,7 @@ foreach ($files_in_folder as $file) {
         $archivos .= "<td>" . '<input data-url="'.$file.'" type="checkbox" aria-label="Seleccione para borrar archivo">' . " </td>";
         $archivos .= "<td>$fileName.pdf</td>";
         $archivos .= "<td>$asoc</td>";
+        $archivos .= "<td>$fecha</td>";
         $archivos .= "<td> <a class='btn btn-info' target='_blank'  title='Ver archivo' href='$file'><i class='fas fa-search-plus'></i> </a> <button class='btn btn-danger' onclick='confirm_delete_one_file($(this))' title='Eliminar Archivo' data-name='$fileName.pdf' data-url='$file'><i class='fa fa-trash'></i></button> </td>";
 
         $archivos .= "</tr>";
@@ -73,6 +75,7 @@ foreach ($files_in_folder as $file) {
         $arrayName = explode("-", $fileName);
         $programa = "{$arrayName[0]} {$arrayName[1]}-{$arrayName[2]}";
         $asoc = "NO";
+        $fecha =  date ("d-M-Y H:i",filemtime($file));
 
         $query = "SELECT * FROM productos WHERE programa LIKE '%$programa%'";
         $consulta = mysqli_query($conexion, $query) or die(mysqli_error($conexion));
@@ -85,6 +88,7 @@ foreach ($files_in_folder as $file) {
         $archivos .= "<td>" . '<input data-url="'.$file.'" type="checkbox" aria-label="Seleccione para borrar archivo">' . " </td>";
         $archivos .= "<td>$fileName.jpg</td>";
         $archivos .= "<td>$asoc</td>";
+        $archivos .= "<td>$fecha</td>";
         $archivos .= "<td> <a class='btn btn-info' target='_blank'  title='Ver archivo' href='$file'><i class='fas fa-search-plus'></i> </a> <button class='btn btn-danger' onclick='confirm_delete_one_file($(this))' title='Eliminar Archivo' data-name='$fileName.pdf' data-url='$file'><i class='fa fa-trash'></i></button> </td>";
 
         $archivos .= "</tr>";
@@ -211,6 +215,7 @@ function fechaValida($fechas)
                                             <th></th>
                                             <th>Archivo Cargado</th>
                                             <th>Programa Asociado</th>
+                                            <th>Fecha Modificacion</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
