@@ -229,7 +229,12 @@ switch ($aero) {
   case '9A-':
     $aero = "cga";
     break;
+  case 'LA-CHLA-':
+  case 'CHLA-LA-':
+    $aero = "LACH-";
     break;
+  case 'CHLA-AV-':
+    $aero = "AV-CHLA-";
     break;
 }
 
@@ -481,7 +486,7 @@ switch ($aero) {
           <ul class="navbar-nav ml-auto">
 
             <span class="ano"><?php echo $ano ?></span>
-            
+
             <!-- Nav Item - Alerts -->
 
 
@@ -516,7 +521,7 @@ switch ($aero) {
               <h2>SALIENDO</h2>
               <div>
                 <span><?php echo $desde . '-' . $hacia; ?></span><span><?php echo $tipo ?></span>
-                <p><img src='<?php echo $url;?>/assets/images/<?php echo $aero;?>.png'>  Vuelo: <?php echo $vuelo ?></p>
+                <p><img src='<?php echo $url; ?>/assets/images/<?php echo $aero; ?>.png'> Vuelo: <?php echo $vuelo ?></p>
 
                 <b><?php echo $dia1 ?> <i><?php echo $mes1 ?></i></b>
 
@@ -535,7 +540,7 @@ switch ($aero) {
               <h2>REGRESANDO</h2>
               <div>
                 <span><?php echo $desde2 . '-' . $hacia2; ?></span><span><?php echo $tipo ?></span>
-                <p><img src='<?php echo $url;?>/assets/images/<?php echo $aero;?>.png'>  Vuelo: <?php echo $vuelo2 ?></p>
+                <p><img src='<?php echo $url; ?>/assets/images/<?php echo $aero; ?>.png'> Vuelo: <?php echo $vuelo2 ?></p>
 
                 <b><?php echo $dia2 ?> <i><?php echo $mes3 ?></i></b>
 
