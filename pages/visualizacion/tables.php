@@ -326,6 +326,13 @@ switch ($mes) {
                                                                   case '9A-':
                                                                         $aero = "cga";
                                                                         break;
+                                                                  case 'LA-CHLA-':
+                                                                  case 'CHLA-LA-':
+                                                                        $aero = "LACH-";
+                                                                        break;
+                                                                  case 'CHLA-AV-':
+                                                                        $aero = "AV-CHLA-";
+                                                                        break;
                                                             }
 
 
