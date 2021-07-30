@@ -149,7 +149,6 @@ switch ($mes) {
 
               if ($registro == 0) {
                 echo "No hay Bloqueos registrados.";
-              } else if ($hacia == 'CLO') {
               } else {;
             ?>
 
