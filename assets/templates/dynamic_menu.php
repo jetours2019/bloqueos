@@ -60,7 +60,7 @@ foreach ($ciudades_menu as $cod_ciudad => $info_ciudad) {
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse<?php echo $cod_ciudad; ?>" aria-expanded="true" aria-controls="collapse<?php echo $cod_ciudad; ?>">
             <i class="fas fa-star-and-crescent"></i>
-            <span>Salidas <?php echo $info_ciudad['ciudad']; ?></span>
+            <span>Salidas desde <?php echo $info_ciudad['ciudad']; ?></span>
         </a>
         <div id="collapse<?php echo $cod_ciudad; ?>" class="collapse <?php if ($_GET['desde'] == $cod_ciudad) echo 'show'; ?> " aria-labelledby="heading<?php echo $cod_ciudad; ?>" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded ">
