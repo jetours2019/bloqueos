@@ -60,7 +60,7 @@ $level_file = "..";
 
             <div class="col-lg-6 mb-4">
               <!-- Project Card Example -->
-              <h1 class="h3 mb-0 text-gray-800">Hotel Brisa del Mar</h1>
+              <h1 class="h3 mb-0 text-gray-800">Koray Hotel</h1>
               <div class="card shadow mb-4">
                 <iframe style="height: 40vh;" width="100%" src="https://www.youtube.com/embed/8q4tGnV5i3U?autoplay=1&loop=1;&amp;mute=1&amp;enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
