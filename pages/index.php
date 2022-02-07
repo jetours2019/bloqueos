@@ -62,7 +62,7 @@ $level_file = "..";
               <!-- Project Card Example -->
               <h1 class="h3 mb-0 text-gray-800">Koray Hotel</h1>
               <div class="card shadow mb-4">
-                <iframe style="height: 40vh;" width="100%" src="https://www.youtube.com/embed/8q4tGnV5i3U?autoplay=1&loop=1;&amp;mute=1&amp;enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe style="height: 40vh;" width="100%" src="https://www.youtube.com/embed/5ElcTpo4QQc?autoplay=1&loop=1;&amp;mute=1&amp;enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </div>
 
@@ -71,7 +71,7 @@ $level_file = "..";
               <!-- Project Card Example -->
               <h1 class="h3 mb-0 text-gray-800">Hotel Isla Bonita</h1>
               <div class="card shadow mb-4">
-                <iframe style="height: 40vh;" width="100%" src="https://www.youtube.com/embed/EEyjzlBxHxE?autoplay=1&loop=1;&amp;mute=1&amp;enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe style="height: 40vh;" width="100%" src="https://www.youtube.com/embed/egGcrBR-qLA?autoplay=1&loop=1;&amp;mute=1&amp;enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </div>
 
