@@ -17,7 +17,9 @@ function asignarNombreCiudad($codigo)
             "CUN" => "Cancún",
             "PSO" => "Pasto",
             "PEI" => "Pereira",
-            "BGA" => "Bucaramanga"
+            "BGA" => "Bucaramanga",
+            "MDE" => "Medellín",
+            "LET" => "Leticia",
       );
 
       return $ciudades[$codigo];
