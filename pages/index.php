@@ -85,28 +85,41 @@ $level_file = "..";
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Bienvenido Aliado</h1>
+            <h1 class="h3 mb-0 text-gray-800">Reserva con los Hoteles Aliados y gana boletas para participar por una <br> moto AKT DYNAMIC PRO 2022</h1>
           </div>
 
 
 
 
           <!-- Content Row -->
-          <div class="row" style="display:none;">
+          <div class="row" >
 
-            <!-- Ultimos (CALI) ciclo -->
-            <div class="col-xl-6 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
+            <!-- Campa単a Hoteles -->
+            <div class="col-12 col-md-4 mb-4">
+              <div class="card  shadow h-100 py-2">
                 <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-
-                    </div>
-                    <div class="col-auto">
-                      <i class="fab fa-slideshare fa-2x text-gray-300"></i>
-
-                    </div>
-                  </div>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                              <img src="../assets/images/hotel(1).jpg" class="w-100">
+                            </button>
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <img src="../assets/images/hotel(1).jpg" class="w-100">
+                                  </div>
+                                 
+                                </div>
+                              </div>
+                            </div>
                 </div>
               </div>
             </div>
@@ -115,18 +128,64 @@ $level_file = "..";
 
 
 
-            <!-- Ultimos (BOGOTA) ciclo -->
-            <div class="col-xl-6 col-md-6 mb-4">
-              <div class="card border-left-success shadow h-100 py-2">
+            <div class="col-12 col-md-4 mb-4">
+              <div class="card  shadow h-100 py-2">
                 <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-
-                    </div>
-                    <div class="col-auto">
-                      <i class="fab fa-slideshare fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
+                              <img src="../assets/images/hotel(2).jpg" class="w-100">
+                            </button>
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <img src="../assets/images/hotel(2).jpg" class="w-100">
+                                  </div>
+                                 
+                                </div>
+                              </div>
+                            </div>
+                </div>
+              </div>
+            </div>
+            
+            
+            
+            
+            
+            <div class="col-12 col-md-4 mb-4">
+              <div class="card  shadow h-100 py-2">
+                <div class="card-body">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3">
+                              <img src="../assets/images/hotel(3).jpg" class="w-100">
+                            </button>
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <img src="../assets/images/hotel(3).jpg" class="w-100">
+                                  </div>
+                                 
+                                </div>
+                              </div>
+                            </div>
                 </div>
               </div>
             </div>

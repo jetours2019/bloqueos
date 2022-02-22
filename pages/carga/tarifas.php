@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $extension = pathinfo($_FILES['filejpg']['name'], PATHINFO_EXTENSION);
 
-            if ($extension != "jpg" && $extension != "jpg" && $extension != "png") {
+            if ($extension != "jpg" && $extension != "jpeg" && $extension != "png" && $extension != "JPG" && $extension != "JPEG" && $extension != "PNG") {
                 $errorCarga = true;
                 $error = "Debe cargar archivos con extensión de imagen (.jpg, .jpeg, .png).";
             } else {
@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $extension = pathinfo($_FILES['filejpg2']['name'], PATHINFO_EXTENSION);
 
-            if ($extension != "jpg" && $extension != "jpg" && $extension != "png") {
+            if ($extension != "jpg" && $extension != "jpeg" && $extension != "png" && $extension != "JPG" && $extension != "JPEG" && $extension != "PNG") {
                 $errorCarga = true;
                 $error = "Debe cargar archivos con extensión de imagen (.jpg, .jpeg, .png).";
             } else {
@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $extension = pathinfo($_FILES['filejpg3']['name'], PATHINFO_EXTENSION);
 
-            if ($extension != "jpg" && $extension != "jpg" && $extension != "png") {
+            if ($extension != "jpg" && $extension != "jpeg" && $extension != "png" && $extension != "JPG" && $extension != "JPEG" && $extension != "PNG") {
                 $errorCarga = true;
                 $error = "Debe cargar archivos con extensión de imagen (.jpg, .jpeg, .png).";
             } else {
@@ -224,19 +224,19 @@ if (array_key_exists('programa', $_GET)) {
                                         </div>
                                         <p class="label-carga">Subir Flyer 1.</p>
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="filejpg" name="filejpg" onchange="validateExtension($(this), ['jpg', 'jpeg', 'png']);">
+                                            <input type="file" class="custom-file-input" id="filejpg" name="filejpg" onchange="validateExtension($(this), ['jpg', 'jpeg', 'png', 'JPG', 'JPEG', 'PNG']);">
                                             <label class="custom-file-label" for="filejpg" id="label-filejpg">Seleccione Archivo...</label>
                                             <div class="invalid-feedback">Debe seleccionar un archivo de imagen</div>
                                         </div>
                                         <p class="label-carga">Subir Flyer Adicional 2.</p>
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="filejpg2" name="filejpg2" onchange="validateExtension($(this), ['jpg', 'jpeg', 'png']);">
+                                            <input type="file" class="custom-file-input" id="filejpg2" name="filejpg2" onchange="validateExtension($(this), ['jpg', 'jpeg', 'png', 'JPG', 'JPEG', 'PNG']);">
                                             <label class="custom-file-label" for="filejpg2" id="label-filejpg2">Seleccione Archivo...</label>
                                             <div class="invalid-feedback">Debe seleccionar un archivo de imagen</div>
                                         </div>
                                         <p class="label-carga">Subir Flyer Adicional 3.</p>
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="filejpg3" name="filejpg3" onchange="validateExtension($(this), ['jpg', 'jpeg', 'png']);">
+                                            <input type="file" class="custom-file-input" id="filejpg3" name="filejpg3" onchange="validateExtension($(this), ['jpg', 'jpeg', 'png', 'JPG', 'JPEG', 'PNG']);">
                                             <label class="custom-file-label" for="filejpg3" id="label-filejpg3">Seleccione Archivo...</label>
                                             <div class="invalid-feedback">Debe seleccionar un archivo de imagen</div>
                                         </div>
