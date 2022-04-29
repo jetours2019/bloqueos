@@ -191,8 +191,92 @@ $level_file = "..";
             </div>
 
 
+            <div class="col-12 col-md-4 mb-4">
+              <div class="card  shadow h-100 py-2">
+                <div class="card-body">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal4">
+                              <img src="../assets/images/hotel(4).jpg" class="w-100">
+                            </button>
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <img src="../assets/images/hotel(4).jpg" class="w-100">
+                                  </div>
+                                 
+                                </div>
+                              </div>
+                            </div>
+                </div>
+              </div>
+            </div>
 
+            <div class="col-12 col-md-4 mb-4">
+              <div class="card  shadow h-100 py-2">
+                <div class="card-body">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal5">
+                              <img src="../assets/images/hotel(5).jpg" class="w-100">
+                            </button>
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <img src="../assets/images/hotel(5).jpg" class="w-100">
+                                  </div>
+                                 
+                                </div>
+                              </div>
+                            </div>
+                </div>
+              </div>
+            </div>
 
+            <div class="col-12 col-md-4 mb-4">
+              <div class="card  shadow h-100 py-2">
+                <div class="card-body">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal6">
+                              <img src="../assets/images/hotel(6).jpg" class="w-100">
+                            </button>
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <img src="../assets/images/hotel(6).jpg" class="w-100">
+                                  </div>
+                                 
+                                </div>
+                              </div>
+                            </div>
+                </div>
+              </div>
+            </div>
             <!-- Pending Requests Card Example -->
 
           </div>
