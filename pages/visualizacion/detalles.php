@@ -27,7 +27,8 @@ do {
     $libre = $registro['libre'];
     $vuelo = $registro['vuelo1'];
     $aero = $registro['aerolineas1'];
-    $tipo = $registro['tipo'];
+    $tipo1 = $registro['tipo1'];
+    $tipo2 = $registro['tipo2'];
     $salida = $registro['salida1'];
     $llegada = $registro['llegada1'];
     $ano = $registro['ano'];
@@ -285,11 +286,12 @@ switch ($aero) {
     }
 
     div#detalles span:nth-child(2) {
-      font-size: 9px;
-      letter-spacing: 17px;
+      font-size: 11px;
+      letter-spacing: 9px;
       text-transform: uppercase;
-      color: #676767;
+      color: #adadad;
       line-height: 9px;
+      font-weight: 600;
     }
 
     div#detalles img {
@@ -520,7 +522,7 @@ switch ($aero) {
             <section>
               <h2>SALIENDO</h2>
               <div>
-                <span><?php echo $desde . '-' . $hacia; ?></span><span><?php echo $tipo ?></span>
+                <span><?php echo $desde . '-' . $hacia; ?></span><span><?php echo $tipo1 ?></span>
                 <p><img src='<?php echo $url; ?>/assets/images/<?php echo $aero; ?>.png'> Vuelo: <?php echo $vuelo ?></p>
 
                 <b><?php echo $dia1 ?> <i><?php echo $mes1 ?></i></b>
@@ -539,7 +541,7 @@ switch ($aero) {
             <section>
               <h2>REGRESANDO</h2>
               <div>
-                <span><?php echo $desde2 . '-' . $hacia2; ?></span><span><?php echo $tipo ?></span>
+                <span><?php echo $desde2 . '-' . $hacia2; ?></span><span><?php echo $tipo2 ?></span>
                 <p><img src='<?php echo $url; ?>/assets/images/<?php echo $aero; ?>.png'> Vuelo: <?php echo $vuelo2 ?></p>
 
                 <b><?php echo $dia2 ?> <i><?php echo $mes3 ?></i></b>

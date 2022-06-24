@@ -143,23 +143,21 @@ switch ($mes) {
                                                 //IMPRIMIR TABLA DE TODOS LOS REGISTROS
                                                 echo "<table class='table table-bordered' id='dataTable' width='100%' cellspacing='0'>
                                                 <colgroup>
-                                                <col span='1' style='width: 101px !important;'>
-                                                <col span='1' style='width: 101px !important;'>
-                                                <col span='1' style='width: 60px !important;'>
-                                                <col span='1' style='width: 77px !important;'>
+                                                <col span='1' style='width: 120px !important;'>
+                                                <col span='1' style='width: 120px !important;'>
                                                 <col span='1' style='width: 65px !important;'>
+                                                <col span='1' style='width: 70px !important;'>
                                                 <col span='1' style='width: 65px !important;'>
-                                                <col span='1' style='width: 80px !important;'>
                                                 <col span='1' style='width: 90px !important;'>
-                                                <col span='1' style='width: 125px !important;'>
-                                                <col span='1' style='width: 125px !important;'>
+                                                <col span='1' style='width: 90px !important;'>
+                                                <col span='1' style='width: 140px !important;'>
+                                                <col span='1' style='width: 150px !important;'>
                                              </colgroup>
                 <thead>
                 <tr>
                 <th>Ruta ida</th>
                 <th>Ruta Regreso</th>
                 <th>Mes</th> 
-                <th>Tipo</th> 
                 <th>Salida</th>
                 <th>Regreso</th>
                 <th>Sillas Libres</th>  
@@ -173,7 +171,6 @@ switch ($mes) {
                 <th>Ruta de Ida</th>
                 <th>Ruta de Regreso</th>
                 <th>Mes</th> 
-                <th>Tipo</th> 
                 <th>Salida</th>
                 <th>Regreso</th>
                 <th>Sillas Libres</th>
@@ -198,7 +195,8 @@ switch ($mes) {
                                                       $vuelo2 = $registro['vuelo2'];
                                                       $aero2 = $registro['aerolineas2'];
                                                       $libre = $registro['libre'];
-                                                      $tipo = $registro['tipo'];
+                                                      $tipo1 = $registro['tipo1'];
+                                                      $tipo2 = $registro['tipo2'];
                                                       $ano = $registro['ano'];
                                                       $mes = $registro['mes'];
                                                       $dia = $registro['dia'];
@@ -341,9 +339,8 @@ switch ($mes) {
                         <td>$desde - $hacia </td>
                         <td>$desde2 - $hacia2 </td>
                         <td>$mes2</td>
-                        <td><span class='_vuelo'>$tipo</span></td>
-                        <td class='dia'>$dia <a title='$fecha'><i class='far fa-calendar-check dat'></i></td>
-                        <td class='dia'>$dia2 <a title='$fecha2'><i class='far fa-calendar-check dat'></i></td>
+                        <td class='dia'>$dia <a title='$fecha'><i class='far fa-calendar-check dat'></i> <br> <p class='lead'><small>$tipo1</small></p></td>
+                        <td class='dia'>$dia2 <a title='$fecha2'><i class='far fa-calendar-check dat'></i> <br> <p class='lead'><small>$tipo2</small></p></td>
                         <td align='center'><img src='$url/assets/images/$aero.png'> $libre</td>
                         <td align='center'> <a href='detalles.php?id=$referencia&desde=$desde' title='$referencia'><i class='fas fa-plane-departure'> </i> <i class='fas fa-calendar-alt'></i></a></td>
                         <td align='center'> $contentPrograma</td>
