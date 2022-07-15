@@ -1,6 +1,6 @@
 <?php
 
-$carpeta = "disponibilidad"; 
+$carpeta = "bloqueos"; 
 $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]/$carpeta"; 
 
 ?>
@@ -8,8 +8,8 @@ $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="">
 <meta name="author" content="">
-<link rel="shortcut icon" type="image/png" href="<?php echo $url; ?>/assets/images/iconlogo.png" />
-<title>Aliados Travel | Control Charter</title>
+<link rel="shortcut icon" type="image/png" href="<?php echo $url; ?>/assets/images/favicon_je.ico" />
+<title>Disponibilidad | Je Tours</title>
 
 <!-- Custom fonts for this template-->
 <link href="<?php echo $url; ?>/assets/css/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -21,16 +21,3 @@ $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http
 <!-- Custom styles for this page -->
 <link rel="stylesheet" href="<?php echo $url; ?>/assets/css/style.css">
 
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130016375-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag('js', new Date());
-
-  gtag('config', 'UA-130016375-2');
-</script>

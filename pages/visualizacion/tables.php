@@ -150,8 +150,6 @@ switch ($mes) {
                                                 <col span='1' style='width: 65px !important;'>
                                                 <col span='1' style='width: 90px !important;'>
                                                 <col span='1' style='width: 90px !important;'>
-                                                <col span='1' style='width: 140px !important;'>
-                                                <col span='1' style='width: 150px !important;'>
                                              </colgroup>
                 <thead>
                 <tr>
@@ -162,8 +160,6 @@ switch ($mes) {
                 <th>Regreso</th>
                 <th>Sillas Libres</th>  
                 <th>Itinerario</th>
-                <th>Programa</th>
-                <th>Flyer</th>
                 </tr>
                 </thead>
                 <tfoot>
@@ -175,8 +171,6 @@ switch ($mes) {
                 <th>Regreso</th>
                 <th>Sillas Libres</th>
                 <th>Itinerario</th>
-                <th>Programa</th>
-                <th>Flyer</th>
                 </tr>
                 </tfoot>
                 <tbody>
@@ -339,12 +333,10 @@ switch ($mes) {
                         <td>$desde - $hacia </td>
                         <td>$desde2 - $hacia2 </td>
                         <td>$mes2</td>
-                        <td class='dia'>$dia <a title='$fecha'><i class='far fa-calendar-check dat'></i> <br> <p class='lead'><small>$tipo1</small></p></td>
-                        <td class='dia'>$dia2 <a title='$fecha2'><i class='far fa-calendar-check dat'></i> <br> <p class='lead'><small>$tipo2</small></p></td>
+                        <td class='dia'>$dia <a title='$fecha' ><i class='far fa-calendar-check dat'></i> <br> <p class='lead'><small>$tipo1</small></p></td>
+                        <td class='dia'>$dia2 <a title='$fecha2' ><i class='far fa-calendar-check dat'></i> <br> <p class='lead'><small>$tipo2</small></p></td>
                         <td align='center'><img src='$url/assets/images/$aero.png'> $libre</td>
-                        <td align='center'> <a href='detalles.php?id=$referencia&desde=$desde' title='$referencia'><i class='fas fa-plane-departure'> </i> <i class='fas fa-calendar-alt'></i></a></td>
-                        <td align='center'> $contentPrograma</td>
-                        <td> $contentFlyer</td>
+                        <td align='center'> <a class='je' href='detalles.php?id=$referencia&desde=$desde' title='$referencia'><i class='fas fa-plane-departure'> </i> <i class='fas fa-calendar-alt'></i></a></td>
                         </tr>     
                         ";
                                                       };

@@ -24,18 +24,6 @@
 
       <!-- Divider -->
       <hr class="sidebar-divider">
-
-      <div class="text-center d-inline">
-        <form action="<?php echo $level_file; ?>/pages/visualizacion/search_bar_result.php" method="GET">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Buscar Programa <i class="fas fa-search-plus"></i> </label>
-            <input type="text" class="form-control search-bar" name="programa" placeholder="AT 0000 P" minlength="4" oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Ingrese el codigo del programa completo')">
-          </div>
-        </form>
-      </div>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider">
       <!-- Heading -->
       <div class="sidebar-heading">
         Menu

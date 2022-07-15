@@ -260,13 +260,6 @@ switch ($aero) {
       padding-bottom: 40px;
     }
 
-    div#detalles h2 {
-      text-align: center;
-      background: #22468d;
-      color: white;
-      font-size: 25px;
-      padding: 5px;
-    }
 
     div#detalles div {
       min-height: 200px;
@@ -336,12 +329,6 @@ switch ($aero) {
       position: absolute;
       left: 50%;
       top: -15px;
-    }
-
-    span.disponible {
-      color: #4CAF50;
-      font-size: 25px;
-      padding: 0 7px;
     }
 
     .input-group-append {
@@ -513,7 +500,7 @@ switch ($aero) {
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <a class="back" href="javascript:history.back(-1);"> <i class="fas fa-arrow-circle-left"></i> Regresar</a>
+          <a class="back je" href="javascript:history.back(-1);"> <i class="fas fa-arrow-circle-left"></i> Regresar</a>
 
           <!-- DataTales Example -->
           <div id="detalles">
@@ -575,7 +562,7 @@ switch ($aero) {
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Aliados Travel 2019</span>
+            <span>Copyright &copy; Je Tours 2022</span>
           </div>
         </div>
       </footer>
