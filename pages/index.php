@@ -84,7 +84,7 @@ $level_file = "..";
         </div-->
 
           <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <div class="d-sm-flex align-items-center justify-content-between mb-4 d-none">
             <h1 class="h3 mb-0 text-gray-800">Reserva con los Hoteles Aliados y gana boletas para participar por una <br> moto AKT DYNAMIC PRO 2022</h1>
           </div>
 
@@ -92,7 +92,7 @@ $level_file = "..";
 
 
           <!-- Content Row -->
-          <div class="row" >
+          <div class="row d-none" >
 
             <!-- Campa単a Hoteles -->
             <div class="col-12 col-md-4 mb-4">
