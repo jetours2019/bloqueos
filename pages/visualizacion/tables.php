@@ -150,6 +150,7 @@ switch ($mes) {
                                                 <col span='1' style='width: 65px !important;'>
                                                 <col span='1' style='width: 90px !important;'>
                                                 <col span='1' style='width: 90px !important;'>
+                                                <col span='1' style='width: 140px !important;'>
                                              </colgroup>
                 <thead>
                 <tr>
@@ -160,6 +161,7 @@ switch ($mes) {
                 <th>Regreso</th>
                 <th>Sillas Libres</th>  
                 <th>Itinerario</th>
+                <th>Programa</th>
                 </tr>
                 </thead>
                 <tfoot>
@@ -171,6 +173,7 @@ switch ($mes) {
                 <th>Regreso</th>
                 <th>Sillas Libres</th>
                 <th>Itinerario</th>
+                <th>Programa</th>
                 </tr>
                 </tfoot>
                 <tbody>
@@ -201,7 +204,7 @@ switch ($mes) {
                                                       $contentPrograma = $contentFlyer = "";
                                                       if (isset($programa) && $programa != null && $programa != "" && $programa != "NO DISPO" && $programa != "0" && $programa != " - " && $programa != "EXCURSIONES") {
                                                             $programaLink = str_replace(" ", "-", trim($programa));
-                                                            $nombre_fichero = "../carga/files/$programaLink";
+                                                            $nombre_fichero = "https://aliadostravel.com/bloqueos/pages/carga/files/$programaLink";
                                                             if (file_exists($nombre_fichero . ".pdf")) {
                                                                   $contentPrograma = "<a target='_blank' href='pdf.php?url=$nombre_fichero.pdf' title='$programa'>$programa <i class='fas fa-search-plus'></i></a>";
                                                             } elseif (file_exists($nombre_fichero . ".PDF")) {
@@ -337,6 +340,7 @@ switch ($mes) {
                         <td class='dia'>$dia2 <a title='$fecha2' ><i class='far fa-calendar-check dat'></i> <br> <p class='lead'><small>$tipo2</small></p></td>
                         <td align='center'><img src='$url/assets/images/$aero.png'> $libre</td>
                         <td align='center'> <a class='je' href='detalles.php?id=$referencia&desde=$desde' title='$referencia'><i class='fas fa-plane-departure'> </i> <i class='fas fa-calendar-alt'></i></a></td>
+                        <td align='center'> $contentPrograma</td>
                         </tr>     
                         ";
                                                       };
