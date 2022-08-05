@@ -3,10 +3,10 @@
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo $url; ?>">
-        <div class="sidebar-brand-icon rotate-n-15">
+        <!--div class="sidebar-brand-icon rotate-n-15">
           <i class="fab fa-avianex"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">BLOQUEO'<sup>s</sup></div>
+        </div-->
+        <div class="sidebar-brand-text mx-3">BLOQUEOS</div>
       </a>
 
       <!-- Divider -->
