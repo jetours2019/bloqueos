@@ -211,6 +211,7 @@ switch ($mes) {
                                                                   $contentPrograma = "<a target='_blank' href='pdf.php?url=$nombre_fichero.PDF' title='$programa'>$programa <i class='fas fa-search-plus'></i></a>";
                                                             } else {
                                                                   $contentPrograma = "$programa - Sin vista previa";
+                                                                  $contentPrograma = "<a target='_blank' href='pdf.php?url=$nombre_fichero.pdf' title='$programa'>$programa <i class='fas fa-search-plus'></i></a>";
                                                             }
 
                                                             $programaFlyer = trim($programa, "AT ");
