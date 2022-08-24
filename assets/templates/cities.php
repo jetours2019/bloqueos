@@ -64,7 +64,7 @@ function asignarNombreCiudad($codigo)
             "CUN" => "Cancún",
             "CUR" => "Curazao",
             "AUA" => "Aruba",
-            "PTY" => "Panamá",
+            "BLB" => "Panamá",
             "SDQ" => "Santo Domingo",
       );
 
