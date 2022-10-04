@@ -67,6 +67,7 @@ function asignarNombreCiudad($codigo)
             "PTY" => "Panamá",
             "BLB" => "Panamá",
             "SDQ" => "Santo Domingo",
+            "MAD" => "Madrid",
       );
 
       return $ciudades[$codigo];
