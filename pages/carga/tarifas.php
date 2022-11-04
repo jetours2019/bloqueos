@@ -18,7 +18,7 @@ $errorCarga = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $carpetaCarga     = "./files/";
     $programa = $_POST['agencia'] . '-' . $_POST['codigo'] . '-' . $_POST['tipo'];
-
+    $programa = trim($programa, "-");
     if ($_FILES['filepdf']['size'] == 0 && $_FILES['filejpg']['size'] == 0 && $_FILES['filejpg2']['size'] == 0 && $_FILES['filejpg3']['size'] == 0) {
         $errorCarga = true;
         $error = "Debe subir al menos un archivo.";
@@ -207,7 +207,7 @@ if (array_key_exists('programa', $_GET)) {
                                             </div>
                                             <div class="col-sm-4 my-1">
                                                 <label class="mr-sm-2 sr-only" for="tipo">Tipo</label>
-                                                <select class="custom-select mr-sm-2" id="tipo" name="tipo" placeholder="Elegir..." required>
+                                                <select class="custom-select mr-sm-2" id="tipo" name="tipo" placeholder="Elegir...">
                                                     <option <?php if ($tipo == "") echo "selected"; ?> value="">Elegir...</option>
                                                     <option <?php if ($tipo == "P") echo "selected"; ?> value="P">Promo</option>
                                                     <option <?php if ($tipo == "SP") echo "selected"; ?> value="SP">Super Promo</option>
@@ -259,7 +259,7 @@ if (array_key_exists('programa', $_GET)) {
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Aliados Travel 2019</span>
+                        <span>Copyright &copy; Je Tours 2022</span>
                     </div>
                 </div>
             </footer>
