@@ -88,7 +88,65 @@ $level_file = "..";
             <h1 class="h3 mb-0 text-gray-800">Reserva con los Hoteles Aliados y gana boletas para participar por una <br> moto AKT DYNAMIC PRO 2022</h1>
           </div>
 
-
+          <div class="row">
+            <!-- CAMPAÑA NAVIDAD-->
+            <div class="col-12 col-md-6">
+              <div class="card  shadow h-100 py-2">
+                <div class="card-body">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalNavidad">
+                              <img src="../assets/images/navidad1.jpg" class="w-100">
+                            </button>
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModalNavidad" tabindex="-1" role="dialog" aria-labelledby="exampleModalNavidadLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <img src="../assets/images/navidad1.jpg" class="w-100">
+                                  </div>
+                                 
+                                </div>
+                              </div>
+                            </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="card  shadow h-100 py-2">
+                <div class="card-body">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalNavidad2">
+                              <img src="../assets/images/navidad2.jpg" class="w-100">
+                            </button>
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModalNavidad2" tabindex="-1" role="dialog" aria-labelledby="exampleModalNavidad2Label" aria-hidden="true">
+                              <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <img src="../assets/images/navidad2.jpg" class="w-100">
+                                  </div>
+                                 
+                                </div>
+                              </div>
+                            </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
           <!-- Content Row -->
