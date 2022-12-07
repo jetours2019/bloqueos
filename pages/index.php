@@ -374,19 +374,22 @@ $level_file = "..";
 </body>
 <script>
   $(document).ready(function() {
-    Swal.fire({
-      imageUrl: '../assets/images/oferta.jpg',
-      width: 500,
-      imageWidth: 500,
-      imageHeight: 500,
-      imageAlt: 'Custom image',
-      showConfirmButton: false,
-      showCloseButton: false,
-      customClass: {
-        title: 'p-0',
-        image: 'mt-3 mb-0',
-      }
-    })
+    var pop_up_activated = false; //TODO: Variable en BD
+    if (pop_up_activated) {
+      Swal.fire({
+        imageUrl: '../assets/images/oferta.jpg',
+        width: 500,
+        imageWidth: 500,
+        imageHeight: 500,
+        imageAlt: 'Custom image',
+        showConfirmButton: false,
+        showCloseButton: false,
+        customClass: {
+          title: 'p-0',
+          image: 'mt-3 mb-0',
+        }
+      })
+    }
   });
 </script>
 
