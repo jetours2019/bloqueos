@@ -147,8 +147,10 @@ switch ($mes) {
               #asignamos el nombre del mes de Destino
               $hacia2 = asignarNombreCiudad($hacia);
               $url_destino = "https://reservas.aliadostravel.com";
-              if($hacia != "ADZ" && $hacia != "CTG" && $hacia != "SMR"){
+              $extra_message = "RESERVA EN LÍNEA";
+              if(($hacia != "ADZ" && $hacia != "CTG" && $hacia != "SMR") || $mes < 2 ){
                 $url_destino = 'tables.php?mes=' . $mes . '&ano=' . $ano . '&destino=' . $hacia . '&desde=' . $desde;
+                $extra_message = "";
               }
               if ($registro == 0) {
                 echo "No hay Bloqueos registrados.";
@@ -164,6 +166,7 @@ switch ($mes) {
                         <div class="row no-gutters align-items-center">
                           <div class="col mr-2">
                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $hacia2 ?></div>
+                            <div class="h6 mb-0 text-success font-weight-bold"><?php echo $extra_message ?></div>
                           </div>
                           <div class="col-auto">
                             <i class="fab fa-slideshare fa-2x text-gray-300"></i>
